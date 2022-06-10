@@ -12,7 +12,7 @@
 ### 克隆到本地
 
 ```bash
-npx degit guxuerui/vue3-minesweeper my-app
-cd my-app
-pnpm i # 如果没有pnpm, 运行: npm install -g pnpm
+1. npx degit guxuerui/vue3-minesweeper my-app 或 git clone git@github.com:guxuerui/vue3-minesweeper.git
+2. cd my-app
+3. pnpm i # 如果没有pnpm, 运行: npm install -g pnpm
 ```
