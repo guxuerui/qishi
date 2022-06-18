@@ -24,7 +24,7 @@ watchEffect(() => {
     </div>
     <div flex="~ gap-2" mt-4 justify-center>
       <button btn @click="toggleDev()">
-        {{ isDev ? '开发模式' : '游玩模式' }}
+        {{ isDev ? '开发模式' : '游戏模式' }}
       </button>
       <button btn @click="play.reset()">
         重新开始

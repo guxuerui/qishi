@@ -40,9 +40,7 @@ const getBlockClass = (block: BlockState) => {
       <div i-mdi-flag text-red />
     </template>
     <template v-else-if="block.reveoled || isDev">
-      <div v-if="block.mine" i-mdi-mine>
-        x
-      </div>
+      <div v-if="block.mine" i-mdi-mine />
       <div v-else>
         {{ block.adjacentMines }}
       </div>
