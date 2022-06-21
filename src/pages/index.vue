@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { isDev, toggleDev } from '~/composables'
-const play = new GamePlay(12, 12)
+const play = new GamePlay(10, 10)
 const state = play.state
 
 watchEffect(() => {
