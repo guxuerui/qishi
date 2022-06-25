@@ -7,6 +7,8 @@ import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
+import Markdown from 'vite-plugin-vue-markdown'
+import prism from 'markdown-it-prism'
 
 export default defineConfig({
   resolve: {
@@ -17,10 +19,20 @@ export default defineConfig({
   plugins: [
     Vue({
       reactivityTransform: true,
+      include: [/\.vue$/, /\.md$/],
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
-    Pages(),
+    Markdown({
+      headEnabled: true,
+      markdownItUses: [
+        prism,
+      ],
+    }),
+    Pages({
+      pagesDir: 'src/pages',
+      extensions: ['vue', 'md'],
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({

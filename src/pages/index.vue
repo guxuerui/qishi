@@ -6,12 +6,23 @@ const state = play.state
 watchEffect(() => {
   play.checkGameState()
 })
+
+const router = useRouter()
+const go = (folder: string, name: string) => {
+  if (folder && name)
+    router.push(`/${folder}/${encodeURIComponent(name)}`)
+}
 </script>
 
 <template>
   <div>
     <div mb-5>
       Minesweeper / 扫雷
+    </div>
+    <div mb-4>
+      <button btn @click="go('blog', 'test4')">
+        to blog page
+      </button>
     </div>
     <div v-for="row, y in state" :key="y" flex="~" items-center justify-center>
       <MineBlock
