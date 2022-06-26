@@ -21,7 +21,7 @@ const go = (folder: string, name: string) => {
     </div>
     <div mb-4>
       <button btn @click="go('blog', 'test4')">
-        to blog page
+        TO MD PAGE
       </button>
     </div>
     <div v-for="row, y in state" :key="y" flex="~" items-center justify-center>

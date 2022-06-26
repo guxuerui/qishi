@@ -6,7 +6,6 @@ import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
-import './styles/dark.css'
 import 'uno.css'
 
 import 'prismjs'
