@@ -18,6 +18,12 @@ body {
   line-height: inherit
 }
 
+.markdown-body {
+  width: 50vw;
+  text-align: left;
+  margin: 0 auto;
+}
+
 hr {
   height: 0;
   color: inherit;
