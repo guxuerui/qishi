@@ -15,14 +15,12 @@ const para = ref({
 })
 
 nextTick(() => {
-  // myCanvas.value = document.getElementById('canvas')!
   context.value = myCanvas.value.getContext('2d')
   WIDTH.value = myCanvas.value.width = document.documentElement.clientWidth
   HEIGHT.value = myCanvas.value.height = document.documentElement.clientHeight
   animate()
 })
 
-// function init() {
 let mouseX = 0
 let mouseY = 0
 
@@ -44,13 +42,10 @@ if (para.value.color)
 else
   color.value = Math.random() * 360
 
-// }
-
 function animate() {
   if (!para.value.color) {
     color.value += 0.1
-    // color2.value = `hsl(${color.value}, 100%, 80%)`
-    color2.value = 'hsl(180, 100%, 80%)'
+    color2.value = `hsl(${color.value}, 100%, 80%)`
   }
 
   context.value.clearRect(0, 0, WIDTH.value, HEIGHT.value)
