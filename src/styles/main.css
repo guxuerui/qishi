@@ -31,6 +31,10 @@ html.dark {
   --c-scrollbar-hover: #222
 }
 
+html.dark .dark\:bg-hex-121212 {
+  background: none !important;
+}
+
 .markdown-body {
   width: 50vw;
   text-align: left;
