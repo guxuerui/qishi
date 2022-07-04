@@ -1,4 +1,4 @@
-*,:before,:after {
+markdown-body*,:before,:after {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
@@ -289,7 +289,7 @@ html:not(.dark) [img-dark] {
   margin-bottom: 1.2em
 }
 
-.prose a {
+.markdown-body a {
   color: var(--fg-deeper);
   text-decoration: none;
   font-weight: 500
@@ -300,48 +300,48 @@ html:not(.dark) [img-dark] {
   font-weight: 600
 }
 
-.prose ol[type=A] {
+.markdown-body ol[type=A] {
   --list-counter-style: upper-alpha
 }
 
-.prose ol[type=a] {
+.markdown-body ol[type=a] {
   --list-counter-style: lower-alpha
 }
 
-.prose ol[type="A s"] {
+.markdown-body ol[type="A s"] {
   --list-counter-style: upper-alpha
 }
 
-.prose ol[type="a s"] {
+.markdown-body ol[type="a s"] {
   --list-counter-style: lower-alpha
 }
 
-.prose ol[type=I] {
+.markdown-body ol[type=I] {
   --list-counter-style: upper-roman
 }
 
-.prose ol[type=i] {
+.markdown-body ol[type=i] {
   --list-counter-style: lower-roman
 }
 
-.prose ol[type="I s"] {
+.markdown-body ol[type="I s"] {
   --list-counter-style: upper-roman
 }
 
-.prose ol[type="i s"] {
+.markdown-body ol[type="i s"] {
   --list-counter-style: lower-roman
 }
 
-.prose ol[type="1"] {
+.markdown-body ol[type="1"] {
   --list-counter-style: decimal
 }
 
-.prose ol>li {
+.markdown-body ol>li {
   position: relative;
   padding-left: 1.75em
 }
 
-.prose ol>li:before {
+.markdown-body ol>li:before {
   content: counter(list-item,var(--list-counter-style, decimal)) ".";
   position: absolute;
   font-weight: 400;
@@ -349,12 +349,12 @@ html:not(.dark) [img-dark] {
   left: 0
 }
 
-.prose ul>li {
+.markdown-body ul>li {
   position: relative;
   padding-left: 1.75em
 }
 
-.prose ul>li:before {
+.markdown-body ul>li:before {
   content: "";
   position: absolute;
   background-color: #d1d5db;
@@ -365,7 +365,7 @@ html:not(.dark) [img-dark] {
   left: .25em
 }
 
-.prose hr {
+.markdown-body hr {
   border-color: #7d7d7d4d;
   margin-top: 3em;
   margin-bottom: 3em
@@ -400,7 +400,7 @@ html:not(.dark) [img-dark] {
   line-height: 1.1111111
 }
 
-.prose h2 {
+.markdown-body h2 {
   color: var(--fg-deep);
   font-weight: 700;
   font-size: 1.5em;
@@ -409,7 +409,7 @@ html:not(.dark) [img-dark] {
   line-height: 1.3333333
 }
 
-.prose h3 {
+.markdown-body h3 {
   color: inherit;
   font-weight: 600;
   font-size: 1.25em;
@@ -418,7 +418,7 @@ html:not(.dark) [img-dark] {
   line-height: 1.6
 }
 
-.prose h4 {
+.markdown-body h4 {
   color: inherit;
   font-weight: 600;
   margin-top: 1.5em;
@@ -426,7 +426,7 @@ html:not(.dark) [img-dark] {
   line-height: 1.5
 }
 
-.prose figure figcaption {
+.markdown-body figure figcaption {
   color: #6b7280;
   font-size: .875em;
   line-height: 1.4285714;
@@ -521,7 +521,7 @@ html:not(.dark) [img-dark] {
   padding: .5714286em
 }
 
-.prose p {
+.markdown-body p {
   margin-top: 1.25em;
   margin-bottom: 1.25em
 }
