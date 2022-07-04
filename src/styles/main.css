@@ -51,7 +51,7 @@ abbr:where([title]) {
   text-decoration: underline dotted
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit
 }
@@ -61,11 +61,11 @@ a {
   text-decoration: inherit
 }
 
-b,strong {
+b, strong {
   font-weight: bolder
 }
 
-code,kbd,samp,pre {
+code, kbd, samp, pre {
   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
   font-size: 1em
 }
@@ -74,7 +74,7 @@ small {
   font-size: 80%
 }
 
-sub,sup {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -336,12 +336,12 @@ html:not(.dark) [img-dark] {
   --list-counter-style: decimal
 }
 
-.markdown-body ol>li {
+.markdown-body ol > li {
   position: relative;
   padding-left: 1.75em
 }
 
-.markdown-body ol>li:before {
+.markdown-body ol > li:before {
   content: counter(list-item,var(--list-counter-style, decimal)) ".";
   position: absolute;
   font-weight: 400;
@@ -349,12 +349,15 @@ html:not(.dark) [img-dark] {
   left: 0
 }
 
-.markdown-body ul>li {
+.markdown-body ul {
+  padding-left: 1rem;
+}
+.markdown-body ul > li {
   position: relative;
   padding-left: 1.75em
 }
 
-.markdown-body ul>li:before {
+.markdown-body ul > li:before {
   content: "";
   position: absolute;
   background-color: #d1d5db;
@@ -371,7 +374,7 @@ html:not(.dark) [img-dark] {
   margin-bottom: 3em
 }
 
-.prose blockquote {
+.markdown-body blockquote {
   font-weight: 500;
   font-style: italic;
   color: inherit;
@@ -383,11 +386,11 @@ html:not(.dark) [img-dark] {
   padding-left: 1em
 }
 
-.prose blockquote p:first-of-type:before {
+.markdown-body blockquote p:first-of-type:before {
   content: open-quote
 }
 
-.prose blockquote p:last-of-type:after {
+.markdown-body blockquote p:last-of-type:after {
   content: close-quote
 }
 
@@ -404,8 +407,7 @@ html:not(.dark) [img-dark] {
   color: var(--fg-deep);
   font-weight: 700;
   font-size: 1.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin: 1em 0; 
   line-height: 1.3333333
 }
 
@@ -554,7 +556,7 @@ html:not(.dark) [img-dark] {
   font-size: .9em
 }
 
-.prose ol,.prose ul {
+.prose ol, .prose ul {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
   list-style-type: none
@@ -3471,29 +3473,9 @@ h1:hover .header-anchor,h1:focus .header-anchor,h2:hover .header-anchor,h2:focus
   font-style: italic;
 }
 
-.\!text-white {
-  --un-text-opacity: 1 !important;
-  color: rgba(255,255,255,var(--un-text-opacity)) !important;
-}
-
 .dark .dark\:text-gray-200 {
   --un-text-opacity: 1;
   color: rgba(229,231,235,var(--un-text-opacity));
-}
-
-.hover\:text-teal-400:hover,.text-teal-400,[text-teal-400=""] {
-  --un-text-opacity: 1;
-  color: rgba(45,212,191,var(--un-text-opacity));
-}
-
-.text-blue-400 {
-  --un-text-opacity: 1;
-  color: rgba(96,165,250,var(--un-text-opacity));
-}
-
-.text-gray-700 {
-  --un-text-opacity: 1;
-  color: rgba(55,65,81,var(--un-text-opacity));
 }
 
 .text-green-500,.text-green5,[text-green5=""] {
@@ -3536,10 +3518,6 @@ h1:hover .header-anchor,h1:focus .header-anchor,h2:hover .header-anchor,h2:focus
   color: rgba(255,255,255,var(--un-text-opacity));
 }
 
-.no-underline {
-  text-decoration: none;
-}
-
 .hover\:opacity-100:hover,[op~="hover\:100"]:hover {
   opacity: 1;
 }
@@ -3552,68 +3530,14 @@ h1:hover .header-anchor,h1:focus .header-anchor,h2:hover .header-anchor,h2:focus
   opacity: 0.75;
 }
 
-.op30,[op30=""] {
-  opacity: 0.3;
-}
-
-.op60,[op60=""] {
-  opacity: 0.6;
-}
-
-.op80,[op~="\38 0"],[op80=""] {
-  opacity: 0.8;
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
-.opacity-20 {
-  opacity: 0.2;
-}
-
-.opacity-70 {
-  opacity: 0.7;
-}
-
-[opacity~="\.3"] {
-  opacity: 0.003;
-}
-
 .shadow,[shadow=""] {
   --un-shadow: var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgba(0,0,0,0.1)),var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgba(0,0,0,0.1));
   box-shadow: var(--un-ring-offset-shadow, 0 0 #0000), var(--un-ring-shadow, 0 0 #0000), var(--un-shadow);
 }
 
-.\!outline-none {
-  outline: 2px solid transparent !important;
-  outline-offset: 2px !important;
-}
-
-.outline-none {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 .dark .dark\:invert {
   --un-invert: invert(1);
   filter: var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);
-}
-
-.filter {
-  filter: var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);
-}
-
-.transition {
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-800 {
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 800ms;
 }
 
 .ease {
