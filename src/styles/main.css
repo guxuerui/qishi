@@ -893,7 +893,7 @@ html:not(.dark) [img-dark] {
   --prism-marker-font-size: .8em;
   --prism-font-size: 1em;
   --prism-line-height: 1.5em;
-  --prism-font-family: monospace;
+  --prism-font-family: "Fria Code", monospace;
   --prism-inline-font-size: var(--prism-font-size);
   --prism-block-font-size: var(--prism-font-size);
   --prism-tab-size: 2;
@@ -950,9 +950,9 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
   background: var(--prism-selection-background)
 }
 
-.token.comment,.token.prolog,.token.doctype,.token.cdata {
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
   color: var(--prism-comment);
-  font-style: var(--prism-comment-style)
+  font-style: var(--prism-comment-style);
 }
 
 .token.namespace {
@@ -1061,11 +1061,6 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
 
 .line-highlight {
   background: var(--prism-line-highlight-background)
-}
-
-:root {
-  --prism-font-size: .9rem;
-  --prism-font-family: "Fira Code", monospace
 }
 
 html:not(.dark) {
