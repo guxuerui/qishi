@@ -1068,10 +1068,6 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
   --prism-font-family: "Fira Code", monospace
 }
 
-:root {
-  --prism-font-family: "Input Mono", monospace
-}
-
 html:not(.dark) {
   --prism-foreground: #393a34;
   --prism-background: #f6f8fa;
@@ -1120,29 +1116,29 @@ html.dark {
   --prism-selection-background: #444444
 }
 
-.prose {
+.markdown-body {
   --fg: #555;
   --fg-deep: #222;
   --fg-deeper: #000;
-  color: var(--fg)
+  color: var(--fg);
 }
 
-.prose a {
+.markdown-body a {
   font-weight: inherit;
   text-decoration: none;
-  border-bottom: 1px solid rgba(125,125,125,.3);
-  transition: border .3s ease-in-out
+  border-bottom: 1px solid rgba(125, 125, 125, .3);
+  transition: border .3s ease-in-out;
 }
 
-.prose a:hover {
-  border-bottom: 1px solid var(--fg)
+.markdown-body a:hover {
+  border-bottom: 1px solid var(--fg);
 }
 
-.prose a code {
+.markdown-body a code {
   color: inherit
 }
 
-.prose hr {
+.markdown-body hr {
   width: 50px;
   margin: 2em auto
 }
