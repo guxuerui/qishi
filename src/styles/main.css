@@ -1210,36 +1210,3 @@ h1:hover .header-anchor,h1:focus .header-anchor,h2:hover .header-anchor,h2:focus
   content: none
 }
 
-@media (max-width: 1200px) {
-  .table-of-contents {
-      display:none
-  }
-}
-
-.table-of-contents {
-  position: fixed;
-  top: 80px;
-  padding-top: 70px;
-  font-size: .8em;
-  right: 10px;
-  width: 200px;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  opacity: 0;
-  transition: all .4s ease-out
-}
-
-.table-of-contents:hover {
-  opacity: .5
-}
-
-.table-of-contents ul>li:before {
-  display: none
-}
-
-.table-of-contents ul>li {
-  padding-left: .8rem
-}
-
