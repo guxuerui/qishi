@@ -1096,7 +1096,7 @@ html:not(.dark) {
 
 html.dark {
   --prism-foreground: #d4cfbf;
-  --prism-background: #202124;
+  --prism-background: #161b22;
   --prism-comment: #758575;
   --prism-string: #d48372;
   --prism-literal: #429988;
