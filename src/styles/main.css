@@ -31,10 +31,6 @@ html.dark {
   --c-scrollbar-hover: #222
 }
 
-html.dark .dark\:bg-hex-121212 {
-  background: none !important;
-}
-
 .markdown-body {
   width: 50vw;
   text-align: left;
@@ -70,10 +66,6 @@ code, kbd, samp, pre {
   font-size: 1em
 }
 
-small {
-  font-size: 80%
-}
-
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -95,7 +87,7 @@ table {
   border-collapse: collapse
 }
 
-button,input,optgroup,select,textarea {
+button, input, optgroup, select, textarea {
   font-family: inherit;
   font-size: 100%;
   font-weight: inherit;
@@ -105,26 +97,14 @@ button,input,optgroup,select,textarea {
   padding: 0
 }
 
-button,select {
+button, select {
   text-transform: none
 }
 
-button,[type=button],[type=reset],[type=submit] {
+button, [type=button], [type=reset], [type=submit] {
   -webkit-appearance: button;
   background-color: transparent;
   background-image: none
-}
-
-:-moz-focusring {
-  outline: auto
-}
-
-:-moz-ui-invalid {
-  box-shadow: none
-}
-
-progress {
-  vertical-align: baseline
 }
 
 ::-webkit-inner-spin-button,::-webkit-outer-spin-button {
