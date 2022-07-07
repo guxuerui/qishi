@@ -1,4 +1,4 @@
-markdown-body*,:before,:after {
+markdown-body*, :before,:after {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
@@ -12,7 +12,7 @@ html {
   tab-size: 4;
   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
   overflow: scroll;
-  background-color: var(--c-bg)
+  background-color: var(--c-bg);
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 }
 
 html, body, #app {
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -29,12 +29,6 @@ html.dark {
   --c-bg: #050505;
   --c-scrollbar: #111;
   --c-scrollbar-hover: #222
-}
-
-.markdown-body {
-  width: 50vw;
-  text-align: left;
-  margin: 0 auto;
 }
 
 hr {
@@ -111,24 +105,6 @@ button, [type=button], [type=reset], [type=submit] {
   height: auto
 }
 
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit
-}
-
-summary {
-  display: list-item
-}
-
 blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre {
   margin: 0
 }
@@ -145,24 +121,15 @@ legend {
 ol,ul,menu {
   list-style: none;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 textarea {
-  resize: vertical
-}
-
-input::placeholder,textarea::placeholder {
-  opacity: 1;
-  color: #9ca3af
+  resize: vertical;
 }
 
 button,[role=button] {
   cursor: pointer
-}
-
-:disabled {
-  cursor: default
 }
 
 img,svg,video,canvas,audio,iframe,embed,object {
@@ -181,7 +148,6 @@ img,video {
   --c-scrollbar-hover: #bbb
 }
 
-
 #nprogress {
   pointer-events: none
 }
@@ -198,7 +164,7 @@ img,video {
 }
 
 * {
-  scrollbar-color: var(--c-scrollbar) var(--c-bg)
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
 }
 
 .sponsorkit-avatar {
@@ -254,14 +220,18 @@ html:not(.dark) [img-dark] {
   display: none
 }
 
-.prose {
+.markdown-body {
+  /* width: 45vw; */
+  /* height: 100%; */
+  text-align: left;
+  margin: 0 auto;
   color: var(--fg);
-  max-width: 65ch;
+  max-width: 70ch;
   font-size: 1rem;
-  line-height: 1.75
+  line-height: 1.75;
 }
 
-.prose [class~=lead] {
+.markdown-body [class~=lead] {
   color: #4b5563;
   font-size: 1.25em;
   line-height: 1.6;
@@ -275,7 +245,7 @@ html:not(.dark) [img-dark] {
   font-weight: 500
 }
 
-.prose strong {
+.markdown-body strong {
   color: var(--fg-deep);
   font-weight: 600
 }
