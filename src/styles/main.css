@@ -252,7 +252,7 @@ img, video {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-scrollbar-hover)
+  background: var(--c-scrollbar-hover);
 }
 
 h2+p>em:first-child {
@@ -263,11 +263,11 @@ h2+p>em:first-child {
 }
 
 .dark [img-light] {
-  display: none
+  display: none;
 }
 
 html:not(.dark) [img-dark] {
-  display: none
+  display: none;
 }
 
 .markdown-body {
@@ -522,13 +522,13 @@ html:not(.dark) [img-dark] {
 
 .markdown-body p {
   margin-top: 1.25em;
-  margin-bottom: 1.25em
+  margin-bottom: 1.25em;
 }
 
-.prose img {
-  margin-top: 2em;
-  margin-bottom: 2em
-}
+/* .markdown-body img { */
+/*   margin-top: 2em; */
+/*   margin-bottom: 2em; */
+/* } */
 
 .prose video {
   margin-top: 2em;
