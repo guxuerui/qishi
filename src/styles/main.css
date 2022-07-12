@@ -385,22 +385,19 @@ html:not(.dark) [img-dark] {
   margin-top: .8571429em
 }
 
-.prose code {
+.markdown-body code {
   color: var(--fg-deep);
+  background: none;
   font-weight: 600;
-  font-size: .875em
+  font-size: .875em;
 }
 
-.prose code:before {
-  content: "`"
+.markdown-body code:before {
+  content: "`";
 }
 
-.prose code:after {
-  content: "`"
-}
-
-.prose a code {
-  color: #111827
+.markdown-body code:after {
+  content: "`";
 }
 
 .markdown-body pre {
