@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import MdFile from '~/markdown/test1.md'
 const props = defineProps<{ name: string }>()
 const router = useRouter()
 </script>
@@ -23,5 +22,4 @@ const router = useRouter()
       </button>
     </div>
   </div>
-  <MdFile />
 </template>
