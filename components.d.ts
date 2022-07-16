@@ -8,6 +8,7 @@ declare module '@vue/runtime-core' {
     AnimateCursor: typeof import('./src/components/AnimateCursor.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    Header: typeof import('./src/components/Header.vue')['default']
     MineBlock: typeof import('./src/components/MineBlock.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
