@@ -30,6 +30,20 @@ html.dark {
   --c-scrollbar-hover: #222
 }
 
+.list-title li a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 125, 125, .8);
+  transition: all 0.2s ease-in-out;
+}
+
+.list-title li a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+html.dark .list-title li a:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
 hr {
   height: 0;
   color: inherit;
