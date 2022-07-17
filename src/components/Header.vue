@@ -62,7 +62,7 @@ const jumpPage = (folder: string, name: string) => {
       <a
         class="vertical-text-top ml-3 c-gray-400 hover:c-black dark:hover:c-white"
         rel="noreferrer"
-        href="https://github.com/guxuerui/vue3-minesweeper"
+        href="https://github.com/guxuerui"
         target="_blank"
         title="GitHub"
       >
