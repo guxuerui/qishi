@@ -55,7 +55,10 @@ const jumpPage = (folder: string, name: string) => {
       >
         {{ item.name }}
       </a>
-      <button class="icon-btn !outline-none vertical-text-top c-gray-800 dark:c-gray-400 hover:c-black dark:hover:c-white" @click="toggleDark()">
+      <button
+        class="icon-btn !outline-none vertical-text-top c-gray-800 dark:c-gray-400 hover:c-black dark:hover:c-white"
+        @click="toggleDark()"
+      >
         <div v-if="isDarkMode" i-carbon-moon />
         <div v-else i-carbon-sun />
       </button>
