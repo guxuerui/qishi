@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const postList = ref([
   {
-    title: 'Vue3之呼吸效果状态组件',
+    title: 'Vue3之状态指示灯组件',
     date: '2022-02-18',
     folder: 'vue',
-    fileName: 'breathLightComp',
+    fileName: 'statusIndicator',
   },
   {
     title: '二次封装BalmUI表格组件',
