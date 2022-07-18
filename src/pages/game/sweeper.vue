@@ -15,7 +15,7 @@ const jumpPage = (folder: string, name: string) => {
 </script>
 
 <template>
-  <div>
+  <div text="center">
     <div mb-5>
       Minesweeper / 扫雷
     </div>
