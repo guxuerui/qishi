@@ -1,45 +1,12 @@
-<script setup lang="ts">
-import { isDev, toggleDev } from '~/composables'
-const play = new GamePlay(10, 10)
-const state = play.state
-
-watchEffect(() => {
-  play.checkGameState()
-})
-
-// const router = useRouter()
-// const go = (folder: string, name: string) => {
-//   if (folder && name)
-//     router.push(`/${folder}/${encodeURIComponent(name)}`)
-// }
-</script>
-
 <template>
-  <div>
-    <div mb-5>
-      Minesweeper / 扫雷
-    </div>
-    <!-- <div mb-4> -->
-    <!--   <button btn @click="go('blog', 'test4')"> -->
-    <!--     TO MD PAGE -->
-    <!--   </button> -->
-    <!-- </div> -->
-    <div v-for="row, y in state" :key="y" flex="~" items-center justify-center>
-      <MineBlock
-        v-for="block, x in row"
-        :key="x"
-        :block="block"
-        @click="play.onClick(block)"
-        @contextmenu.prevent="play.onRightClick(block)"
-      />
-    </div>
-    <div flex="~ gap-2" mt-4 justify-center>
-      <button btn @click="toggleDev()">
-        {{ isDev ? '开发模式' : '游戏模式' }}
-      </button>
-      <button btn @click="play.reset()">
-        重新开始
-      </button>
-    </div>
+  <div class="markdown-body">
+    <h1>关于我</h1>
+    <p>
+      嗨, 我是骑誓~ 2017年本科毕业, 从事前端开发至今, 写过移动端, 也写过PC端, 主要使用vue全家桶, 目前在一家5G+云计算公司任职, 主做B端产品。
+    </p>
+    <p>平时喜欢刷B站看动漫、听歌、骑行、写代码, 做一些有意思的小项目。</p>
+    <p class="cursor-pointer">
+      <a href="https://github.com/guxuerui" target="_blank">我的Github</a>
+    </p>
   </div>
 </template>
