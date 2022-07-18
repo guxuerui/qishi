@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     MineBlock: typeof import('./src/components/MineBlock.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StatusIndicator: typeof import('./src/components/statusIndicator.vue')['default']
   }
 }
 
