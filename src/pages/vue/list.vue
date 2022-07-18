@@ -30,7 +30,7 @@ const jumpPage = (folder: string, name: string) => {
       >
         {{ item.title }}
       </a>
-      <div class="sub-title flex items-center c-gray-600 dark:c-gray-400">
+      <div class="flex items-center c-gray-600 dark:c-gray-400">
         {{ item.date }}
       </div>
     </li>
@@ -38,7 +38,4 @@ const jumpPage = (folder: string, name: string) => {
 </template>
 
 <style scoped>
-  .sub-title {
-    font-size: 0.8rem;
-  }
 </style>
