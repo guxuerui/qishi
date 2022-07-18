@@ -1,17 +1,16 @@
-<template>
-  <nav text-xl mt-6 inline-flex gap-2>
-    <button class="icon-btn !outline-none" @click="toggleDark()">
-      <div v-if="isDark" i-carbon-moon />
-      <div v-else i-carbon-sun />
-    </button>
+<script setup lang="ts">
+const router = useRouter()
+const goBack = () => router.back()
+</script>
 
-    <a
-      class="icon-btn"
-      i-carbon-logo-github
-      rel="noreferrer"
-      href="https://github.com/guxuerui/vue3-minesweeper"
-      target="_blank"
-      title="GitHub"
-    />
+<template>
+  <nav text-sm mt-6>
+    <div class="markdown-body cursor-pointer">
+      <a @click="goBack">cd ../</a>
+    </div>
+    <div class="markdown-body">
+      <a href="/">cd ..</a>
+    </div>
   </nav>
 </template>
+
