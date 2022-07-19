@@ -6,10 +6,10 @@ const goBack = () => router.back()
 <template>
   <nav text-sm mt-6>
     <div class="markdown-body cursor-pointer">
-      <a @click="goBack">cd ../</a>
+      <a @click="goBack">cd ..</a>
     </div>
     <div class="markdown-body">
-      <a href="/">cd ..</a>
+      <a href="/">cd ~</a>
     </div>
   </nav>
 </template>
