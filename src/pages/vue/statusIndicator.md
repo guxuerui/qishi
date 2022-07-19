@@ -42,7 +42,7 @@ const typeMap = ref<TypeMap>({
 })
 const indicatorColor = ref<string>('#326cd6')
 watchEffect(() => {
-  if (props.type) {
+  if (props.type)
     indicatorColor.value = typeMap.value[props.type]
 
   else
