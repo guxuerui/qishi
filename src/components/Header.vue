@@ -56,14 +56,14 @@ const jumpPage = (folder: string, name: string) => {
         {{ item.name }}
       </a>
       <button
-        class="icon-btn !outline-none vertical-text-top c-gray-800 dark:c-gray-400 hover:c-black dark:hover:c-white"
+        class="icon-btn !outline-none vertical-sub c-gray-800 dark:c-gray-400 hover:c-black dark:hover:c-white"
         @click="toggleDark()"
       >
         <div v-if="isDarkMode" i-carbon-moon />
         <div v-else i-carbon-sun />
       </button>
       <a
-        class="vertical-text-top ml-3 c-gray-400 hover:c-black dark:hover:c-white"
+        class="vertical-sub ml-3 c-gray-400 hover:c-black dark:hover:c-white"
         rel="noreferrer"
         href="https://github.com/guxuerui"
         target="_blank"
