@@ -1,20 +1,38 @@
 <script setup lang="ts">
-// status indicator
+interface TypeMap {
+  [key: string]: string
+}
+
 const props = defineProps({
+  type: {
+    type: String,
+    requird: false,
+    default: '',
+  },
   bgColor: {
     type: String,
     requird: false,
     default: '#326cd6',
   },
 })
+// define the default state type
+const typeMap = ref<TypeMap>({
+  success: '#4FAD59',
+  error: '#FC4D44',
+  warning: '#FB8C00',
+  primary: '#326cd6',
+})
 const indicatorColor = ref<string>('#326cd6')
 watchEffect(() => {
-  indicatorColor.value = props.bgColor
+  if (props.type)
+    indicatorColor.value = typeMap.value[props.type]
+
+  else
+    indicatorColor.value = props.bgColor
 })
 </script>
 
 <template>
-  <!-- status-indicator状态指示器 -->
   <span class="indicator" />
 </template>
 

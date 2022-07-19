@@ -17,16 +17,36 @@
 import { ref, watchEffect } from 'vue'
 // 或者可以使用插件 @antfu/unplugin-auto-import 实现自动导入
 
+interface TypeMap {
+  [key: string]: string
+}
+
 const props = defineProps({
+  type: {
+    type: String,
+    requird: false,
+    default: '',
+  },
   bgColor: {
     type: String,
     requird: false,
     default: '#326cd6',
   },
 })
+// define the default state type
+const typeMap = ref<TypeMap>({
+  success: '#4FAD59',
+  error: '#FC4D44',
+  warning: '#FB8C00',
+  primary: '#326cd6',
+})
 const indicatorColor = ref<string>('#326cd6')
 watchEffect(() => {
-  indicatorColor.value = props.bgColor
+  if (props.type) {
+    indicatorColor.value = typeMap.value[props.type]
+  } else {
+    indicatorColor.value = props.bgColor
+  }
 })
 ```
 ### 2. css样式
@@ -49,23 +69,33 @@ watchEffect(() => {
 </style>
 ```
 ## 使用预览
-以下为示例, 状态对应的颜色可以自定义传入
+以下为示例, 状态对应的颜色可以自定义传入也可以使用默认的type
 ```ts
 <script setup lant="ts">
 // @c 为自定义的文件路径alias，在vite.config.ts中配置
 import { StatusIndicator } from '@c/statusIndicator.vue'
 </script>
 ```
+- 方式一: 传入具体的色值
 ```html
-normal:  <StatusIndicator bg-color="#326CD6" class="mx-2"/>
+primary: <StatusIndicator bg-color="#326CD6" class="mx-2"/>
 success: <StatusIndicator bg-color="#4FAD59" class="mx-2"/>
 error:   <StatusIndicator bg-color="#e4393c" class="mx-2"/>
 warning: <StatusIndicator bg-color="orange" class="mx-2"/>
 ```
-normal:  <StatusIndicator bg-color="#326CD6" class="mx-2"/>
+- 方式二: 使用默认的type
+```html
+primary: <StatusIndicator type="primary" class="mx-2"/>
+success: <StatusIndicator type="success" class="mx-2"/>
+error:   <StatusIndicator type="error" class="mx-2"/>
+warning: <StatusIndicator type="warning" class="mx-2"/>
+```
+primary: <StatusIndicator bg-color="#326CD6" class="mx-2"/>
 success: <StatusIndicator bg-color="#4FAD59" class="mx-2"/>
 error:   <StatusIndicator bg-color="#e4393c" class="mx-2"/>
 warning: <StatusIndicator bg-color="orange" class="mx-2"/>
+
+> Tips: 不建议两种方式同时使用, 否则会以传入的type为准
 
 ## 结束啦
 到此为止, 状态指示灯组件就开发完啦✌️, 用起来吧~~
