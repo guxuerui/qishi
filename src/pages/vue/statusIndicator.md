@@ -44,9 +44,9 @@ const indicatorColor = ref<string>('#326cd6')
 watchEffect(() => {
   if (props.type) {
     indicatorColor.value = typeMap.value[props.type]
-  } else {
+
+  else
     indicatorColor.value = props.bgColor
-  }
 })
 ```
 ### 2. css样式
