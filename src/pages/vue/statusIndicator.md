@@ -71,10 +71,8 @@ watchEffect(() => {
 ## 使用预览
 以下为示例, 状态对应的颜色可以自定义传入也可以使用默认的type
 ```ts
-<script setup lant="ts">
 // @c 为自定义的文件路径alias，在vite.config.ts中配置
 import { StatusIndicator } from '@c/statusIndicator.vue'
-</script>
 ```
 - 方式一: 传入具体的色值
 ```html
