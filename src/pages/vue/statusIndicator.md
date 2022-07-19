@@ -97,3 +97,6 @@ warning: <StatusIndicator bg-color="orange" class="mx-2"/>
 
 ## 结束啦
 到此为止, 状态指示灯组件就开发完啦✌️, 用起来吧~~
+<div>
+  <a href="https://github.com/guxuerui/vue3-status-indicator" target="_blank">GitHub仓库地址</a>
+</div>
