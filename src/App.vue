@@ -18,7 +18,7 @@ const routes = useRoute()
 
 <style scoped>
   .main {
-    max-width: 60ch;
+    max-width: 65ch;
     text-align: left;
     margin: 0 auto;
     font-size: 1rem;
