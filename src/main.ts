@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
 import App from './App.vue'
 import StatusIndicator from './components/statusIndicator.vue'
+import Vue3Guage from './components/vue3Guage.vue'
 
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
@@ -25,4 +26,5 @@ const router = createRouter({
 app.use(router)
 app.use(head)
 app.component('StatusIndicator', StatusIndicator)
+app.component('Vue3Guage', Vue3Guage)
 app.mount('#app')

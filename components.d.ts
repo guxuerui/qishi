@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StatusIndicator: typeof import('./src/components/statusIndicator.vue')['default']
+    Vue3Guage: typeof import('./src/components/vue3Guage.vue')['default']
   }
 }
 
