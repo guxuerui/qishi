@@ -148,37 +148,35 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div position="relative">
-    <div ref="area" class="gauge-area">
-      <div :style="cssGauge">
-        <div :style="cssDotWrap">
-          <div
-            v-for="i in 90"
-            :key="i"
-            :style="Object.assign({}, {
-              transform: `rotateZ(${i * 4}deg)`,
-              backgroundColor: setScaleColor(i),
-            }, cssDot)"
-          />
-        </div>
-        <div :style="cssDotWrap2">
-          <div class="gauge-back" />
-          <div
-            v-for="j in 120"
-            :key="j"
-            :style="Object.assign({}, {
-              transform: `rotateZ(${j * 3}deg)`,
-              backgroundColor: setScaleColor(j),
-            }, cssDot2)"
-          />
-        </div>
+  <div ref="area" class="gauge-area" position="relative">
+    <div :style="cssGauge">
+      <div :style="cssDotWrap">
         <div
+          v-for="i in 90"
+          :key="i"
           :style="Object.assign({}, {
-            transform: `rotateZ(${getGaugeRotate}deg)`,
-          })"
-          class="gauge-needle"
+            transform: `rotateZ(${i * 4}deg)`,
+            backgroundColor: setScaleColor(i),
+          }, cssDot)"
         />
       </div>
+      <div :style="cssDotWrap2">
+        <div class="gauge-back" />
+        <div
+          v-for="j in 120"
+          :key="j"
+          :style="Object.assign({}, {
+            transform: `rotateZ(${j * 3}deg)`,
+            backgroundColor: setScaleColor(j),
+          }, cssDot2)"
+        />
+      </div>
+      <div
+        :style="Object.assign({}, {
+          transform: `rotateZ(${getGaugeRotate}deg)`,
+        })"
+        class="gauge-needle"
+      />
     </div>
     <div class="gauge-title">
       {{ value }}
@@ -202,7 +200,7 @@ onBeforeUnmount(() => {
     font-size: 2rem;
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-weight: bold;
   }
