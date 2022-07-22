@@ -196,7 +196,6 @@ onBeforeUnmount(() => {
   /* 中间数字 */
   .gauge-title {
     font-family: Bender;
-    color: #fff;
     font-size: 2rem;
     position: absolute;
     top: 50%;
