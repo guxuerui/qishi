@@ -1,4 +1,4 @@
-<h2 align="center">Vue3 Minesweeper</h2>
+<h2 align="center">Qishi</h2>
 
 ### 插件
 
