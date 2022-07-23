@@ -12,6 +12,10 @@
     height: 50px;
     position: relative;
     animation: spin 4s linear infinite;
+    --cogBg: #fff;
+  }
+  html.dark .cog {
+    --cogBg: #1d1e22;
   }
   .cog::after {
     content: '';
@@ -22,7 +26,7 @@
     width: 50%;
     height: 50%;
     border-radius: 50%;
-    background-color: #1d1e22;
+    background-color: var(--cogBg);
   }
   .cog div {
     position: absolute;
