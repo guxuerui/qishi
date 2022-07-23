@@ -178,7 +178,7 @@ onBeforeUnmount(() => {
         class="gauge-needle"
       />
     </div>
-    <div class="gauge-title">
+    <div class="gauge-title" color="black/80" dark:color="white/80">
       {{ value }}
     </div>
   </div>
@@ -187,8 +187,8 @@ onBeforeUnmount(() => {
 <style scoped>
   /* 仪表盘区域 */
   .gauge-area {
-    width: 500px;
-    height: 500px;
+    width: 200px;
+    height: 200px;
     /* background: #121212; */
     /* animation: loading 5s linear infinite; */
   }
