@@ -18,7 +18,7 @@ const links = ref([
   },
   {
     name: 'Note',
-    fileName: 'index',
+    fileName: 'list',
     folder: 'note',
   },
   {
@@ -46,7 +46,7 @@ const jumpPage = (folder: string, name: string) => {
         Home
       </a>
     </div>
-    <div>
+    <div style="padding-top: 0.3rem">
       <a
         v-for="(item, i) in links"
         :key="i"
