@@ -1,50 +1,70 @@
 # 找出数组中只出现过一次的数
 
 > 给定一个数组，其中有一个数字只出现了一次，写一个方法，返回这个数字
+```ts
+// 给定数组
+const item = [3, 3, 2, 5, 5]
+```
 
+## 1. 第一种方法
+先将数组原地排序，然后通过`for`循环依次比对
+```ts
 const getRes = (item) => {
-  item.sort();
-  for (let i = 0; i < item.length; i+=2) {
-    if (item[i] !== item[i+1]) {
-      return item[i];
-    }
+  item.sort()
+  for (let i = 0; i < item.length; i += 2) {
+    if (item[i] !== item[i + 1])
+      return item[i]
+
   }
-};
-const item = [3, 3, 2, 2, 4, 5, 5];
-console.log(getRes(item));
+}
+getRes(item) // -> 2
+```
 
-
+## 2. 第二种方法
+使用异或运算符`^`，表示若两个二进制位不相同，则结果为1，否则为0，比如`3 ^ 3 = 0; 0 ^ 3 = 3`
+```ts
 const getSingleNumber = (item) => {
-  let res = 0;
-  for (let i = 0; i < item.length; i++) {
-    res ^= item[i];
-  }
-  return res;
-}
-console.log(getSingleNumber(item));
+  let res = 0
+  for (let i = 0; i < item.length; i++)
+    res ^= item[i]
 
+  return res
+}
+getSingleNumber(item) // -> 2
+```
+
+## 3. 第三种方法
+使用Map()将只出现了一次的数字存储，最后通过`for...of`操作将数字返回
+```ts
 const getSingNum = (item) => {
-  let map = new Map()
+  const map = new Map()
   for (let i = 0; i < item.length; i++) {
-    if (map.has(item[i])) {
-      map.delete(item[i]);
-    } else {
-      map.set(item[i], 1);
-    }
-  }
-  for (let [key] of map) {
-    return key;
-  }
-}
-getSingNum(item);
+    if (map.has(item[i]))
+      map.delete(item[i])
 
-const getSingNum2 = (item) => {
-  let res = {}
-  for (let i = 0; i < item.length; i++) {
-    res[item[i]] = res[item[i]] ? res[item[i]] + 1 : 1;
+    else
+      map.set(item[i], 1)
+
   }
-  for (let [k, v] of Object.entries(res)) {
-    if (v === 1) return k;
-  }
+  // for (const [key] of map)
+  //  return key
 }
-getSingNum2(item);
+getSingNum(item) // -> 2
+```
+
+## 4. 第四种方法
+用普通对象结构，将每个数字出现的次数存起来，最后通过对象的`Object.entries()`方法返回此数字
+```ts
+const getSingNum2 = (item) => {
+  const res = {}
+  for (let i = 0; i < item.length; i++)
+    res[item[i]] = res[item[i]] ? res[item[i]] + 1 : 1
+
+  for (const [k, v] of Object.entries(res)) {
+    if (v === 1)
+      return k
+  }
+
+}
+getSingNum2(item) // -> 2
+```
