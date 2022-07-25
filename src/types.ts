@@ -6,3 +6,11 @@ export interface BlockState {
   mine?: boolean
   adjacentMines: number
 }
+
+export interface Post {
+  title: string
+  date: string
+  folder: string
+  fileName: string
+}
+
