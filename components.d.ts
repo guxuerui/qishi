@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     MineBlock: typeof import('./src/components/MineBlock.vue')['default']
+    PostList: typeof import('./src/components/postList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StatusIndicator: typeof import('./src/components/statusIndicator.vue')['default']
