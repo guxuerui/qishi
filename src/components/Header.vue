@@ -8,7 +8,7 @@ const links = ref([
   },
   {
     name: 'Js',
-    fileName: 'index',
+    fileName: 'list',
     folder: 'js',
   },
   {
