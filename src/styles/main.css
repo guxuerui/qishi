@@ -4,7 +4,10 @@ markdown-body*, :before,:after {
   border-style: solid;
   border-color: currentColor
 }
-
+::selection {
+  background: #1DB954;
+  color: #fff;
+}
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
