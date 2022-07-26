@@ -34,6 +34,17 @@ getSingleNumber(item) // -> 2
 ```
 
 ## 3. 第三种方法
+使用`reduce`
+```ts
+const getNum = (nums) => {
+  return nums.reduce((prev, next) => {
+    return prev ^ next
+  }, 0)
+}
+getNum(item) // -> 2
+
+```
+## 3. 第四种方法
 使用Map()将只出现了一次的数字存储，最后通过`for...of`操作将数字返回
 ```ts
 const getSingNum = (item) => {
@@ -46,13 +57,15 @@ const getSingNum = (item) => {
       map.set(item[i], 1)
 
   }
-  // for (const [key] of map)
-  //  return key
+  for (const [key, value] of map) {
+    if (value === 1)
+      return key
+  }
 }
 getSingNum(item) // -> 2
 ```
 
-## 4. 第四种方法
+## 4. 第五种方法
 用普通对象结构，将每个数字出现的次数存起来，最后通过对象的`Object.entries()`方法返回此数字
 ```ts
 const getSingNum2 = (item) => {
