@@ -6,23 +6,12 @@ const state = play.state
 watchEffect(() => {
   play.checkGameState()
 })
-
-const router = useRouter()
-const jumpPage = (folder: string, name: string) => {
-  if (folder && name)
-    router.push(`/${folder}/${encodeURIComponent(name)}`)
-}
 </script>
 
 <template>
   <div text="center">
     <div mb-5>
       Minesweeper / 扫雷
-    </div>
-    <div mb-4>
-      <button btn @click="jumpPage('blog', 'test4')">
-        TO MD PAGE
-      </button>
     </div>
     <div v-for="row, y in state" :key="y" flex="~" items-center justify-center>
       <MineBlock
