@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { isDev, toggleDev } from '~/composables'
 
-const play = new GamePlay(10, 10)
+const play = new GamePlay(10, 10, 30)
 useStorage('vuesweeper-state', play.state)
 const state = computed(() => play.board)
 
@@ -24,6 +24,9 @@ watchEffect(() => {
         @contextmenu.prevent="play.onRightClick(block)"
       />
     </div>
+    <!-- <div> -->
+    <!--   count: {{ play.blocks.reduce((a, b) => a + (b.mine ? 1 : 0), 0) }} -->
+    <!-- </div> -->
     <div flex="~ gap-2" mt-4 justify-center>
       <button btn @click="toggleDev()">
         {{ isDev ? '开发模式' : '游戏模式' }}
