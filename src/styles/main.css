@@ -655,33 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm blockquote {
-  margin-top: 1.3333333em;
-  margin-bottom: 1.3333333em;
-  padding-left: 1.1111111em
-}
-
-.prose-sm h1 {
-  font-size: 2.1428571em;
-  margin-top: 0;
-  margin-bottom: .8em;
-  line-height: 1.2
-}
-
-.prose-sm h2 {
-  font-size: 1.4285714em;
-  margin-top: 1.6em;
-  margin-bottom: .8em;
-  line-height: 1.4
-}
-
-.prose-sm h3 {
-  font-size: 1.2857143em;
-  margin-top: 1.5555556em;
-  margin-bottom: .4444444em;
-  line-height: 1.5555556
-}
-
 .prose-sm h4 {
   margin-top: 1.4285714em;
   margin-bottom: .5714286em;
