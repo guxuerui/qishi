@@ -655,59 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm h4 {
-  margin-top: 1.4285714em;
-  margin-bottom: .5714286em;
-  line-height: 1.4285714
-}
-
-.prose-sm img {
-  margin-top: 1.7142857em;
-  margin-bottom: 1.7142857em
-}
-
-.prose-sm video {
-  margin-top: 1.7142857em;
-  margin-bottom: 1.7142857em
-}
-
-.prose-sm figure {
-  margin-top: 1.7142857em;
-  margin-bottom: 1.7142857em
-}
-
-.prose-sm figure>* {
-  margin-top: 0;
-  margin-bottom: 0
-}
-
-.prose-sm figure figcaption {
-  font-size: .8571429em;
-  line-height: 1.3333333;
-  margin-top: .6666667em
-}
-
-.prose-sm code {
-  font-size: .8571429em
-}
-
-.prose-sm h2 code {
-  font-size: .9em
-}
-
-.prose-sm h3 code {
-  font-size: .8888889em
-}
-
-.prose-sm pre {
-  font-size: .8571429em;
-  line-height: 1.6666667;
-  margin-top: 1.6666667em;
-  margin-bottom: 1.6666667em;
-  border-radius: .25rem;
-  padding: .6666667em 1em
-}
-
 .prose-sm ol,.prose-sm ul {
   margin-top: 1.1428571em;
   margin-bottom: 1.1428571em
