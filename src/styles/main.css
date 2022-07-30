@@ -655,23 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm {
-  font-size: .875rem;
-  line-height: 1.7142857
-}
-
-.prose-sm p {
-  margin-top: 1.1428571em;
-  margin-bottom: 1.1428571em
-}
-
-.prose-sm [class~=lead] {
-  font-size: 1.2857143em;
-  line-height: 1.5555556;
-  margin-top: .8888889em;
-  margin-bottom: .8888889em
-}
-
 .prose-sm blockquote {
   margin-top: 1.3333333em;
   margin-bottom: 1.3333333em;
