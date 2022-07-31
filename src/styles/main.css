@@ -655,27 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm>ul>li p {
-  margin-top: .5714286em;
-  margin-bottom: .5714286em
-}
-
-.prose-sm>ul>li>*:first-child {
-  margin-top: 1.1428571em
-}
-
-.prose-sm>ul>li>*:last-child {
-  margin-bottom: 1.1428571em
-}
-
-.prose-sm>ol>li>*:first-child {
-  margin-top: 1.1428571em
-}
-
-.prose-sm>ol>li>*:last-child {
-  margin-bottom: 1.1428571em
-}
-
 .prose-sm ul ul,.prose-sm ul ol,.prose-sm ol ul,.prose-sm ol ol {
   margin-top: .5714286em;
   margin-bottom: .5714286em
