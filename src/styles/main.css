@@ -655,35 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm ol,.prose-sm ul {
-  margin-top: 1.1428571em;
-  margin-bottom: 1.1428571em
-}
-
-.prose-sm li {
-  margin-top: .2857143em;
-  margin-bottom: .2857143em
-}
-
-.prose-sm ol>li {
-  padding-left: 1.5714286em
-}
-
-.prose-sm ol>li:before {
-  left: 0
-}
-
-.prose-sm ul>li {
-  padding-left: 1.5714286em
-}
-
-.prose-sm ul>li:before {
-  height: .3571429em;
-  width: .3571429em;
-  top: calc(.8571429em - .1785714em);
-  left: .2142857em
-}
-
 .prose-sm>ul>li p {
   margin-top: .5714286em;
   margin-bottom: .5714286em
