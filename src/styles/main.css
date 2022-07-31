@@ -655,43 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm ul ul,.prose-sm ul ol,.prose-sm ol ul,.prose-sm ol ol {
-  margin-top: .5714286em;
-  margin-bottom: .5714286em
-}
-
-.prose-sm hr {
-  margin-top: 2.8571429em;
-  margin-bottom: 2.8571429em
-}
-
-.prose-sm hr+* {
-  margin-top: 0
-}
-
-.prose-sm h2+* {
-  margin-top: 0
-}
-
-.prose-sm h3+* {
-  margin-top: 0
-}
-
-.prose-sm h4+* {
-  margin-top: 0
-}
-
-.prose-sm table {
-  font-size: .8571429em;
-  line-height: 1.5
-}
-
-.prose-sm thead th {
-  padding-right: 1em;
-  padding-bottom: .6666667em;
-  padding-left: 1em
-}
-
 .prose-sm thead th:first-child {
   padding-left: 0
 }
