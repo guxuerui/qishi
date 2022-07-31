@@ -655,34 +655,6 @@ html:not(.dark) [img-dark] {
   color: inherit
 }
 
-.prose-sm thead th:first-child {
-  padding-left: 0
-}
-
-.prose-sm thead th:last-child {
-  padding-right: 0
-}
-
-.prose-sm tbody td {
-  padding: .6666667em 1em
-}
-
-.prose-sm tbody td:first-child {
-  padding-left: 0
-}
-
-.prose-sm tbody td:last-child {
-  padding-right: 0
-}
-
-.prose-sm>:first-child {
-  margin-top: 0
-}
-
-.prose-sm>:last-child {
-  margin-bottom: 0
-}
-
 div[class*=language-],pre[class*=language-],code[class*=language-] {
   font-size: var(--prism-font-size);
   font-family: var(--prism-font-family);
