@@ -541,10 +541,10 @@ html:not(.dark) [img-dark] {
   margin-bottom: 1.25em;
 }
 
-/* .markdown-body img { */
-/*   margin-top: 2em; */
-/*   margin-bottom: 2em; */
-/* } */
+.markdown-body img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
 
 .prose video {
   margin-top: 2em;
@@ -643,16 +643,8 @@ html:not(.dark) [img-dark] {
   margin-top: 0
 }
 
-.prose>:last-child {
-  margin-bottom: 0
-}
-
 .prose b {
   color: var(--fg-deep)
-}
-
-.prose em {
-  color: inherit
 }
 
 div[class*=language-],pre[class*=language-],code[class*=language-] {
