@@ -141,7 +141,6 @@ export class GamePlay {
       }
       else {
         this.state.value.gameState = 'won'
-        alert('is won')
       }
     }
   }
@@ -165,7 +164,6 @@ export class GamePlay {
     if (block.mine) {
       this.state.value.gameState = 'lost'
       this.showAllMines()
-      alert('is lost')
       return
     }
     this.expandZero(block)
