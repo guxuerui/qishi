@@ -8,7 +8,7 @@ const state = computed(() => play.board)
 const newGame = (difficulty: 'easy' | 'medium' | 'hard') => {
   switch (difficulty) {
     case 'easy':
-      play.reset(9, 9, 10)
+      play.reset(9, 9, 1)
       break
     case 'medium':
       play.reset(16, 16, 40)
@@ -21,7 +21,7 @@ const newGame = (difficulty: 'easy' | 'medium' | 'hard') => {
 
 const now = $(useNow())
 const timerMS = $computed(() => {
-  return Math.round((+now - play.state.value.startMS) / 1000)
+  return Math.round(((play.state.value.endMS || +now) - play.state.value.startMS) / 1000)
 })
 
 const mineReset = $computed(() => {
@@ -75,6 +75,6 @@ watchEffect(() => {
     <!--     {{ isDev ? '开发模式' : '游戏模式' }} -->
     <!--   </button> -->
     <!-- </div> -->
-    <Confetti :passed="play.state.value.gameState === 'won'" />
+    <Confetti :passed="play.state.value.status === 'won'" />
   </div>
 </template>
