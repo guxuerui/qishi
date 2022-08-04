@@ -175,4 +175,22 @@ export class GamePlay {
     }
     this.expandZero(block)
   }
+
+  autoExpand(block: BlockState) {
+    const siblings = this.getSiblings(block)
+    const flags = siblings.reduce((a, b) => a + (b.flagged ? 1 : 0), 0)
+    const notReveoled = siblings.reduce((a, b) => a + (!b.reveoled && !b.flagged ? 1 : 0), 0)
+    if (flags === block.adjacentMines) {
+      siblings.forEach((s) => {
+        s.reveoled = true
+      })
+    }
+    const missingFlags = block.adjacentMines - flags
+    if (notReveoled === missingFlags) {
+      siblings.forEach((s) => {
+        if (!s.reveoled && !s.flagged)
+          s.flagged = true
+      })
+    }
+  }
 }
