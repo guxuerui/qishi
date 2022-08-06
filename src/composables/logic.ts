@@ -61,6 +61,7 @@ export class GamePlay {
         ),
       ),
       startMS: +Date.now(),
+      endMS: +Date.now(),
     }
   }
 
@@ -140,7 +141,7 @@ export class GamePlay {
   }
 
   checkGameState() {
-    if (!this.state.value.mineGernerated)
+    if (!this.state.value.mineGernerated || this.state.value.status === 'lost')
       return
     const blocks = this.board.flat()
     if (blocks.every(block => block.reveoled || block.flagged)) {
@@ -167,11 +168,15 @@ export class GamePlay {
       this.generateMines(this.board, block)
       this.state.value.mineGernerated = true
     }
+    if (this.state.value.endMS) {
+      this.state.value.startMS = +Date.now()
+      this.state.value.endMS = 0
+    }
     block.reveoled = true
-    // if (block.mine) {
-    //   this.onGameOver('lost')
-    //   return
-    // }
+    if (block.mine) {
+      this.onGameOver('lost')
+      return
+    }
     this.expandZero(block)
   }
 
@@ -198,11 +203,7 @@ export class GamePlay {
   onGameOver(status: GameStatus) {
     this.state.value.status = status
     this.state.value.endMS = +Date.now()
-    if (status === 'lost') {
+    if (status === 'lost')
       this.showAllMines()
-      setTimeout(() => {
-        alert('lost')
-      }, 100)
-    }
   }
 }

@@ -19,7 +19,9 @@ const replay = () => {
       v-if="open"
       w-80 border="1 gray-400"
       mx-auto px-6 pt-6 pb-4
+      bg="blue-400/60"
       position-relative
+      style="top: -20rem"
     >
       <div>阿欧, 你输啦! 别气馁, 再来一次吧!</div>
       <div flex="~ gap2" justify-center p4>

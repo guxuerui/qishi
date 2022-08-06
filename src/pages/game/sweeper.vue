@@ -2,6 +2,7 @@
 // import { isDev, toggleDev } from '~/composables'
 
 const play = new GamePlay(9, 9, 10)
+play.reset(9, 9, 10)
 useStorage('vuesweeper-state', play.state)
 const state = computed(() => play.board)
 
@@ -76,5 +77,6 @@ watchEffect(() => {
     <!--   </button> -->
     <!-- </div> -->
     <Confetti :passed="play.state.value.status === 'won'" />
+    <LostModal :open="play.state.value.status === 'lost'" @replay="play.reset()" />
   </div>
 </template>
