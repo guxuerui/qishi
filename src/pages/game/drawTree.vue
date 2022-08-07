@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const el = $ref<HTMLCanvasElement>()
 const ctx = $computed(() => el!.getContext('2d')!)
-const img = new Image()
-img.src = '/imgs/lotus_flower.svg'
 
 const WIDTH = 800
 const HEIGHT = 800
@@ -44,14 +42,14 @@ function step(b: Branch, depth = 0) {
     pendingTasks.push(() => step({
       start: end,
       length: b.length * (0.7 + 0.5 * Math.random()),
-      theta: b.theta - 0.3 * Math.random(),
+      theta: b.theta - 0.8 * Math.random(),
     }, depth + 1))
   }
   if (depth < 4 || Math.random() < 0.5) {
     pendingTasks.push(() => step({
       start: end,
       length: b.length * (0.7 + 0.3 * Math.random()),
-      theta: b.theta + 0.3 * Math.random(),
+      theta: b.theta + 0.8 * Math.random(),
     }, depth + 1))
   }
 }
@@ -66,11 +64,6 @@ function lineTo(p1: Point, p2: Point) {
 
 function drawBranch(b: Branch) {
   lineTo(b.start, getEndPoint(b))
-  // drawImg(img, getEndPoint(b))
-}
-
-function drawImg(img: HTMLImageElement, p: Point) {
-  ctx.drawImage(img, p.x - 5, p.y - 5, 20, 20)
 }
 
 function frame() {
