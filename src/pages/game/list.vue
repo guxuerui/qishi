@@ -3,7 +3,13 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
-    title: '用canvas画一颗树',
+    title: '开花的树',
+    date: '2022-08-07',
+    folder: 'game',
+    fileName: 'flowerTree',
+  },
+  {
+    title: '光秃秃的树',
     date: '2022-08-07',
     folder: 'game',
     fileName: 'drawTree',
