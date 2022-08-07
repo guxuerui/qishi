@@ -22,8 +22,8 @@ const links = ref([
     folder: 'note',
   },
   {
-    name: 'Minesweeper',
-    fileName: 'sweeper',
+    name: 'Game',
+    fileName: 'list',
     folder: 'game',
   },
 ])
