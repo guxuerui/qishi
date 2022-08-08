@@ -6,6 +6,7 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AnimateCursor: typeof import('./src/components/AnimateCursor.vue')['default']
+    BaseDataTable: typeof import('./src/components/BaseDataTable.vue')['default']
     Cog: typeof import('./src/components/cog.vue')['default']
     Confetti: typeof import('./src/components/Confetti.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
