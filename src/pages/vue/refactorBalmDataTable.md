@@ -11,7 +11,71 @@
 
 ## 开干
 
-### 1. 基本的DOM结构
+### 1. 定义需要传入的属性
+```ts
+// <script setup lang="ts">
+/*
+  showCheckbox -> 是否展示复选框
+  tableHeight -> 表格高度
+  uiTableData -> 表格所需要的thead、tbody、和data等属性
+*/
+defineProps({
+  showCheckbox: {
+    type: Boolean,
+    default: false,
+  },
+  tableHeight: {
+    type: String,
+    default: '500px',
+  },
+  uiTableData: {
+    type: Object,
+    default: () => ({
+      data: [],
+      thead: [],
+      tbody: [],
+      total: 0,
+      showProgress: false,
+    }),
+  },
+})
+
+// 定义对父组件提供的方法
+const emit = defineEmits<{
+  (e: 'onChangePage', page: number): void
+  (e: 'onChangePageSize', pageSize: number): void
+}>()
+
+// 定义表格的size -> 每页展示多少条数据
+const pageItems = $ref([
+  { value: 10, label: '10' },
+  { value: 25, label: '25' },
+  { value: 50, label: '50' },
+  { value: 100, label: '100' },
+])
+// 分页页码
+const pageNum = $ref<number>(1)
+
+// 表格默认条数
+const pageSize = $ref<number>(10)
+
+// 复选表格所选中的值
+const selectedRows = $ref<string[] | number[]>([])
+
+// 切换页码
+const changePage = () => {
+  emit('onChangePage', pageNum)
+}
+
+// 切换每页展示多少条数据
+const changePageSize = () => {
+  emit('onChangePageSize', pageSize)
+}
+````
+
+### 2. 基本的DOM结构
+`<v-divider />`是 [vuetify](https://next.vuetifyjs.com/en/components/dividers/) 组件
+
 ```html
 <template>
   <ui-table
@@ -22,7 +86,6 @@
     :tbody="uiTableData.tbody"
     :row-checkbox="showCheckbox"
     :show-progress="uiTableData.showProgress"
-    class="border-none"
     :style="{ height: tableHeight }"
   >
   </ui-table>
@@ -54,4 +117,21 @@
 </template>
 ```
 
+### 3. 基本完成
+到这里，二次封装就基本完成了，在父组件中使用只需要传入所需要的数据，表格组件的各种功能已经可以正常使用了。
+但是，还是有那么些特殊情况，需要对某一列或某几列的数据做特殊处理，比如对状态列做样式定制，此时就需要再做进一步处理
+
+首先需要增加`props属性`
+```ts
+import type { PropType } from 'vue'
+
+defineProps({
+  slotNameArr: {
+    type: Array as PropType<string[]>,
+    default: () => []
+  }
+})
+```
+
+然后在模板中增加
 未完待续...
