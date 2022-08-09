@@ -209,7 +209,6 @@ function handleChangePageSize() {
   </template>
 </BaseDataTable>
 ```
-
-> 在日常业务开发中，感觉需要这种二次封装的组件还是比较多的，所以梳理下思路，记录一下~
 [文件仓库地址](https://github.com/guxuerui/qishi/blob/main/src/components/BaseDataTable.vue)
 
+> 在日常业务开发中，感觉需要这种二次封装的组件还是比较多的，所以梳理下思路，记录一下~
