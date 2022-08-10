@@ -100,3 +100,4 @@ warning: <StatusIndicator bg-color="orange" class="mx-2"/>
 <div>
   <a href="https://github.com/guxuerui/vue3-status-indicator" target="_blank">GitHub仓库地址</a>
 </div>
+

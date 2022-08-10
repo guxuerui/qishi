@@ -181,5 +181,5 @@ onBeforeUnmount(() => {
   timer.value && clearInterval(timer.value)
 })
 ```
-
 <Vue3Guage />
+
