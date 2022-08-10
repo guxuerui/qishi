@@ -3,6 +3,7 @@
 > 背景: 因为在做ToB的业务时，经常会有增删改查的页面，需要用到表格组件，为了提高开发复用效率，所以二次封装了BalmUI的表格组件
 
 ## 为什么要二次封装?
+
 当我们只有个别几个页面里使用表格组件时，确实没有太大的必要在做二次封装，甚至可能会显得更加麻烦。
 但是，假设你有10个、20个页面都需要用到此表格组件的时候，那么进行二次封装就显得很有必要了。
 首先，表格本身和分页部分都是可复用的，二次封装之后，就可以省去很多重复的代码
@@ -12,6 +13,7 @@
 ## 开干
 
 ### 1. 定义需要传入的属性
+
 ```ts
 // <script setup lang="ts">
 /*
@@ -74,6 +76,7 @@ const changePageSize = () => {
 ````
 
 ### 2. 基本的DOM结构
+
 `<v-divider />`是 [vuetify](https://next.vuetifyjs.com/en/components/dividers/) 组件
 
 ```html
@@ -118,10 +121,12 @@ const changePageSize = () => {
 ```
 
 ### 3. 基本完成
+
 到这里，二次封装就基本完成了，在父组件中使用只需要传入所需要的数据，表格组件的各种功能已经可以正常使用了。
 但是，还是有那么些特殊情况，需要对某一列或某几列的数据做特殊处理，比如对状态列做样式定制，此时就需要再做进一步处理
 
 首先需要增加`props属性`，在父组件中指定一个或多个需要特殊处理的字段，使用插槽进行处理
+
 ```ts
 import type { PropType } from 'vue'
 
@@ -165,6 +170,7 @@ defineProps({
 ```
 
 ## 搞定啦
+
 现在就可以直接使用这个封装好的 `BaseTableData` 组件了，如果不需要对列数据做特殊处理或编辑等操作，
 就可以只定义 `uiTableData` 属性, 其他操作都不需要
 
@@ -186,7 +192,6 @@ function handleChangePageSize() {
 }
 ```
 
-
 ```html
 <BaseDataTable
   :uiTableData="tableData"
@@ -196,6 +201,7 @@ function handleChangePageSize() {
 ```
 
 如果需要对某一列做特殊处理，就需要传入slot了，比如
+
 ```html
 <BaseDataTable
   :uiTableData="tableData"
@@ -209,6 +215,7 @@ function handleChangePageSize() {
   </template>
 </BaseDataTable>
 ```
+
 [文件仓库地址](https://github.com/guxuerui/qishi/blob/main/src/components/BaseDataTable.vue)
 
 > 在日常业务开发中，感觉需要这种二次封装的组件还是比较多的，所以梳理下思路，记录一下~
