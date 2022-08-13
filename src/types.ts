@@ -14,3 +14,12 @@ export interface Post {
   fileName: string
 }
 
+export interface RepoList {
+  name: string
+  id: number
+  fork: boolean
+  forks_count: number
+  stargazers_count: number
+  html_url: string
+}
+
