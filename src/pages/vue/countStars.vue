@@ -156,6 +156,9 @@ const sortRepo = (type: string) => {
         <span border="~">{{ repo.forks_count }}</span>
       </div>
     </div>
+    <div mt-4>
+      <a href="https://github.com/guxuerui/qishi/blob/main/src/pages/vue/countStars.vue" target="_blank">源码地址</a>
+    </div>
   </div>
 </template>
 

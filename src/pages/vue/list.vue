@@ -3,7 +3,7 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
-    title: '统计GitHub项目Star数量',
+    title: '统计GitHub个人项目Star数量',
     date: '2022-08-13',
     folder: 'vue',
     fileName: 'countStars',
