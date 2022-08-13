@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: '统计GitHub项目Star数量',
+    date: '2022-08-13',
+    folder: 'vue',
+    fileName: 'countStars',
+  },
+  {
     title: 'Vue3之齿轮环状仪表盘组件',
     date: '2022-07-22',
     folder: 'vue',
