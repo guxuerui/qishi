@@ -12,6 +12,7 @@
   "dependencies": {
     "@vueuse/core": "^8.6.0",
     "@vueuse/head": "^0.7.6",
+    "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "markdown-it-prism": "^2.2.4",
     "vite-plugin-vue-markdown": "^0.1.1",
