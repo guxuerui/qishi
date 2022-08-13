@@ -87,7 +87,7 @@ const sortRepo = (type: string) => {
         type="text"
         autocomplete="false"
         p="x-4 y-2"
-        ml-2
+        mx-3
         w="250px"
         text="center"
         bg="transparent"
@@ -97,14 +97,14 @@ const sortRepo = (type: string) => {
       >
 
       <button
-        class="m-3 text-sm btn"
+        class="text-sm btn"
         :disabled="!inputVal"
         @click="search"
       >
         Count
       </button>
       <button
-        class="mr-3 text-sm btn"
+        class="m-3 text-sm btn"
         :disabled="!personalRepoList.length"
         @click="sortRepo('star')"
       >
