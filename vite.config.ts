@@ -41,6 +41,11 @@ export default defineConfig({
         'vue/macros',
         'vue-router',
         '@vueuse/core',
+        {
+          axios: [
+            ['default', 'axios'],
+          ],
+        },
       ],
       dts: true,
       dirs: [
