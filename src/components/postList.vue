@@ -8,9 +8,7 @@ defineProps({
     required: true,
   },
 })
-// const emit = defineEmits<{
-//   (e: 'jump', post: Post): void
-// }>()
+
 const router = useRouter()
 const jumpPage = (folder: string, name: string) => {
   if (folder && name)
