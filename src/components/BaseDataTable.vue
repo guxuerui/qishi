@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 
-defineProps({
+const props = defineProps({
+  selectedKey: {
+    type: String,
+    default: '',
+  },
   slotNameArr: {
     type: Array as PropType<string[]>,
     default: () => [],
@@ -29,6 +33,7 @@ defineProps({
 const emit = defineEmits<{
   (e: 'onChangePage', page: number): void
   (e: 'onChangePageSize', pageSize: number): void
+  (e: 'onChangeSelectedRows', selectedRows: any[]): void
 }>()
 
 const pageItems = $ref([
@@ -37,16 +42,24 @@ const pageItems = $ref([
   { value: 50, label: '50' },
   { value: 100, label: '100' },
 ])
-const pageNum = $ref<number>(1)
-const pageSize = $ref<number>(10)
 const selectedRows = $ref<any[]>([])
+const pageSize = $ref<number>(10)
+let pageNum = $ref<number>(1)
 
 const changePage = () => {
+  // 没有数据时，不会触发changePage事件
+  if (props.uiTableData.data.length === 0)
+    return
   emit('onChangePage', pageNum)
 }
 const changePageSize = () => {
+  pageNum = 1
   emit('onChangePageSize', pageSize)
 }
+
+watch(() => selectedRows, (newValue) => {
+  emit('onChangeSelectedRows', newValue)
+}, { deep: true })
 </script>
 
 <template>
@@ -56,6 +69,7 @@ const changePageSize = () => {
     :data="uiTableData.data"
     :thead="uiTableData.thead"
     :tbody="uiTableData.tbody"
+    :selected-key="selectedKey"
     :row-checkbox="showCheckbox"
     :show-progress="uiTableData.showProgress"
     class="border-none"

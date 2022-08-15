@@ -56,7 +56,7 @@ const pageItems = $ref([
   { value: 100, label: '100' },
 ])
 // 分页页码
-const pageNum = $ref<number>(1)
+let pageNum = $ref<number>(1)
 
 // 表格默认条数
 const pageSize = $ref<number>(10)
@@ -66,11 +66,14 @@ const selectedRows = $ref<string[] | number[]>([])
 
 // 切换页码
 const changePage = () => {
+  if (props.uiTableData.data.length === 0)
+    return
   emit('onChangePage', pageNum)
 }
 
 // 切换每页展示多少条数据
 const changePageSize = () => {
+  pageNum = 1
   emit('onChangePageSize', pageSize)
 }
 ````
