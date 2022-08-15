@@ -172,9 +172,63 @@ defineProps({
 </ui-table>
 ```
 
+### 4. no，还没完
+
+当使用表格的复选框功能时，还需要指定所使用的`selectedKey`字段，就是
+
+```ts
+defineProps({
+  selectedKey: {
+    type: String,
+    default: ''
+  }
+})
+```
+
+然后，在父组件中指定具体使用哪个字段，比如
+
+```html
+<BaseDataTable
+  selectedKey="id"
+>
+</BaseDataTable>
+```
+
+接着，还需要在组件中监听选中值`selectedRows`的变化
+
+```ts
+const emit = defineEmits<{
+  (e: 'onChangePage', page: number): void
+  (e: 'onChangePageSize', pageSize: number): void
+  (e: 'onChangeSelectedRows', selectedRows: any[]): void
+}>()
+
+watch(() => selectedRows, (newValue) => {
+  emit('onChangeSelectedRows', newValue)
+}, { deep: true })
+```
+
+最后，在父组件中使用时就可以通过监听这个事件来实时获取选中的表格行数据
+
+```html
+<BaseDataTable
+  selectedKey="id"
+  @on-change-selected-rows="handleChangeSelected"
+>
+</BaseDataTable>
+```
+
+```ts
+const selectedData = $ref([])
+
+const handleChangeSelected = ($event) => {
+  selectedData = $event
+}
+```
+
 ## 搞定啦
 
-现在就可以直接使用这个封装好的 `BaseTableData` 组件了，如果不需要对列数据做特殊处理或编辑等操作，
+现在就可以使用这个封装好的 `BaseTableData` 组件了，如果不需要对列数据做特殊处理或编辑等操作，
 就可以只定义 `uiTableData` 属性, 其他操作都不需要
 
 ```ts
@@ -212,7 +266,7 @@ function handleChangePageSize() {
   @on-change-page="handleChangePage"
   @on-change-page-size="handleChangePageSize"
 >
-  <template #status="{ data }: any">
+  <template #status="{ data }">
     <!-- 这里做具体的处理 -->
     {{ data.status }}
   </template>
