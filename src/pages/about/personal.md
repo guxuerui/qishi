@@ -46,7 +46,7 @@
 
 1. 使用`vite`、`vuetify`、`BalmUI`进行项目框架搭建，包括登录、权限、拓扑图(antv/g6)、告警等页面开发
 2. 封装`Axios`，对token和请求错误码做统一拦截处理并弹窗提示，大幅提高联调接口效率
-3. 使用`hooks`提炼逻辑代码，提高代码复用效率
+3. 使用`composables`方法提炼逻辑代码，提高代码复用效率
 4. 封装页面公共组件，包括但不限于二次封装BalmUI表格组件、日期选择组件、二次封装Vuetify表单组件、状态指示灯组件( https://github.com/guxuerui/vue3-status-indicator)，极大提高了团队成员的开发效率
 5. 使用`xlsx.js`实现纯前端表格数据导出
 6. 使用`vue-i18n`实现中日英国际化
