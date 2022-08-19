@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// router link list
 const links = ref([
   {
     name: 'Vue',
