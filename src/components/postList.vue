@@ -17,7 +17,7 @@ const jumpPage = (folder: string, name: string) => {
 </script>
 
 <template>
-  <ul class="list-title">
+  <ul class="list-title font-mno">
     <li v-for="(item, i) in posts" :key="i" class="w-full flex justify-between mb-4">
       <a
         class="cursor-pointer c-gray-600 hover:c-black dark:c-gray-400 dark:hover:c-white"

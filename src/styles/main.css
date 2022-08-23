@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'MCB';
+  font-style: normal;
+  src: url('../../public/font/MapleMono-SC-NF-Bold.ttf');
+}
+@font-face {
+  font-family: 'MCB';
+  font-style: italic;
+  src: url('../../public/font/MapleMono-SC-NF-BoldItalic.ttf');
+}
+@font-face {
+  font-family: 'MCI';
+  font-style: italic;
+  src: url('../../public/font/MapleMono-SC-NF-Italic.ttf');
+}
+@font-face {
+  font-family: 'MCR';
+  src: url('../../public/font/MapleMono-SC-NF-Regular.ttf');
+}
+.font-mno {
+  font-family: MCB;
+}
 markdown-body*, :before,:after {
   box-sizing: border-box;
   border-width: 0;
@@ -18,7 +40,7 @@ html {
 }
 
 body {
-  line-height: inherit
+  line-height: inherit;
 }
 
 html, body, #app {
@@ -295,6 +317,7 @@ html:not(.dark) [img-dark] {
   max-width: 70ch;
   font-size: 1rem;
   line-height: 1.75;
+  font-family: MCB;
 }
 
 .markdown-body [class~=lead] {
