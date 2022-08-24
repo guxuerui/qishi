@@ -3,20 +3,6 @@
   font-style: normal;
   src: url('../../public/font/MapleMono-SC-NF-Bold.ttf');
 }
-@font-face {
-  font-family: 'MCB';
-  font-style: italic;
-  src: url('../../public/font/MapleMono-SC-NF-BoldItalic.ttf');
-}
-@font-face {
-  font-family: 'MCI';
-  font-style: italic;
-  src: url('../../public/font/MapleMono-SC-NF-Italic.ttf');
-}
-@font-face {
-  font-family: 'MCR';
-  src: url('../../public/font/MapleMono-SC-NF-Regular.ttf');
-}
 .font-mno {
   font-family: MCB;
 }
