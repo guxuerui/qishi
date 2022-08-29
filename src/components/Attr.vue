@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const content = ref('I am tooltip content')
+const content = ref('我是提示框内容')
 </script>
 
 <template>
@@ -17,9 +17,9 @@ const content = ref('I am tooltip content')
     outline="none active:none"
   >
   <p>
-    Hover
-    <span class="tooltip" :data-tooltip="content">Here</span>
-    to see the tooltip.
+    鼠标悬停
+    <span class="tooltip" :data-tooltip="content">这里</span>
+    查看提示框.
   </p>
 </template>
 

@@ -25,11 +25,11 @@ HTML:
 
 ```html
   <p>
-    Hover
-    <span class="tooltip" data-tooltip="I am tooltip content">
-      Here
+    鼠标悬停
+    <span class="tooltip" data-tooltip="我是提示框内容">
+      这里
     </span>
-    to see the tooltip.
+    查看提示框.
   </p>
 ```
 
@@ -67,3 +67,6 @@ CSS:
     visibility: visible;
   }
 ```
+
+> 注: 只要模板中的`data-tooltip`和css中使用时的`attr(data-tooltip)`名称保持一致即可, 可以任意取名, 比如都取名为`test-attr`
+
