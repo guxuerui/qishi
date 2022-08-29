@@ -1,25 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const props = defineProps<{ init?: number }>()
-const counter = ref(props.init || 0)
+const props = defineProps<{
+  initial: number
+}>()
+const { count, inc, dec } = useCounter(props.initial)
 </script>
 
 <template>
-  <div class="counter" p-6>
-    <div mb-2>
-      Counter: {{ counter }}
-    </div>
-    <button btn @click="counter += 1">
-      Inc
+  <div>
+    {{ count }}
+    <button class="inc" @click="inc()">
+      +
     </button>
-    <button btn ml-4 @click="counter -= 1">
-      Dec
+    <button class="dec" @click="dec()">
+      -
     </button>
   </div>
 </template>
 
-<style scoped>
-.counter {
-  border: 2px dashed #3eaf7c;
-}
-</style>
