@@ -4,7 +4,7 @@ import Filter from '~/components/filter.vue'
 
 # CSS语法之filter
 
-> CSS属性 filter 将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像、背景和边框的渲染
+> CSS属性 `filter` 将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像、背景和边框的渲染
 
 下面列举一些常用的属性
 
