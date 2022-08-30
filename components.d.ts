@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     Cog: typeof import('./src/components/cog.vue')['default']
     Confetti: typeof import('./src/components/Confetti.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
+    Filter: typeof import('./src/components/filter.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
