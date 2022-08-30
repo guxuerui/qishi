@@ -24,6 +24,9 @@ const slider7Val = computed(() => `${slider7}%`)
 
 const slider8 = $ref(100)
 const slider8Val = computed(() => `${slider8}%`)
+
+const slider9 = $ref(0)
+const slider9Val = computed(() => `${slider9}px`)
 </script>
 
 <template>
@@ -127,6 +130,30 @@ const slider8Val = computed(() => `${slider8}%`)
       <img :src="image" class="slider8">
     </div>
   </div>
+  <div flex="~ gap-6">
+    <div min-h-50 w-85>
+      <div h-24 overflow-scroll>
+        9. blur() 函数将高斯模糊应用于图像。默认为0，不能是百分比值
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider9 }}px</div>
+      </div>
+      <input v-model="slider9" type="range" min="0" max="100" step="1">
+      <img :src="image" class="slider9">
+    </div>
+    <div min-h-50 w-85>
+      <div h-24 overflow-scroll>
+        10. drop-shadow() 函数
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider8 }}</div>
+      </div>
+      <input v-model="slider8" type="range" min="0" max="3000" step="1">
+      <img :src="image" class="slider8">
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -168,5 +195,8 @@ const slider8Val = computed(() => `${slider8}%`)
   }
   .slider8 {
     filter: contrast(v-bind(slider8Val));
+  }
+  .slider9 {
+    filter: blur(v-bind(slider9Val));
   }
 </style>
