@@ -12,6 +12,12 @@ const slider3Val = computed(() => `${slider3}%`)
 
 const slider4 = $ref(100)
 const slider4Val = computed(() => `${slider4}deg`)
+
+const slider5 = $ref(0)
+const slider5Val = computed(() => `${slider5}%`)
+
+const slider6 = $ref(100)
+const slider6Val = computed(() => `${slider6}%`)
 </script>
 
 <template>
@@ -65,6 +71,32 @@ const slider4Val = computed(() => `${slider4}deg`)
       <img :src="image" class="slider4">
     </div>
   </div>
+  <div flex="~ gap-6">
+    <div min-h-50 w-85>
+      <div h-20 overflow-scroll>
+        5. invert() 函数反转图像。取值为0%-100%，默认为0%
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider5 }}</div>
+        <div>Max: 100</div>
+      </div>
+      <input v-model="slider5" type="range" min="0" max="100" step="1">
+      <img :src="image" class="slider5">
+    </div>
+    <div min-h-50 w-85>
+      <div h-20 overflow-scroll>
+        6. opacity() 函数转化图像的透明度。取值在0%-100%之间，默认为100%
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider6 }}</div>
+        <div>Max: 100</div>
+      </div>
+      <input v-model="slider6" type="range" min="0" max="100" step="1">
+      <img :src="image" class="slider6">
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -94,5 +126,11 @@ const slider4Val = computed(() => `${slider4}deg`)
   }
   .slider4 {
     filter: hue-rotate(v-bind(slider4Val));
+  }
+  .slider5 {
+    filter: invert(v-bind(slider5Val));
+  }
+  .slider6 {
+    filter: opacity(v-bind(slider6Val));
   }
 </style>
