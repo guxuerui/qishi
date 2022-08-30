@@ -32,6 +32,6 @@ CSS使用示例
   /* 模糊度 */
   filter: blur(3px);
   /* 阴影 */
-  filter: drop-shadow(2px 4px 8px #585858);
+  filter: drop-shadow(8px 10px 8px #585);
 ```
 

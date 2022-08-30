@@ -27,6 +27,9 @@ const slider8Val = computed(() => `${slider8}%`)
 
 const slider9 = $ref(0)
 const slider9Val = computed(() => `${slider9}px`)
+
+const slider10 = $ref(8)
+const slider10Val = computed(() => `${slider10}px`)
 </script>
 
 <template>
@@ -144,14 +147,14 @@ const slider9Val = computed(() => `${slider9}px`)
     </div>
     <div min-h-50 w-85>
       <div h-24 overflow-scroll>
-        10. drop-shadow() 函数
+        10. drop-shadow() 函数设置图像阴影效果。使用drop-shadow(offset-x offset-y blur-raduis? color?)
       </div>
       <div flex="~" justify-between>
         <div>Min: 0</div>
-        <div>current: {{ slider8 }}</div>
+        <div>current: {{ slider10 }}</div>
       </div>
-      <input v-model="slider8" type="range" min="0" max="3000" step="1">
-      <img :src="image" class="slider8">
+      <input v-model="slider10" type="range" min="0" max="100" step="1">
+      <img :src="image" class="slider10">
     </div>
   </div>
 </template>
@@ -198,5 +201,8 @@ const slider9Val = computed(() => `${slider9}px`)
   }
   .slider9 {
     filter: blur(v-bind(slider9Val));
+  }
+  .slider10 {
+    filter: drop-shadow(8px 10px v-bind(slider10Val) #585);
   }
 </style>
