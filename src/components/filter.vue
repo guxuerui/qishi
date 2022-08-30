@@ -18,6 +18,12 @@ const slider5Val = computed(() => `${slider5}%`)
 
 const slider6 = $ref(100)
 const slider6Val = computed(() => `${slider6}%`)
+
+const slider7 = $ref(100)
+const slider7Val = computed(() => `${slider7}%`)
+
+const slider8 = $ref(100)
+const slider8Val = computed(() => `${slider8}%`)
 </script>
 
 <template>
@@ -97,6 +103,30 @@ const slider6Val = computed(() => `${slider6}%`)
       <img :src="image" class="slider6">
     </div>
   </div>
+  <div flex="~ gap-6">
+    <div min-h-50 w-85>
+      <div h-24 overflow-scroll>
+        7. brightness() 函数调整图像明亮度。可以为数字或百分比值，默认为1即100%
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider7 }}</div>
+      </div>
+      <input v-model="slider7" type="range" min="0" max="3000" step="1">
+      <img :src="image" class="slider7">
+    </div>
+    <div min-h-50 w-85>
+      <div h-24 overflow-scroll>
+        8. contrast() 函数调整图像的对比度。值大于等于0%，默认为100%
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider8 }}</div>
+      </div>
+      <input v-model="slider8" type="range" min="0" max="3000" step="1">
+      <img :src="image" class="slider8">
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -132,5 +162,11 @@ const slider6Val = computed(() => `${slider6}%`)
   }
   .slider6 {
     filter: opacity(v-bind(slider6Val));
+  }
+  .slider7 {
+    filter: brightness(v-bind(slider7Val));
+  }
+  .slider8 {
+    filter: contrast(v-bind(slider8Val));
   }
 </style>
