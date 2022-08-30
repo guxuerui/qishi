@@ -9,6 +9,9 @@ const slider2Val = computed(() => `${slider2}%`)
 
 const slider3 = $ref(1)
 const slider3Val = computed(() => `${slider3}%`)
+
+const slider4 = $ref(100)
+const slider4Val = computed(() => `${slider4}deg`)
 </script>
 
 <template>
@@ -40,8 +43,8 @@ const slider3Val = computed(() => `${slider3}%`)
   </div>
   <div flex="~ gap-6">
     <div min-h-50 w-85>
-      <div h-20 overflow-scroll>
-        3. saturate() 函数转换图像饱和度。取值应大于0，默认为1
+      <div h-24 overflow-scroll>
+        3. saturate() 函数转换图像饱和度。取值应大于等于0，默认为1
       </div>
       <div flex="~" justify-between>
         <div>Min: 0</div>
@@ -49,6 +52,17 @@ const slider3Val = computed(() => `${slider3}%`)
       </div>
       <input v-model="slider3" type="range" min="0" max="10000" step="1">
       <img :src="image" class="slider3">
+    </div>
+    <div min-h-50 w-85>
+      <div h-24 overflow-scroll>
+        4. hue-rotate() 函数对图像做色相旋转。默认为0deg，0-360deg为一个循环，超过360deg相当于又从0开始
+      </div>
+      <div flex="~" justify-between>
+        <div>Min: 0</div>
+        <div>current: {{ slider4 }}</div>
+      </div>
+      <input v-model="slider4" type="range" min="0" max="10000" step="1">
+      <img :src="image" class="slider4">
     </div>
   </div>
 </template>
@@ -77,5 +91,8 @@ const slider3Val = computed(() => `${slider3}%`)
   }
   .slider3 {
     filter: saturate(v-bind(slider3Val));
+  }
+  .slider4 {
+    filter: hue-rotate(v-bind(slider4Val));
   }
 </style>
