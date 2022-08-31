@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'MCB';
   font-style: normal;
-  src: url('../../public/font/MapleMono-SC-NF-Bold.ttf');
+  /* src: url('../../public/font/MapleMono-SC-NF-Bold.ttf'); */
+  src: url('../../public/font/MapleMono-Bold.ttf');
 }
 .font-mno {
   font-family: MCB;
