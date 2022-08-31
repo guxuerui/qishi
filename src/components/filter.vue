@@ -25,7 +25,7 @@ const slider7Val = computed(() => `${slider7}%`)
 const slider8 = $ref(100)
 const slider8Val = computed(() => `${slider8}%`)
 
-const slider9 = $ref(0)
+const slider9 = $ref(5)
 const slider9Val = computed(() => `${slider9}px`)
 
 const slider10 = $ref(8)
