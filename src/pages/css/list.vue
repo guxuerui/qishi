@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: '3D立方体',
+    date: '2022-00-01',
+    folder: 'css',
+    fileName: 'cube3D',
+  },
+  {
     title: 'CSS语法之filter',
     date: '2022-08-30',
     folder: 'css',

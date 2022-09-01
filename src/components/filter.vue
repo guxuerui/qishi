@@ -160,21 +160,6 @@ const slider10Val = computed(() => `${slider10}px`)
 </template>
 
 <style scoped>
-  input[type=range] {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 4px;
-    background: #eee;
-  }
-  /* chrome - slider 滑块样式 */
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 12px;
-    width: 12px;
-    background: #7D5;
-    border-radius: 50%;
-    border: none;
-  }
   .slider1 {
     filter: grayscale(v-bind(slider1Val));
   }
