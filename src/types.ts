@@ -23,3 +23,19 @@ export interface RepoList {
   html_url: string
 }
 
+export interface SearchIndex {
+  [key: string]: string
+}
+
+export interface Area {
+  direct: string
+  transform: string
+  color: string
+}
+
+export interface BlockArea {
+  x: number
+  y: number
+  z: number
+  areas: Area[]
+}
