@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Area, BlockArea, SearchIndex } from '~/types'
 
+let rotateX = $ref<number>(-30)
+let rotateY = $ref<number>(30)
 const count = $ref<number>(3)
 const side = $ref<number>(50)
 
@@ -58,9 +60,43 @@ blocks.value = Array.from({ length: count }, (_, x) =>
     ),
   ),
 ).flat(2)
+
+// monitor keyboard event
+const { arrowup, arrowdown, arrowleft, arrowright } = useMagicKeys()
+watchEffect(() => {
+  if (arrowup.value)
+    rotateX += 20
+  if (arrowdown.value)
+    rotateX -= 20
+  if (arrowleft.value)
+    rotateY -= 20
+  if (arrowright.value)
+    rotateY += 20
+})
 </script>
 
 <template>
+  <div class="flex flex-col md:flex-row">
+    <div>
+      <p class="mt-0 mb-4">
+        点击键盘方向按键旋转魔方
+      </p>
+      <div class="flex gap-2 justify-center">
+        <Key :value="arrowup">
+          <div i-carbon-arrow-up />
+        </Key>
+        <Key :value="arrowdown">
+          <div i-carbon-arrow-down />
+        </Key>
+        <Key :value="arrowleft">
+          <div i-carbon-arrow-left />
+        </Key>
+        <Key :value="arrowright">
+          <div i-carbon-arrow-right />
+        </Key>
+      </div>
+    </div>
+  </div>
   <div class="wrap">
     <div
       class="content"
@@ -68,6 +104,7 @@ blocks.value = Array.from({ length: count }, (_, x) =>
         width: `${count * side}px`,
         height: `${count * side}px`,
         transformOrigin: `${(count * side) / 2}px ${(count * side) / 2}px -${(count * side) / 2}px`,
+        transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(0)`,
       }"
     >
       <div
@@ -105,7 +142,6 @@ blocks.value = Array.from({ length: count }, (_, x) =>
   }
   .content {
     transform-style: preserve-3d;
-    transform: rotateX(-30deg) rotateY(30deg) rotateZ(0deg);
     position: relative;
     margin: auto;
   }

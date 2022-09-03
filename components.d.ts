@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     Filter: typeof import('./src/components/filter.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
+    Key: typeof import('./src/components/Key.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
     LostModal: typeof import('./src/components/LostModal.vue')['default']
     MineBlock: typeof import('./src/components/MineBlock.vue')['default']
