@@ -2,7 +2,7 @@
 import type { Area, BlockArea, SearchIndex } from '~/types'
 
 const count = $ref<number>(3)
-const side = $ref<number>(100)
+const side = $ref<number>(50)
 
 const transformDirection: SearchIndex = {
   top: `translateY(-${side}px) rotateX(90deg)`,
