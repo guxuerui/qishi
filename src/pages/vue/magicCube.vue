@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { Area, BlockArea, SearchIndex } from '~/types'
 
-let rotateX = $ref<number>(-30)
-let rotateY = $ref<number>(30)
+const ifMobile = isMobile()
 const count = $ref<number>(3)
 const side = $ref<number>(50)
+let rotateX = $ref<number>(-30)
+let rotateY = $ref<number>(30)
 
 const transformDirection: SearchIndex = {
   top: `translateY(-${side}px) rotateX(90deg)`,
@@ -76,9 +77,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row">
+  <div v-if="!ifMobile" class="flex flex-col md:flex-row">
     <div>
-      <p class="mt-0 mb-4">
+      <p class="text-center mt-0 mb-4">
         点击键盘方向按键旋转魔方
       </p>
       <div class="flex gap-2 justify-center">
