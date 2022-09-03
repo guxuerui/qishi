@@ -2,6 +2,7 @@
 import type { Area, BlockArea, SearchIndex } from '~/types'
 
 const ifMobile = isMobile()
+const ifSafari = isSafari()
 const count = $ref<number>(3)
 const side = $ref<number>(50)
 let rotateX = $ref<number>(-30)
@@ -74,7 +75,10 @@ function blockTransform(block: BlockArea) {
     rotateX(${block.rotate.x}deg) rotateY(${block.rotate.y}deg) rotateZ(${block.rotate.z}deg)
   `
 }
+
 function getOrigin(block: BlockArea) {
+  if (ifSafari || ifMobile.value)
+    return
   if (block.z === 0 && block.x === 0)
     return `${count * side / 2}px ${side / 2}px -${count * side / 2}px`
   if (block.z === 0 && block.x === 1)
@@ -175,6 +179,11 @@ function handleMousedown(event: MouseEvent, area: Area) {
         />
       </div>
     </div>
+  </div>
+  <div class="markdown-body">
+    <blockquote>
+      <p>注: 当前版本只能在Chrome最新浏览器中使用</p>
+    </blockquote>
   </div>
 </template>
 
