@@ -26,22 +26,25 @@ const colors: SearchIndex = {
 function getAreas(x: number, y: number, z: number) {
   const areas = [] as Area[]
   if (x === 0)
-    areas.push(getArea('left'))
+    areas.push(getArea('left', x, y, z))
   if (x === count - 1)
-    areas.push(getArea('right'))
+    areas.push(getArea('right', x, y, z))
   if (y === 0)
-    areas.push(getArea('top'))
+    areas.push(getArea('top', x, y, z))
   if (y === count - 1)
-    areas.push(getArea('bottom'))
+    areas.push(getArea('bottom', x, y, z))
   if (z === 0)
-    areas.push(getArea('before'))
+    areas.push(getArea('before', x, y, z))
   if (z === count - 1)
-    areas.push(getArea('after'))
+    areas.push(getArea('after', x, y, z))
 
   return areas
 }
-function getArea(direct: string) {
+function getArea(direct: string, x: number, y: number, z: number) {
   return {
+    x,
+    y,
+    z,
     direct,
     transform: transformDirection[direct],
     color: colors[direct],
@@ -56,11 +59,41 @@ blocks.value = Array.from({ length: count }, (_, x) =>
         x,
         y,
         z,
+        rotate: {
+          x: 0, y: 0, z: 0,
+        },
         areas: getAreas(x, y, z),
       }),
     ),
   ),
 ).flat(2)
+
+function blockTransform(block: BlockArea) {
+  return `
+    translateX(${side * block.x}px) translateY(${side * block.y}px) translateZ(-${side * block.z}px)
+    rotateX(${block.rotate.x}deg) rotateY(${block.rotate.y}deg) rotateZ(${block.rotate.z}deg)
+  `
+}
+function getOrigin(block: BlockArea) {
+  if (block.z === 0 && block.x === 0)
+    return `${count * side / 2}px ${side / 2}px -${count * side / 2}px`
+  if (block.z === 0 && block.x === 1)
+    return `${side / 2}px ${side / 2}px -${count * side / 2}px`
+  if (block.z === 0 && block.x === 2)
+    return `-${side / 2}px ${side / 2}px -${count * side / 2}px`
+  if (block.z === 1 && block.x === 0)
+    return `${count * side / 2}px ${count * side / 2}px -${side / 2}px`
+  if (block.z === 1 && block.x === 1)
+    return `${side / 2}px 0 -${side / 2}px`
+  if (block.z === 1 && block.x === 2)
+    return `-${side / 2}px 0 -${side / 2}px`
+  if (block.z === 2 && block.x === 0)
+    return `${count * side / 2}px ${count * side / 2}px ${side / 2}px`
+  if (block.z === 2 && block.x === 1)
+    return `${side / 2}px 0 ${side / 2}px`
+  if (block.z === 2 && block.x === 2)
+    return `-${side / 2}px 0 ${side / 2}px`
+}
 
 // monitor keyboard event
 const { arrowup, arrowdown, arrowleft, arrowright } = useMagicKeys()
@@ -74,6 +107,15 @@ watchEffect(() => {
   if (arrowright.value)
     rotateY += 20
 })
+
+function handleMousedown(event: MouseEvent, area: Area) {
+  // const { x, y, z } = area
+  const { y } = area
+  blocks.value.forEach((block: BlockArea) => {
+    if (block.y === y)
+      block.rotate.y += 90
+  })
+}
 </script>
 
 <template>
@@ -104,7 +146,7 @@ watchEffect(() => {
       :style="{
         width: `${count * side}px`,
         height: `${count * side}px`,
-        transformOrigin: `${(count * side) / 2}px ${(count * side) / 2}px -${(count * side) / 2}px`,
+        transformOrigin: `${count * side / 2}px ${count * side / 2}px -${count * side / 2}px`,
         transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(0)`,
       }"
     >
@@ -117,7 +159,8 @@ watchEffect(() => {
         :style="{
           width: `${side}px`,
           height: `${side}px`,
-          transform: `translateX(${side * block.x}px) translateY(${side * block.y}px) translateZ(-${side * block.z}px)`,
+          transformOrigin: getOrigin(block),
+          transform: blockTransform(block),
         }"
       >
         <p
@@ -128,6 +171,7 @@ watchEffect(() => {
             background: area.color,
             transform: area.transform,
           }"
+          @mousedown="handleMousedown($event, area)"
         />
       </div>
     </div>
@@ -138,7 +182,7 @@ watchEffect(() => {
   .wrap {
     width: 100%;
     height: 50vh;
-    perspective: 1300px;
+    perspective: 1200px;
     display: flex;
   }
   .content {
@@ -151,6 +195,7 @@ watchEffect(() => {
     position: absolute;
     top: 0;
     left: 0;
+    transition: transform .5s linear;
   }
   .content > div > p {
     border: 2px solid #000;
@@ -161,16 +206,16 @@ watchEffect(() => {
     top: 0;
     left: 0;
   }
-  .content .top {
+  .top {
     transform-origin: bottom;
   }
-  .content .bottom {
+  .bottom {
     transform-origin: top;
   }
-  .content .left {
+  .left {
     transform-origin: right;
   }
-  .content .right {
+  .right {
     transform-origin: left;
   }
 </style>

@@ -27,7 +27,13 @@ export interface SearchIndex {
   [key: string]: string
 }
 
-export interface Area {
+export interface BlockRotate {
+  x: number
+  y: number
+  z: number
+}
+
+export interface Area extends BlockRotate {
   direct: string
   transform: string
   color: string
@@ -37,5 +43,6 @@ export interface BlockArea {
   x: number
   y: number
   z: number
+  rotate: BlockRotate
   areas: Area[]
 }
