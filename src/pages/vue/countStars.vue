@@ -104,14 +104,14 @@ const sortRepo = (type: string) => {
         Count
       </button>
       <button
-        class="m-3 text-sm btn"
+        class="m-2 text-sm btn"
         :disabled="!personalRepoList.length"
         @click="sortRepo('star')"
       >
         Sort By Star
       </button>
       <button
-        class="mr-3 text-sm btn"
+        class="text-sm btn"
         :disabled="!personalRepoList.length"
         @click="sortRepo('fork')"
       >
