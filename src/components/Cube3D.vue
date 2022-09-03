@@ -33,7 +33,7 @@ function reset() {
     </div>
     <input v-model="rotateZ" type="range" min="0" max="10000" step="1">
   </div>
-  <button btn mt-2 @click="reset">
+  <button btn my-4 @click="reset">
     重置
   </button>
   <div class="wrap">
@@ -46,7 +46,7 @@ function reset() {
 <style scoped>
   .wrap {
     width: 100%;
-    height: 25vh;
+    height: 35vh;
     perspective: 1200px;
     display: flex;
   }
