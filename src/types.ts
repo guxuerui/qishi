@@ -33,7 +33,7 @@ export interface BlockRotate {
   z: number
 }
 
-export interface Area extends BlockRotate {
+export interface Area {
   direct: string
   transform: string
   color: string
