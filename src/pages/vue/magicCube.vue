@@ -17,7 +17,7 @@ const transformDirection: SearchIndex = {
   after: `translateZ(-${side}px)`,
 }
 const colors: SearchIndex = {
-  top: '#FF6D00',
+  top: '#FF0',
   bottom: '#FCCC08',
   left: '#D63F2E',
   right: '#009D54',
@@ -76,27 +76,51 @@ function blockTransform(block: BlockArea) {
   `
 }
 
+let diffx = $ref<number>(0)
+let diffy = $ref<number>(0)
 function getOrigin(block: BlockArea) {
   if (ifSafari || ifMobile.value)
     return
-  if (block.z === 0 && block.x === 0)
-    return `${count * side / 2}px ${side / 2}px -${count * side / 2}px`
-  if (block.z === 0 && block.x === 1)
-    return `${side / 2}px ${side / 2}px -${count * side / 2}px`
-  if (block.z === 0 && block.x === 2)
-    return `-${side / 2}px ${side / 2}px -${count * side / 2}px`
-  if (block.z === 1 && block.x === 0)
-    return `${count * side / 2}px ${count * side / 2}px -${side / 2}px`
-  if (block.z === 1 && block.x === 1)
-    return `${side / 2}px 0 -${side / 2}px`
-  if (block.z === 1 && block.x === 2)
-    return `-${side / 2}px 0 -${side / 2}px`
-  if (block.z === 2 && block.x === 0)
-    return `${count * side / 2}px ${count * side / 2}px ${side / 2}px`
-  if (block.z === 2 && block.x === 1)
-    return `${side / 2}px 0 ${side / 2}px`
-  if (block.z === 2 && block.x === 2)
-    return `-${side / 2}px 0 ${side / 2}px`
+  if (Math.abs(diffx) > Math.abs(diffy)) {
+    if (block.z === 0 && block.x === 0)
+      return `${count * side / 2}px ${side / 2}px -${count * side / 2}px`
+    if (block.z === 0 && block.x === 1)
+      return `${side / 2}px ${side / 2}px -${count * side / 2}px`
+    if (block.z === 0 && block.x === 2)
+      return `-${side / 2}px ${side / 2}px -${count * side / 2}px`
+    if (block.z === 1 && block.x === 0)
+      return `${count * side / 2}px ${count * side / 2}px -${side / 2}px`
+    if (block.z === 1 && block.x === 1)
+      return `${side / 2}px 0 -${side / 2}px`
+    if (block.z === 1 && block.x === 2)
+      return `-${side / 2}px 0 -${side / 2}px`
+    if (block.z === 2 && block.x === 0)
+      return `${count * side / 2}px ${count * side / 2}px ${side / 2}px`
+    if (block.z === 2 && block.x === 1)
+      return `${side / 2}px 0 ${side / 2}px`
+    if (block.z === 2 && block.x === 2)
+      return `-${side / 2}px 0 ${side / 2}px`
+  }
+  else {
+    if (block.y === 0 && block.z === 0)
+      return `0 ${count * side / 2}px -${count * side / 2}px`
+    if (block.y === 0 && block.z === 1)
+      return `0 ${count * side / 2}px -${side / 2}px`
+    if (block.y === 0 && block.z === 2)
+      return `0 ${count * side / 2}px ${side / 2}px`
+    if (block.y === 1 && block.z === 0)
+      return `0 ${side / 2}px -${count * side / 2}px`
+    if (block.y === 1 && block.z === 1)
+      return `0 ${side / 2}px -${side / 2}px`
+    if (block.y === 1 && block.z === 2)
+      return `0 ${side / 2}px ${side / 2}px`
+    if (block.y === 2 && block.z === 0)
+      return `0 -${side / 2}px -${count * side / 2}px`
+    if (block.y === 2 && block.z === 1)
+      return `0 -${side / 2}px -${side / 2}px`
+    if (block.y === 2 && block.z === 2)
+      return `0 -${side / 2}px ${side / 2}px`
+  }
 }
 
 // monitor keyboard event
@@ -112,13 +136,37 @@ watchEffect(() => {
     rotateY += 20
 })
 
-function handleMousedown(event: MouseEvent, area: Area) {
-  // const { x, y, z } = area
-  const { y } = area
+function rotateBlock(y: number, reverse: boolean) {
   blocks.value.forEach((block: BlockArea) => {
     if (block.y === y)
-      block.rotate.y += 90
+      reverse ? block.rotate.y -= 90 : block.rotate.y += 90
   })
+}
+
+function rotateBlockX(x: number, reverse: boolean) {
+  blocks.value.forEach((block: BlockArea) => {
+    if (block.x === x)
+      reverse ? block.rotate.x += 90 : block.rotate.x -= 90
+  })
+}
+
+function handleMousedown(event: MouseEvent, area: Area) {
+  const { x, y } = area
+  const startX = event.pageX || event.clientX
+  const startY = event.pageY || event.clientY
+  document.onmouseup = (ev: MouseEvent) => {
+    const endX = ev.pageX || ev.clientX
+    const endY = ev.pageY || ev.clientY
+    diffx = endX - startX
+    diffy = endY - startY
+    if (Math.abs(diffx) > Math.abs(diffy))
+      diffx > 0 ? rotateBlock(y, false) : rotateBlock(y, true)
+
+    else
+      diffy > 0 ? rotateBlockX(x, false) : rotateBlockX(x, true)
+
+    document.onmouseup = null
+  }
 }
 </script>
 
@@ -175,7 +223,7 @@ function handleMousedown(event: MouseEvent, area: Area) {
             background: area.color,
             transform: area.transform,
           }"
-          @mousedown="handleMousedown($event, area)"
+          @mousedown.prevent="handleMousedown($event, area)"
         />
       </div>
     </div>
