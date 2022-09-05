@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'MCB';
   font-style: normal;
-  /* src: url('../../public/font/MapleMono-SC-NF-Bold.ttf'); */
-  src: url('../../public/font/MapleMono-Bold.ttf');
+  /* src: url('/font/MapleMono-SC-NF-Bold.ttf'); */
+  src: url('/font/MapleMono-Bold.ttf');
 }
 .font-mno {
   font-family: MCB;
@@ -31,6 +31,7 @@ markdown-body*, :before,:after {
 ::selection {
   background: #1DB954;
   color: #fff;
+  -webkit-text-fill-color: lightcyan;
 }
 html {
   line-height: 1.5;
@@ -49,6 +50,25 @@ html, body, #app {
   margin: 0;
   padding: 0;
 }
+
+.text-linear {
+  letter-spacing: 1px;
+  font-feature-settings: "ss02", "ss01";
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(71.18deg, rgb(0, 34, 255) -27.32%, rgb(0, 34, 255) -16.39%, rgb(81, 121, 254) -7.38%, rgb(53, 172, 62) 62.61%, rgb(55, 192, 130) 75.82%);
+}
+
+html.dark .text-linear {
+  letter-spacing: 1px;
+  font-feature-settings: "ss02", "ss01";
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(71.18deg, rgb(0, 34, 255) -27.32%, rgb(0, 34, 255) -16.39%, rgb(81, 121, 254) -7.38%, rgb(165, 237, 182) 30.59%, rgb(250, 232, 90) 46.06%, rgb(253, 172, 62) 62.61%, rgb(255, 92, 0) 75.82%);
+}
+
 
 html.dark {
   --c-bg: #050505;
