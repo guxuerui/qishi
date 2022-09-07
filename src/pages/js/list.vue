@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: 'canvas从入门到放弃',
+    date: '2022-09-07',
+    folder: 'js',
+    fileName: 'canvasExample',
+  },
+  {
     title: '序列生成器range方法',
     date: '2022-09-01',
     folder: 'js',

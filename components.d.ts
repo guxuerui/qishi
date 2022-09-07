@@ -8,6 +8,7 @@ declare module '@vue/runtime-core' {
     AnimateCursor: typeof import('./src/components/AnimateCursor.vue')['default']
     Attr: typeof import('./src/components/Attr.vue')['default']
     BaseDataTable: typeof import('./src/components/BaseDataTable.vue')['default']
+    CanvasExample: typeof import('./src/components/CanvasExample.vue')['default']
     Cog: typeof import('./src/components/cog.vue')['default']
     Confetti: typeof import('./src/components/Confetti.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
