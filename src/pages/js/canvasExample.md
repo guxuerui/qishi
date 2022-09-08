@@ -38,7 +38,7 @@ onMounted(() => {
 </template>
 ```
 
-1. 画线
+1、 画线
 
 ```js
 ctx.beginPath() // 开始路径
@@ -52,7 +52,7 @@ ctx.stroke() // 描边
 ctx.closePath() // 结束路径
 ```
 
-2. 矩形
+2、 矩形
 
 ```js
 // ctx.strokeRect(横坐标, 纵坐标, 宽, 高)
@@ -63,7 +63,7 @@ ctx.fillStyle = '#9fa'
 ctx.fillRect(100, 20, 80, 40) // 填充
 ```
 
-3. 圆形
+3、 圆形
 
 ```js
 // 不使用beginPath()方法新开路径会造成图形之间样式互相影响
@@ -71,4 +71,20 @@ ctx.beginPath()
 ctx.arc(240, 40, 30, 0, 2 * Math.PI)
 ctx.fillStyle = '#1fa'
 ctx.fill()
+```
+
+4、 三角形
+
+```js
+ctx.beginPath()
+ctx.moveTo(300, 20)
+ctx.lineTo(300, 80)
+ctx.lineTo(360, 20)
+// closePath() 可以自动将终点和起始点连接起来
+ctx.closePath()
+ctx.lineWidth = 10
+// 线条连接的样式。miter: 默认; bevel: 斜面; round: 圆角
+ctx.lineJoin = 'bevel'
+ctx.strokeStyle = 'orange'
+ctx.stroke()
 ```

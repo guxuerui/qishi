@@ -28,12 +28,27 @@ function drawRect() {
   ctx.fillRect(100, 20, 80, 40)
 }
 
+function drawTriangle() {
+  ctx.beginPath()
+  ctx.moveTo(300, 20)
+  ctx.lineTo(300, 80)
+  ctx.lineTo(360, 20)
+  // closePath() 可以自动将终点和起始点连接起来
+  ctx.closePath()
+  ctx.lineWidth = 10
+  // 线条连接的样式。miter: 默认; bevel: 斜面; round: 圆角
+  ctx.lineJoin = 'bevel'
+  ctx.strokeStyle = 'orange'
+  ctx.stroke()
+}
+
 onMounted(() => {
   // 清空画布
   ctx.clearRect(0, 0, 500, 500)
   drawLine()
   drawCircle(240, 40, 30, '#1fa')
   drawRect()
+  drawTriangle()
 })
 </script>
 
