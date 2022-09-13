@@ -104,3 +104,21 @@ ctx.strokeStyle = 'cyan'
 ctx.closePath()
 ctx.stroke()
 ```
+
+6、弧形
+
+```js
+// 1. arc() 30度的弧形, 不使用closePath()即可
+ctx.beginPath()
+ctx.arc(-50, 120, 100, 0, 30 * Math.PI / 180)
+ctx.strokeStyle = 'yellow'
+ctx.stroke()
+
+// 2. arcTo()
+ctx.beginPath()
+ctx.moveTo(80, 120)
+ctx.arcTo(150, 120, 150, 150, 50)
+ctx.strokeStyle = 'pink'
+ctx.stroke()
+```
+

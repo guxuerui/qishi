@@ -54,6 +54,21 @@ function drawRhombus() {
   ctx.stroke()
 }
 
+function drawArc() {
+  ctx.beginPath()
+  ctx.arc(-50, 120, 100, 0, 30 * Math.PI / 180)
+  ctx.strokeStyle = 'yellow'
+  ctx.stroke()
+}
+
+function drawAcr2() {
+  ctx.beginPath()
+  ctx.moveTo(80, 120)
+  ctx.arcTo(150, 120, 150, 150, 50)
+  ctx.strokeStyle = 'pink'
+  ctx.stroke()
+}
+
 onMounted(() => {
   // 清空画布
   ctx.clearRect(0, 0, 500, 500)
@@ -62,6 +77,8 @@ onMounted(() => {
   drawRect()
   drawTriangle()
   drawRhombus()
+  drawArc()
+  drawAcr2()
 })
 </script>
 
