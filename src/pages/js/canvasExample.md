@@ -67,6 +67,8 @@ ctx.fillRect(100, 20, 80, 40) // 填充
 
 ```js
 // 不使用beginPath()方法新开路径会造成图形之间样式互相影响
+// arc(横坐标, 纵坐标, 半径, 开始角度, 结束角度, 绘制方向)
+// 绘制方向 -> true: 逆时针, false -> 顺时针，默认为false
 ctx.beginPath()
 ctx.arc(240, 40, 30, 0, 2 * Math.PI)
 ctx.fillStyle = '#1fa'
