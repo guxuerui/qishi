@@ -42,6 +42,18 @@ function drawTriangle() {
   ctx.stroke()
 }
 
+function drawRhombus() {
+  ctx.beginPath()
+  ctx.moveTo(380, 50)
+  ctx.lineTo(430, 80)
+  ctx.lineTo(480, 50)
+  ctx.lineTo(430, 20)
+  ctx.lineWidth = 5
+  ctx.strokeStyle = 'cyan'
+  ctx.closePath()
+  ctx.stroke()
+}
+
 onMounted(() => {
   // 清空画布
   ctx.clearRect(0, 0, 500, 500)
@@ -49,6 +61,7 @@ onMounted(() => {
   drawCircle(240, 40, 30, '#1fa')
   drawRect()
   drawTriangle()
+  drawRhombus()
 })
 </script>
 

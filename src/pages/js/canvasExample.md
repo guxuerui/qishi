@@ -88,3 +88,17 @@ ctx.lineJoin = 'bevel'
 ctx.strokeStyle = 'orange'
 ctx.stroke()
 ```
+
+5、菱形
+
+```js
+ctx.beginPath()
+ctx.moveTo(380, 50)
+ctx.lineTo(430, 80)
+ctx.lineTo(480, 50)
+ctx.lineTo(430, 20)
+ctx.lineWidth = 5
+ctx.strokeStyle = 'cyan'
+ctx.closePath()
+ctx.stroke()
+```
