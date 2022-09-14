@@ -2,7 +2,7 @@
 import CanvasExample from '~/components/CanvasExample.vue'
 </script>
 
-# canvas从入门到放弃
+# canvas基础使用示例
 
 > Canvas用JS动态生成元素，可绘制路径、矩形、圆形、字符等各种图案，可用于动画、游戏、可视化、图片编辑等领域
 
@@ -45,6 +45,7 @@ ctx.beginPath() // 开始路径
 ctx.moveTo(0, 0) // 移动坐标, 线的开始坐标
 ctx.lineTo(60, 80) // 线的结束坐标
 ctx.lineTo(60, 20)
+// ctx.setLineDash([10]) // 虚线
 ctx.lineWidth = 5 // 线的粗细
 ctx.strokeStyle = '#29f' // 线的颜色
 ctx.lineCap = 'round' // 线结尾处的样式，默认为butt, 可选roude、square
