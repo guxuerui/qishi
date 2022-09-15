@@ -69,6 +69,15 @@ function drawAcr2() {
   ctx.stroke()
 }
 
+function drawText() {
+  // 在绘制文字的时候，默认是以文字的左下角作为参考点进行绘制
+  ctx.font = '60px Arial'
+  ctx.strokeStyle = '#ccf'
+  ctx.fillStyle = '#191'
+  ctx.strokeText('骑誓', 200, 170)
+  ctx.fillText('骑誓', 200, 170)
+}
+
 onMounted(() => {
   // 清空画布
   ctx.clearRect(0, 0, 500, 500)
@@ -79,6 +88,7 @@ onMounted(() => {
   drawRhombus()
   drawArc()
   drawAcr2()
+  drawText()
 })
 </script>
 

@@ -123,3 +123,16 @@ ctx.strokeStyle = 'pink'
 ctx.stroke()
 ```
 
+7、文本
+
+```js
+// 在绘制文字的时候，默认是以文字的左下角作为参考点进行绘制
+// ctx.textAlign = 'start / end / left / right / center'
+// ctx.textBaseline = 'alphabetic / top / bottom / middle / hanging'
+ctx.font = '60px Arial'
+ctx.strokeStyle = '#ccf'
+ctx.fillStyle = '#191'
+ctx.strokeText('骑誓', 200, 170)
+ctx.fillText('骑誓', 200, 170)
+```
+
