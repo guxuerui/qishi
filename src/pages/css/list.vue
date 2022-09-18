@@ -12,7 +12,7 @@ const postList = ref<Post[]>([
     title: 'CSS语法之filter',
     date: '2022-08-30',
     folder: 'css',
-    fileName: 'filter',
+    fileName: 'CssFilter',
   },
   {
     title: 'CSS语法之attr()',

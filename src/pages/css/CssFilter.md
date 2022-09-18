@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Filter from '~/components/filter.vue'
+import CssFilter from '~/components/CssFilter.vue'
 </script>
 
 # CSS语法之filter
@@ -8,7 +8,7 @@ import Filter from '~/components/filter.vue'
 
 下面列举一些常用的属性
 
-<Filter />
+<CssFilter />
 
 CSS使用示例
 
