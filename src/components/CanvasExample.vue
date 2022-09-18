@@ -94,6 +94,16 @@ function splitImg() {
   }
 }
 
+function drawFilterImg() {
+  ctx.beginPath()
+  const image = new Image()
+  image.src = '/imgs/street.jpeg'
+  image.onload = () => {
+    ctx.filter = 'contrast(1.4) sepia(1) drop-shadow(-9px 9px 2px #e81) blur(3px)'
+    ctx.drawImage(image, 20, 350, 220, 140)
+  }
+}
+
 onMounted(() => {
   // 清空画布
   ctx.clearRect(0, 0, 500, 500)
@@ -107,6 +117,7 @@ onMounted(() => {
   drawText()
   drawImg()
   splitImg()
+  drawFilterImg()
 })
 </script>
 

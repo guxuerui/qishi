@@ -168,3 +168,16 @@ image.onload = () => {
   ctx.drawImage(image, 800, 100, 500, 400, 250, 200, 220, 140)
 }
 ```
+
+10、滤镜图片
+
+```js
+// 测试 Safari 浏览器不兼容
+ctx.beginPath()
+const image = new Image()
+image.src = '/imgs/street.jpeg'
+image.onload = () => {
+  ctx.filter = 'sepia(1) drop-shadow(-9px 9px 2px #e81) blur(3px)'
+  ctx.drawImage(image, 20, 350, 220, 140)
+}
+```
