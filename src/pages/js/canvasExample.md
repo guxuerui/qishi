@@ -136,3 +136,35 @@ ctx.strokeText('骑誓', 200, 170)
 ctx.fillText('骑誓', 200, 170)
 ```
 
+8、图片
+
+```js
+const image = new Image()
+image.src = '/imgs/street.jpeg'
+image.onload = () => {
+  // ctx.image(image, 横坐标, 纵坐标, 宽, 高)
+  ctx.drawImage(image, 20, 200, 220, 140)
+}
+```
+
+9、截取图片
+
+```js
+const image = new Image()
+image.src = '/imgs/street.jpeg'
+image.onload = () => {
+  /*
+    参数按顺序依次为:
+    image,
+    开始截取横坐标,
+    结束截取纵坐标,
+    截取宽,
+    截取高,
+    图片横坐标,
+    图片纵坐标,
+    图片宽,
+    图片高
+  */
+  ctx.drawImage(image, 800, 100, 500, 400, 250, 200, 220, 140)
+}
+```

@@ -78,6 +78,22 @@ function drawText() {
   ctx.fillText('骑誓', 200, 170)
 }
 
+function drawImg() {
+  const image = new Image()
+  image.src = '/imgs/street.jpeg'
+  image.onload = () => {
+    ctx.drawImage(image, 20, 200, 220, 140)
+  }
+}
+
+function splitImg() {
+  const image = new Image()
+  image.src = '/imgs/street.jpeg'
+  image.onload = () => {
+    ctx.drawImage(image, 800, 100, 500, 400, 250, 200, 220, 140)
+  }
+}
+
 onMounted(() => {
   // 清空画布
   ctx.clearRect(0, 0, 500, 500)
@@ -89,6 +105,8 @@ onMounted(() => {
   drawArc()
   drawAcr2()
   drawText()
+  drawImg()
+  splitImg()
 })
 </script>
 
