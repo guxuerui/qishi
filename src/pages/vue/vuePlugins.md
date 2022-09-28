@@ -26,8 +26,8 @@ export default {
 
 ```ts
 // main.ts
-import i18nbPlugin from './plugins/i18n'
-app.use(i18nbPlugin, {
+import i18nPlugin from './plugins/i18n'
+app.use(i18nPlugin, {
   page: {
     title: 'My Page'
   }
