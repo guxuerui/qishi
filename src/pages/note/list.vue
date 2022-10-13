@@ -3,7 +3,7 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
-    title: 'vim快捷操作',
+    title: '常用vim快捷操作',
     date: '2022-09-21',
     folder: 'note',
     fileName: 'vimOperator',
