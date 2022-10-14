@@ -19,7 +19,8 @@
     ],
     "paths": {
       "~/*": ["src/*"]
-    }
+    },
+    "noImplicitAny": false
   },
   "exclude": ["dist", "node_modules"]
 }
