@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: '创建函数式组件',
+    date: '2022-10-14',
+    folder: 'vue',
+    fileName: 'functionalComp',
+  },
+  {
     title: '在Vue3和Ts项目中注册全局插件',
     date: '2022-09-28',
     folder: 'vue',
