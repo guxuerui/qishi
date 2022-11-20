@@ -11,13 +11,13 @@
 
 ```ts
 // type
-type A = string
-type B = number[]
-type C = (num: number) => number
-type D = {
-  age: number
-  name: sting
-}
+// type A = string
+// type B = number[]
+// type C = (num: number) => number
+// type D = {
+//   age: number
+//   name: string
+// }
 
 // interface
 interface Sum {
@@ -35,17 +35,17 @@ interface Person {
 // 数字枚举
 // 不指定值，则默认为数字，从 0 开始
 enum Direction {
-  Up,    // 0
-  Down,  // 1
-  Left,  // 2
+  Up, // 0
+  Down, // 1
+  Left, // 2
   Right, // 3
 }
 
 // 指定一个值，则后续的未指定的枚举项回进行自增
 enum Direction2 {
-  Up = 1,// 1
-  Down,  // 2
-  Left,  // 3
+  Up = 1, // 1
+  Down, // 2
+  Left, // 3
   Right, // 4
 }
 
