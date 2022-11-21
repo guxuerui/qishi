@@ -49,20 +49,26 @@ const jumpPage = (folder: string, name: string) => {
       <a
         v-for="(item, i) in links"
         :key="i"
-        class="mr-3 c-gray-500 hover:c-black dark:hover:c-white cursor-pointer"
+        class="mr-3 c-gray-500 cursor-pointer"
+        hover="c-black border-b-2 border-b-orange"
+        dark:hover="c-white"
         @click="jumpPage(item.folder, item.fileName)"
       >
         {{ item.name }}
       </a>
       <button
-        class="icon-btn !outline-none vertical-sub c-gray-800 dark:c-gray-400 hover:c-black dark:hover:c-white"
+        class="icon-btn !outline-none vertical-sub c-gray-800 dark:c-gray-400"
+        hover="c-black"
+        dark:hover="c-white"
         @click="toggleDark()"
       >
         <div v-if="isDarkMode" i-carbon-moon />
         <div v-else i-carbon-sun />
       </button>
       <a
-        class="vertical-sub ml-3 c-gray-400 hover:c-black dark:hover:c-white"
+        class="vertical-sub ml-3 c-gray-400"
+        hover="c-black"
+        dark:hover="c-white"
         rel="noreferrer"
         href="https://github.com/guxuerui"
         target="_blank"
