@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: '纵览TypeScript(三)',
+    date: '2022-11-26',
+    folder: 'note',
+    fileName: 'overviewTs3',
+  },
+  {
     title: '纵览TypeScript(二)',
     date: '2022-11-22',
     folder: 'note',
