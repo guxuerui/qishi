@@ -82,3 +82,97 @@ type Upper<T extends string> = T extends 'a'
 
 type B = Upper<'b'> // 'B'
 ```
+
+## 5. 泛型与条件和类型推断变量
+
+这里要引入一个关键词 `infer`
+
+`infer` 可以在 `X extends Y ? expr1 : expr2` 的 `Y` 中使用类型变量，并且这个类型变量，可以在后续的 `expr1` 中使用
+
+例如当需要得到函数的返回值的类型可以如下操作:
+
+```ts
+type ReturnType<T> = T extends ((...args: any) => infer R) ? R : never
+
+type GetSum = (a: number, b: number) => number
+
+type A = ReturnType<GetSum> // number
+```
+
+其中，`R` 是类型推断变量, **`extends` 是一个大忙人:**
+
+- 在JS中，担当类的继承重担，例如 `App extends Component`
+- 在TS中，担当泛型约束，例如 `type ToUpper<S extends string> === xxx`
+- 在TS类型中，条件判断的关键词 `type ReturnType<T> = T extends () => infer R ? R : never`
+
+## 6. 内置泛型工具
+
+TS内置了一些极其有用的泛型工具:
+
+```ts
+interface Person {
+  name: string
+  age: number
+  id: number
+}
+
+// Pick 挑选出指定属性，生成新对象类型
+type UserInfo = Pick<Person, 'name' | 'age'> // 挑选出 { name: string; age: number }
+
+// Omit 排除指定的属性，生成新的对象类型
+type UserInfo2 = Omit<Person, 'id'> // 排除id, 生成 { name: string; age: number }
+
+// Partial 将对象所有属性变为可选
+type PartialPerson = Partial<Person> // { name?: string; age?: number; id?: number }
+
+// Readonly 将对象所有属性变为只读
+type ReadonlyPerson = Readonly<Person> // { readonly name: string; readonly age: number; readonly id: number}
+
+// Record 生成对象类型
+type PersonMap = Record<number, Person> // { [index: number]: Person }
+
+// Exclude 排除指定key，返回联合类型
+type UserInfoKeys = Exclude<keyof Person, 'id'> // 'name' | 'age'
+```
+
+## 7. 实例
+
+- 传递多种类型的参数
+
+```ts
+// 参数类型为number
+function Person(arg: number): number {
+  return arg
+}
+
+// 参数类型变为string
+function Person(arg: string): string {
+  return arg
+}
+
+// 参数类型变为number或string
+function Person(arg: number | string): number | string {
+  return arg
+}
+
+// 使用泛型解决上述问题
+function Person<T>(arg: T): T {
+  return arg
+}
+
+// 以泛型方式调用, 都是正常的
+Person(22)
+Person('33')
+Person(true)
+```
+
+- 约束检查对象上是否存在 key
+
+```ts
+const Obj = { one: 'list', two: 'topic' }
+function getType<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key]
+}
+getType(Obj, 'one')
+getType(Obj, 'four') // // error, type 类型 `four` 的参数不能赋给类型"one" | "two"的参数
+```
