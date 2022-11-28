@@ -174,5 +174,6 @@ function getType<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key]
 }
 getType(Obj, 'one')
-getType(Obj, 'four') // // error, type 类型 `four` 的参数不能赋给类型"one" | "two"的参数
+getType(Obj, 'four')
+// error, type 类型 `four` 的参数不能赋给类型"one" | "two"的参数
 ```
