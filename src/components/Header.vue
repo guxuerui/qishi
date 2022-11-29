@@ -70,7 +70,7 @@ const jumpPage = (folder: string, name: string) => {
         hover="c-black"
         dark:hover="c-white"
         rel="noreferrer"
-        href="https://github.com/guxuerui"
+        href="https://github.com/guxuerui/qishi"
         target="_blank"
         title="GitHub"
       >
