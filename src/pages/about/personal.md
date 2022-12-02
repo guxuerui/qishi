@@ -6,14 +6,14 @@
 * 工作年限: 5年
 * 目标职位: 前端开发工程师
 * 个人邮箱: im.guxuerui@gmail.com
-* 个人仓库: https://github.com/guxuerui
-* 个人博客: https://www.guxuerui.cn
+* 个人仓库: <https://github.com/guxuerui>
+* 个人博客: <https://www.guxuerui.cn>
 
 ## 专业技能
 
 * 熟练掌握JS、TS、ES6、HTML5、CSS3，可以脱离框架独立进行项目开发
 * 熟练使用vue2、vue3等Vue全家桶开发
-* 熟悉webpack、vite等打包工具使用
+* 熟练使用webpack、vite等打包工具
 * 熟练使用Echarts、Apexcharts、antv/g6等可视化图表工具
 * 熟练使用Canvas，了解Three.js
 * 熟练使用Git，熟悉常用的shell命令并可熟练使用
@@ -47,7 +47,7 @@
 1. 使用`vite`、`vuetify`、`BalmUI`进行项目框架搭建，包括登录、权限、拓扑图(antv/g6)、告警等页面开发
 2. 封装`Axios`，对token和请求错误码做统一拦截处理并弹窗提示，大幅提高联调接口效率
 3. 使用`composables`方法提炼逻辑代码，提高代码复用效率, 提升了个人及团队成员开发效率
-4. 封装页面公共组件，包括但不限于二次封装BalmUI表格组件、日期选择组件、二次封装Vuetify表单组件、状态指示灯组件( https://github.com/guxuerui/vue3-status-indicator)，极大提高了团队成员的开发效率
+4. 封装页面公共组件，包括但不限于二次封装BalmUI表格组件、日期选择组件、二次封装Vuetify表单组件、状态指示灯组件( <https://github.com/guxuerui/vue3-status-indicator>)，极大提高了团队成员的开发效率
 5. 使用`xlsx.js`实现纯前端表格数据导出
 6. 使用`vue-i18n`实现中日英国际化
 7. 使用`antv/g6`实现网元结构拓扑图，并封装`useNodeImage`方法，根据不同节点类型及节点状态动态渲染节点图片
