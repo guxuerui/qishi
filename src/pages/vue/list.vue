@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: '发布vue3组件到npm',
+    date: '2022-12-04',
+    folder: 'vue',
+    fileName: 'publishComp',
+  },
+  {
     title: '创建函数式组件',
     date: '2022-10-14',
     folder: 'vue',
@@ -44,4 +50,3 @@ const postList = ref<Post[]>([
 <template>
   <PostList :posts="postList" />
 </template>
-
