@@ -1,9 +1,9 @@
 <script setup lang="ts">
-// const router = useRouter()
-// const jumpPage = (folder: string, name: string) => {
-//   if (folder && name)
-//     router.push(`/${folder}/${encodeURIComponent(name)}`)
-// }
+const router = useRouter()
+const jumpPage = (folder: string, name: string) => {
+  if (folder && name)
+    router.push(`/${folder}/${encodeURIComponent(name)}`)
+}
 
 // judge whether the browser is Safari
 // const isSafari = () => {
@@ -22,6 +22,7 @@
     </p>
     <div mt-4 class="text-linear">
       <!-- <a class="cursor-pointer" @click="jumpPage('about', 'personal')">我的个人简历</a> -->
+      <a class="mr-3 cursor-pointer" @click="jumpPage('about', 'lifeTimeline')">光阴长河</a>
       <a href="https://github.com/guxuerui" target="_blank">我的Github</a>
     </div>
   </div>

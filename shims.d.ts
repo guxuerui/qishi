@@ -13,3 +13,4 @@ declare module '*.md' {
 declare module 'vite-plugin-vue-markdown'
 declare module 'markdown-it-prism'
 declare module '@vueuse/head'
+declare module 'pretty-timeline'
