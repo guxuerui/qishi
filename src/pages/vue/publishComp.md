@@ -101,16 +101,38 @@ export default defineConfig ({
 
 ## 6. 使用发布到npm的包
 
+> [About Issue](https://github.com/vuejs/core/issues/2064)
+
 如果发布前使用 `npm link` 对包进行了测试，那么在 `npm install` 后使用组件可能会报错，导致组件不能渲染,
-原因大概是因为 `vue源码` 执行了两次，需要在 `vite.config.ts` 中加上如下配置
+原因大概是因为 `vue源码` 执行了两次, 需要添加如下配置
+
+- 如果使用 `vite`
 
 ```ts
+// vite.config.ts
 import { defineConfig } from 'vite'
 
 export default defineConfig ({
   resolve: {
-    // 启用此选项会使 Vite 通过原始文件路径（即不跟随符号链接的路径）而不是真正的文件路径（即跟随符号链接后的路径）确定文件身份
-    preserveSymlinks: true,
+    dedupe: ['vue'],
   },
 })
+```
+
+- 如果使用 `webpack`
+
+```ts
+// vue.config.js
+const path = require('path')
+
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      symlinks: false,
+      alias: {
+        vue: path.resolve('./node_modules/vue')
+      }
+    }
+  }
+}
 ```
