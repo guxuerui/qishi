@@ -12,6 +12,7 @@ import prism from 'markdown-it-prism'
 
 export default defineConfig({
   resolve: {
+    dedupe: ['vue'],
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
@@ -67,5 +68,9 @@ export default defineConfig({
   // https://github.com/vitest-dev/vitest
   test: {
     environment: 'jsdom',
+    globals: true,
+    threads: false,
+    watch: false,
+    include: ['**/*.test.{js,tsx,ts}'],
   },
 })

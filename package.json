@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "markdown-it-prism": "^2.2.4",
+    "pretty-timeline": "^1.1.8",
     "vite-plugin-vue-markdown": "^0.1.1",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
