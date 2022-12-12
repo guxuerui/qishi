@@ -3,8 +3,14 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: 'CSS水平垂直居中方法大全',
+    date: '2022-12-12',
+    folder: 'css',
+    fileName: 'VerticalCenter',
+  },
+  {
     title: '3D立方体',
-    date: '2022-00-01',
+    date: '2022-09-01',
     folder: 'css',
     fileName: 'cube3D',
   },
@@ -32,4 +38,3 @@ const postList = ref<Post[]>([
 <template>
   <PostList :posts="postList" />
 </template>
-
