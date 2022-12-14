@@ -117,25 +117,47 @@ interface Person {
 }
 
 // Pick 挑选出指定属性，生成新对象类型
-type UserInfo = Pick<Person, 'name' | 'age'> // 挑选出 { name: string; age: number }
+// 挑选出 { name: string; age: number }
+type UserInfo = Pick<Person, 'name' | 'age'>
 
 // Omit 排除指定的属性，生成新的对象类型
-type UserInfo2 = Omit<Person, 'id'> // 排除id, 生成 { name: string; age: number }
+// 排除id, 生成 { name: string; age: number }
+type UserInfo2 = Omit<Person, 'id'>
 
 // Partial 将对象所有属性变为可选
-type PartialPerson = Partial<Person> // { name?: string; age?: number; id?: number }
+// -> { name?: string; age?: number; id?: number }
+type PartialPerson = Partial<Person>
+
+// Required 将对象所有属性变为必选
+// -> { name: string; age: number; id: number }
+type RequiredPerson = Required<PartialPerson>
 
 // Readonly 将对象所有属性变为只读
-type ReadonlyPerson = Readonly<Person> // { readonly name: string; readonly age: number; readonly id: number}
+// -> { readonly name: string; readonly age: number; readonly id: number}
+type ReadonlyPerson = Readonly<Person>
 
 // Record 生成对象类型
-type PersonMap = Record<number, Person> // { [index: number]: Person }
+// -> { [index: number]: Person }
+type PersonMap = Record<number, Person>
 
 // Exclude 排除指定key，返回联合类型
-type UserInfoKeys = Exclude<keyof Person, 'id'> // 'name' | 'age'
+// -> 'name' | 'age'
+type UserInfoKeys = Exclude<keyof Person, 'id'>
+
+// Extract 选定指定key，返回联合类型
+// -> 'name' | 'age'
+type ExtractInfoKeys = Extract<keyof Person, 'name' | 'age'>
+
+// NonNullable 去除类型中包含的null或undefined
+// -> string
+type NonNullableType = NonNullable<string | null | undefined>
+
+// ReturnType 得到一个函数的返回值类型
+type Func = (value: number) => string
+const foo: ReturnType<Func> = '1' // ✅
 ```
 
-## 7. 实例
+## 7. 示例
 
 - 传递多种类型的参数
 
