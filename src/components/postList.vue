@@ -22,13 +22,10 @@ const jumpPage = (folder: string, name: string) => {
       <a
         class="cursor-pointer c-gray-600 hover:c-black dark:c-gray-400 dark:hover:c-white"
         @click="jumpPage(item.folder, item.fileName)"
-      >
-        {{ item.title }}
-      </a>
+      >{{ item.title }}</a>
       <div class="flex items-center c-gray-600 dark:c-gray-400">
         {{ item.date }}
       </div>
     </li>
   </ul>
 </template>
-
