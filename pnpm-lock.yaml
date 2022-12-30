@@ -17,7 +17,7 @@ specifiers:
   jsdom: ^19.0.0
   markdown-it-prism: ^2.2.4
   pnpm: ^7.1.7
-  pretty-timeline: ^1.1.8
+  pretty-timeline: ^1.1.10
   prismjs: ^1.28.0
   typescript: ^4.7.2
   unocss: ^0.37.2
@@ -37,7 +37,7 @@ dependencies:
   axios: 0.27.2
   canvas-confetti: 1.5.1
   markdown-it-prism: registry.npmmirror.com/markdown-it-prism/2.2.4
-  pretty-timeline: 1.1.8_vite@2.9.9
+  pretty-timeline: 1.1.10_vite@2.9.9
   vite-plugin-vue-markdown: registry.npmmirror.com/vite-plugin-vue-markdown/0.1.1_vite@2.9.9
   vue: 3.2.36
   vue-router: 4.0.15_vue@3.2.36
@@ -272,8 +272,8 @@ packages:
       - supports-color
     dev: true
 
-  /@mdit-vue/plugin-component/0.11.1:
-    resolution: {integrity: sha512-fCqyYPwEXFa182/Vz6g8McDi3SCIwm3yHWkWddHx+QNn0gMGFqkhJVcz/wjCIA3oCoWUBWM80aZ09ZuoQiOmvQ==}
+  /@mdit-vue/plugin-component/0.11.2:
+    resolution: {integrity: sha512-ucFiEULCkLcCG1Tf1MfG5u5PS4BIXWIeKGHRGsXxz1ix2GbZWKFVgWEdNEckBu8s75Fv1WJLIOiAYZyri2f1nw==}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
@@ -1081,8 +1081,8 @@ packages:
       - debug
     dev: false
 
-  /axios/1.2.1:
-    resolution: {integrity: sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==}
+  /axios/1.2.2:
+    resolution: {integrity: sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==}
     dependencies:
       follow-redirects: 1.15.1
       form-data: 4.0.0
@@ -3372,12 +3372,12 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /pretty-timeline/1.1.8_vite@2.9.9:
-    resolution: {integrity: sha512-GnndKMwQV0KoMC68fWFZd6QfajhGAHyVSv4k0cYBv0TDBxL25pTCUeRw4nW/lOyiinQHkSWo7X+QrwQnUY1vqQ==}
+  /pretty-timeline/1.1.10_vite@2.9.9:
+    resolution: {integrity: sha512-jrzlpO1ES4SS2nLaCcBSRoDnF41Djv7D1RGxhFIHHPo1FtmYkivhh/WWqVCR8NkGFmc8SoYVm/moAW+RMZzZMw==}
     dependencies:
       '@vueuse/core': 9.1.0_vue@3.2.45
       '@vueuse/head': 0.7.9_vue@3.2.45
-      axios: 1.2.1
+      axios: 1.2.2
       canvas-confetti: 1.6.0
       markdown-it-prism: 2.3.0
       vite-plugin-vue-markdown: 0.22.1_vite@2.9.9
@@ -4048,7 +4048,7 @@ packages:
       vite: ^2.0.0 || ^3.0.0-0
     dependencies:
       '@antfu/utils': 0.5.2
-      '@mdit-vue/plugin-component': 0.11.1
+      '@mdit-vue/plugin-component': 0.11.2
       '@mdit-vue/plugin-frontmatter': 0.11.1
       '@mdit-vue/types': 0.11.0
       '@rollup/pluginutils': 4.2.1
