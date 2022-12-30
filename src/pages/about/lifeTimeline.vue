@@ -5,7 +5,7 @@ import { timelineArr } from '~/composables/useTimelineData'
 </script>
 
 <template>
-  <PrettyTimeline :timeline-data="timelineArr" />
+  <PrettyTimeline base-color="#09afaf" :timeline-data="timelineArr" />
 </template>
 
 <style scoped>
