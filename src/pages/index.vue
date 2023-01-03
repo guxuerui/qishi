@@ -4,11 +4,6 @@ const jumpPage = (folder: string, name: string) => {
   if (folder && name)
     router.push(`/${folder}/${encodeURIComponent(name)}`)
 }
-
-// judge whether the browser is Safari
-// const isSafari = () => {
-//   return /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)
-// }
 </script>
 
 <template>
