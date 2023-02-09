@@ -16,7 +16,7 @@ const jumpPage = (folder: string, name: string) => {
       平时喜欢听歌、看动漫、骑行、看书、写代码, 做一些有意思的小项目
     </p>
     <div mt-4 class="text-linear">
-      <!-- <a class="cursor-pointer" @click="jumpPage('about', 'personal')">我的个人简历</a> -->
+      <a class="cursor-pointer mr-4" @click="jumpPage('about', 'personal')">我的个人简历</a>
       <!-- <a class="mr-3 cursor-pointer" @click="jumpPage('about', 'lifeTimeline')">光阴长河</a> -->
       <a href="https://github.com/guxuerui" target="_blank">我的Github</a>
     </div>
