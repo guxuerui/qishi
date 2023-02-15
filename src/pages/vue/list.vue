@@ -3,6 +3,12 @@ import type { Post } from '~/types'
 
 const postList = ref<Post[]>([
   {
+    title: 'Vue中监听组合按键',
+    date: '2023-02-15',
+    folder: 'vue',
+    fileName: 'mointorKey',
+  },
+  {
     title: '发布vue3组件到npm',
     date: '2022-12-04',
     folder: 'vue',
