@@ -1,27 +1,29 @@
 <script setup lang="ts">
-const links = ref([
+import type { Post } from '~/types'
+
+const links = ref<Omit<Post, 'date'>[]>([
   {
-    name: 'Vue',
+    title: 'Vue',
     fileName: 'list',
     folder: 'vue',
   },
   {
-    name: 'Js',
+    title: 'Js',
     fileName: 'list',
     folder: 'js',
   },
   {
-    name: 'Css',
+    title: 'Css',
     fileName: 'list',
     folder: 'css',
   },
   {
-    name: 'Note',
+    title: 'Note',
     fileName: 'list',
     folder: 'note',
   },
   {
-    name: 'Game',
+    title: 'Game',
     fileName: 'list',
     folder: 'game',
   },
@@ -32,9 +34,9 @@ const isDarkMode = computed(() => {
 })
 
 const router = useRouter()
-const jumpPage = (folder: string, name: string) => {
-  if (folder && name)
-    router.push(`/${folder}/${encodeURIComponent(name)}`)
+const jumpPage = (folder: string, title: string) => {
+  if (folder && title)
+    router.push(`/${folder}/${encodeURIComponent(title)}`)
 }
 </script>
 
@@ -54,7 +56,7 @@ const jumpPage = (folder: string, name: string) => {
         dark:hover="c-white"
         @click="jumpPage(item.folder, item.fileName)"
       >
-        {{ item.name }}
+        {{ item.title }}
       </a>
       <button
         class="icon-btn !outline-none vertical-sub c-gray-800 dark:c-gray-400"
