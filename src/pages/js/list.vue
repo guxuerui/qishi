@@ -1,28 +1,7 @@
 <script setup lang="ts">
-import type { Post } from '~/types'
-
-const postList = ref<Post[]>([
-  {
-    title: 'canvas基础使用示例',
-    date: '2022-09-07',
-    folder: 'js',
-    fileName: 'canvasExample',
-  },
-  {
-    title: '序列生成器range方法',
-    date: '2022-09-01',
-    folder: 'js',
-    fileName: 'range',
-  },
-  {
-    title: '找出数组中只出现过一次的数',
-    date: '2022-07-25',
-    folder: 'js',
-    fileName: 'singleNumber',
-  },
-])
+import { jsPostList } from '~/composables/jsPost'
 </script>
 
 <template>
-  <PostList :posts="postList" />
+  <PostList :posts="jsPostList" />
 </template>
