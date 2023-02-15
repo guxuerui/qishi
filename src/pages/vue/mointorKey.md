@@ -29,7 +29,7 @@
 import { onBeforeUnmount, onMounted } from 'vue'
 import { useEventListener } from '@vueuse/core'
 
-function handleKeyDown(e) {
+function handleKeyDown(e: KeyboardEvent) {
   if ((e.metaKey || e.ctrlKey) && e.code === 'KeyK') {
     console.log(e.code, e.key)
     console.log('Command (Mac) or Ctrl (Windows) + K was pressed')
@@ -38,10 +38,8 @@ function handleKeyDown(e) {
   }
 }
 
-onMounted(() => {
-  const cleanup = useEventListener(document, 'keydown', (e) => {
-    handleKeyDown()
-  })
+const cleanup = useEventListener(document, 'keydown', (e: KeyboardEvent) => {
+  handleKeyDown()
 })
 
 onBeforeUnmount(() => {
