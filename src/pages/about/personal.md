@@ -9,6 +9,12 @@
 * 个人仓库: <https://github.com/guxuerui>
 * 个人博客: <https://www.guxuerui.cn>
 
+## 个人作品
+
+1. [pretty-timeline](https://github.com/guxuerui/pretty-timeline)
+2. [vue3-status-indicator](https://github.com/guxuerui/vue3-status-indicator)
+3. [vue3-signage](https://github.com/guxuerui/vue3-signage)
+
 ## 专业技能
 
 * 熟练掌握JS、TS、ES6、HTML5、CSS3，可脱离框架独立进行项目开发
