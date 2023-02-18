@@ -9,10 +9,16 @@ defineProps({
   },
 })
 
+const emit = defineEmits<{
+  (e: 'jumped'): void
+}>()
+
 const router = useRouter()
 const jumpPage = (folder: string, name: string) => {
   if (folder && name)
     router.push(`/${folder}/${encodeURIComponent(name)}`)
+
+  emit('jumped')
 }
 </script>
 
