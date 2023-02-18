@@ -18,6 +18,7 @@ const emit = defineEmits<{
   (e: 'cancel'): void
 }>()
 
+const target = ref(null)
 const searchVal = ref('')
 const throttled = refThrottled(searchVal, 1000)
 const postList = ref<Post[]>([])
@@ -34,6 +35,10 @@ const cancel = () => {
   searchVal.value = ''
   emit('cancel')
 }
+
+onClickOutside(target, (e: MouseEvent) => {
+  cancel()
+})
 
 watch(() => throttled.value, (newVal, oldVal) => {
   if (newVal !== oldVal)
@@ -56,9 +61,9 @@ onBeforeUnmount(() => {
     <div
       v-if="open"
       class="out"
-      @keydown.esc="cancel"
     >
       <div
+        ref="target"
         w-120
         mx-auto pa-4
         bg="gray-800"
