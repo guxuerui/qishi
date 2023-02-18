@@ -10,7 +10,7 @@ import type { Post } from '~/types'
 interface Props {
   open: boolean
 }
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   open: false,
 })
 
@@ -29,6 +29,7 @@ const target = ref(null)
 const searchVal = ref('')
 const throttled = refThrottled(searchVal, 1000)
 const postList = ref<Post[]>([])
+const recentPostList = ref<Post[]>([])
 const search = () => {
   if (!searchVal.value)
     return postList.value = []
@@ -47,10 +48,20 @@ onClickOutside(target, (e: MouseEvent) => {
   cancel()
 })
 
+const clearRecent = () => {
+  localStorage.setItem('recentPost', '')
+  recentPostList.value = []
+}
+
 watch(() => throttled.value, (newVal, oldVal) => {
   if (newVal !== oldVal)
     search()
 })
+
+watch(() => props.open, (newVal, oldVal) => {
+  if (newVal)
+    recentPostList.value = JSON.parse(localStorage.getItem('recentPost') || '[]')
+}, { immediate: true })
 
 // 监听ESC
 const cleanup = useEventListener(document, 'keydown', (e: KeyboardEvent) => {
@@ -91,7 +102,16 @@ onBeforeUnmount(() => {
           outline="none active:none"
           @keydown.enter="search"
         >
-        <PostList class="px-1 mt-4" :posts="postList" @jumped="cancel" />
+        <div v-if="!searchVal && recentPostList.length">
+          <div text="#1DB954" my-3 flex="~" justify-between items-center>
+            <span>Recent Files</span>
+            <span text="sm" cursor-pointer @click="clearRecent">
+              清空历史记录
+            </span>
+          </div>
+          <PostList class="px-1" :posts="recentPostList" @jumped="cancel" />
+        </div>
+        <PostList v-else class="px-1 mt-4" :posts="postList" @jumped="cancel" />
         <div flex="~" justify-between b-t="1 solid gray-500" pt-3>
           <span>press esc to close</span>
           <button hover:text="orange" transition="color 1s linear" @click="cancel">
