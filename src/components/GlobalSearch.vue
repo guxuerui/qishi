@@ -18,6 +18,13 @@ const emit = defineEmits<{
   (e: 'cancel'): void
 }>()
 
+// autofocus directive
+const vFocus = {
+  mounted: (el: { focus: () => void }, binding: { }) => {
+    el.focus()
+  },
+}
+
 const target = ref(null)
 const searchVal = ref('')
 const throttled = refThrottled(searchVal, 1000)
@@ -73,9 +80,9 @@ onBeforeUnmount(() => {
         <input
           id="input"
           v-model.trim="searchVal"
+          v-focus
           placeholder="Search Posts"
           type="text"
-          autofocus
           autocomplete="true"
           w-full h-10 pl-3
           text="left"
@@ -86,7 +93,7 @@ onBeforeUnmount(() => {
         >
         <PostList class="px-1 mt-4" :posts="postList" @jumped="cancel" />
         <div flex="~" justify-between b-t="1 solid gray-500" pt-3>
-          <span>esc to close</span>
+          <span>press esc to close</span>
           <button hover:text="orange" transition="color 1s linear" @click="cancel">
             关闭
           </button>
