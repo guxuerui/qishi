@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useEventListener } from '@vueuse/core'
 import type { Post } from '~/types'
 
 const links = ref<Omit<Post, 'date'>[]>([
@@ -38,13 +39,39 @@ const jumpPage = (folder: string, title: string) => {
   if (folder && title)
     router.push(`/${folder}/${encodeURIComponent(title)}`)
 }
+
+// open search modal
+const openSearch = ref(false)
+// 监听 command+K 按键
+function handleKeyDown(e: KeyboardEvent) {
+  if ((e.metaKey || e.ctrlKey) && e.code === 'KeyK') {
+    // 执行操作
+    openSearch.value = true
+    e.preventDefault()
+  }
+}
+
+const cleanup = useEventListener(document, 'keydown', (e: KeyboardEvent) => {
+  handleKeyDown(e)
+})
+
+onBeforeUnmount(() => {
+  cleanup()
+})
 </script>
 
 <template>
   <nav class="header pa-4 link font-mno">
-    <div>
-      <a href="/" class="c-gray-500 hover:c-black dark:hover:c-white">
+    <div class="c-gray-500">
+      <a href="/" class="hover:c-black dark:hover:c-white">
         Home
+      </a>
+      <a class="cursor-pointer hover:c-#1DB954 search-btn" @click="openSearch = true">
+        <span class="inline-block vertical-sub" i-carbon-search />
+        <span border="1px solid c-gray-500 rounded" class="px-1 text-sm search-icon ml-1">
+          <span class="inline-block vertical-sub" i-carbon-mac-command />
+          <span>K</span>
+        </span>
       </a>
     </div>
     <div style="padding-top: 0.3rem">
@@ -80,6 +107,7 @@ const jumpPage = (folder: string, title: string) => {
       </a>
     </div>
   </nav>
+  <global-search :open="openSearch" @cancel="openSearch = false" />
 </template>
 
 <style scoped>
@@ -88,7 +116,10 @@ const jumpPage = (folder: string, title: string) => {
     justify-content: space-between;
     align-items: center;
   }
-  .link div a {
-    transition: color 0.2s ease-in-out;
+  .link div a, search-icon {
+    transition: all 0.2s ease-in-out;
+  }
+  .search-btn:hover .search-icon {
+    border-color: #1DB954;
   }
 </style>
