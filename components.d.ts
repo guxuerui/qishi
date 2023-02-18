@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     Cube3D: typeof import('./src/components/Cube3D.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     FunctionalComp: typeof import('./src/components/FunctionalComp.vue')['default']
+    GlobalSearch: typeof import('./src/components/GlobalSearch.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     Key: typeof import('./src/components/Key.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
