@@ -2,6 +2,14 @@
 import { useEventListener } from '@vueuse/core'
 import type { Post } from '~/types'
 
+const ifMobile = isMobile()
+const showMenuList = ref(false)
+const targetMenu = ref(null)
+onClickOutside(targetMenu, (e: MouseEvent) => {
+  if (showMenuList.value)
+    showMenuList.value = false
+})
+
 const links = ref<Omit<Post, 'date'>[]>([
   {
     title: 'Vue',
@@ -36,6 +44,8 @@ const isDarkMode = computed(() => {
 
 const router = useRouter()
 const jumpPage = (folder: string, title: string) => {
+  showMenuList.value = false
+
   if (folder && title)
     router.push(`/${folder}/${encodeURIComponent(title)}`)
 }
@@ -75,8 +85,38 @@ onBeforeUnmount(() => {
       </a>
     </div>
     <div style="padding-top: 0.3rem">
+      <span v-if="ifMobile" ref="targetMenu">
+        <a
+          class="vertical-sub mr-3 c-gray-400"
+          hover="c-black"
+          position-relative
+          dark:hover="c-white"
+          @click="showMenuList = !showMenuList"
+        >
+          <span class="inline-block" i-carbon-menu />
+        </a>
+        <div
+          v-if="showMenuList"
+          position-absolute
+          bg="gray-100"
+          dark:bg="gray-900"
+          w-20
+          pa-2
+          border="rounded"
+        >
+          <a
+            v-for="(item, i) in links"
+            :key="i"
+            class="c-gray-500 cursor-pointer block mt-1"
+            @click="jumpPage(item.folder, item.fileName)"
+          >
+            {{ item.title }}
+          </a>
+        </div>
+      </span>
       <a
         v-for="(item, i) in links"
+        v-else
         :key="i"
         class="mr-3 c-gray-500 cursor-pointer"
         hover="c-black border-b-2 border-b-orange"
