@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
     >
       <div
         ref="target"
-        w-120
+        max-w-120
         mx-auto pa-4
         bg="gray-800"
         position-relative
