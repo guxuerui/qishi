@@ -8,7 +8,7 @@ const routes = useRoute()
     <router-view />
     <Footer v-if="routes.fullPath !== '/'" />
     <div mt-4>
-      Qishi © 2022
+      Qishi © 2023
     </div>
   </main>
 </template>
