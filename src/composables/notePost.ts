@@ -2,6 +2,12 @@ import type { Post } from '~/types'
 
 export const notePostList = ref<Post[]>([
   {
+    title: '打造你的专属最强IDE--Neovim',
+    date: '2022-03-05',
+    folder: 'note',
+    fileName: 'neovim',
+  },
+  {
     title: '纵览TypeScript之联合类型的操作',
     date: '2022-12-12',
     folder: 'note',
