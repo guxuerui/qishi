@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="header pa-4 link font-mno">
+  <nav class="header link font-mno mx-auto max-w-70ch" :class="ifMobile ? 'pa-4' : 'py-4'">
     <div class="c-gray-500">
       <a href="/" class="hover:c-black dark:hover:c-white">
         Home
