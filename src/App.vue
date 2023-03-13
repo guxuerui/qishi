@@ -11,6 +11,7 @@ const routes = useRoute()
       Qishi © 2023
     </div>
   </main>
+  <BackTop />
 </template>
 
 <style scoped>
