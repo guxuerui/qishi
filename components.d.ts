@@ -7,6 +7,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AnimateCursor: typeof import('./src/components/AnimateCursor.vue')['default']
     Attr: typeof import('./src/components/Attr.vue')['default']
+    BackTop: typeof import('./src/components/BackTop.vue')['default']
     BaseDataTable: typeof import('./src/components/BaseDataTable.vue')['default']
     CanvasExample: typeof import('./src/components/CanvasExample.vue')['default']
     Cog: typeof import('./src/components/cog.vue')['default']
