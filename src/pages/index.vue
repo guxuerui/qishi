@@ -10,7 +10,7 @@ const jumpPage = (folder: string, name: string) => {
   <div class="markdown-body">
     <h1>关于我</h1>
     <p class="text-linear">
-      嗨, 我是骑誓~  机缘巧合进入IT行业，从事前端开发工作至今, 写过移动端, 也写过PC端, 主要使用vue全家桶, 目前在一家5G+云计算公司任职, 主做B端产品
+      嗨, 我是骑誓~  机缘巧合进入了IT行业，从事前端开发工作至今, 写过移动端, 也写过PC端, 主要使用vue全家桶, svelte和react也略懂一些, 目前在一家5G+云计算公司任职, 主做B端产品
     </p>
     <p class="text-linear">
       平时喜欢听歌、看动漫、骑行、看书、写代码, 做一些有意思的小项目
