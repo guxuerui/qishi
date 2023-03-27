@@ -1,42 +1,41 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
+  label: {
+    type: String,
+    required: true,
+    defalut: '',
+  },
   progress: {
     type: String,
     required: true,
     default: '25%',
   },
+  barColor: {
+    type: String,
+    required: true,
+    default: '#c87',
+  },
 })
 </script>
 
 <template>
-  <div class="shell">
-    <div class="bar" :style="{ width: progress }">
-      <span>{{ progress }}%</span>
+  <div my-1>
+    {{ label }}
+  </div>
+  <div flex="~">
+    <div h-6 w-full border="1 solid #aaa rounded-3" px-1 class="shell">
+      <div h-3 class="bar rounded-3" :style="{ width: progress, backgroundColor: barColor }" />
+    </div>
+    <div ml-2>
+      {{ progress }}
     </div>
   </div>
 </template>
 
 <style scoped>
-.shell {
-  height: 30px;
-  width: 250px;
-  border: 1px solid #aaa;
-  border-radius: 13px;
-  padding: 4px;
-}
-
 .bar {
-  background: linear-gradient(to right, #B993D6, #8CA6DB);
-  height: 20px;
-  border-radius: 10px;
+  margin-top: 5px;
   animation: width 1s ease-in-out;
-}
-
-.bar span {
-  float: right;
-  color: #fff;
-  font-size: 0.8rem;
-  padding-right: 8px;
 }
 
 @keyframes width {
