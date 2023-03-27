@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { PostCardData, SkillListData } from '~/consants/skillData'
 const router = useRouter()
 const jumpPage = (folder: string, name: string) => {
   if (folder && name)
@@ -19,6 +20,26 @@ const jumpPage = (folder: string, name: string) => {
       <!-- <a class="cursor-pointer mr-4" @click="jumpPage('about', 'personal')">我的个人简历</a> -->
       <!-- <a class="mr-3 cursor-pointer" @click="jumpPage('about', 'lifeTimeline')">光阴长河</a> -->
       <a href="https://github.com/guxuerui" target="_blank">我的Github</a>
+    </div>
+    <div grid="~ cols-2" gap-x-4>
+      <PostCard
+        v-for="(card, i) in PostCardData"
+        :key="i"
+        my-4
+        :title="card.title"
+        :abstract="card.abstract"
+        :chip-text="card.chipText"
+        :chip-color="card.chipColor"
+      />
+    </div>
+    <div grid="~ cols-1">
+      <ProgressBar
+        v-for="(bar, i) in SkillListData"
+        :key="i"
+        :label="bar.label"
+        :progress="bar.progress"
+        :bar-color="bar.color"
+      />
     </div>
   </div>
 </template>
