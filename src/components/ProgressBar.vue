@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-   <div class="shell">
+  <div class="shell">
     <div class="bar" :style="{ width: progress }">
       <span>{{ progress }}%</span>
     </div>
