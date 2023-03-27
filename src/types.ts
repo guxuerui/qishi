@@ -66,3 +66,14 @@ export interface ITimeline {
   title: string
   list: IList[]
 }
+
+export interface ISkill {
+  label: string
+  progress: string
+  color: string
+}
+
+export interface IPostCard extends Pick<IList, 'chipColor' | 'chipText'> {
+  title: string
+  abstract: string
+}
