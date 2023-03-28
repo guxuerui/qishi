@@ -1,37 +1,58 @@
 <script setup lang="ts">
-import { PostCardData, SkillListData } from '~/consants/skillData'
+import { ChipsData, SkillListData } from '~/consants/skillData'
+import { getLatestPost } from '~/consants/latestPostData'
+import type { IPostCard } from '~/types'
+
 const router = useRouter()
+const latestPostData = ref<IPostCard[]>([])
 const jumpPage = (folder: string, name: string) => {
   if (folder && name)
     router.push(`/${folder}/${encodeURIComponent(name)}`)
 }
+
+onMounted(async () => {
+  latestPostData.value = await getLatestPost()
+})
 </script>
 
 <template>
   <div class="markdown-body">
-    <h1>关于我</h1>
-    <p class="text-linear">
-      嗨, 我是骑誓~  机缘巧合进入了IT行业，从事前端开发工作至今, 写过移动端, 也写过PC端, 主要使用vue全家桶, svelte和react也略懂一些, 目前在一家5G+云计算公司任职, 主做B端产品
-    </p>
-    <p class="text-linear">
-      平时喜欢听歌、看动漫、骑行、看书、写代码, 做一些有意思的小项目
-    </p>
-    <div mt-4 class="text-linear">
-      <!-- <a class="cursor-pointer mr-4" @click="jumpPage('about', 'personal')">我的个人简历</a> -->
-      <!-- <a class="mr-3 cursor-pointer" @click="jumpPage('about', 'lifeTimeline')">光阴长河</a> -->
-      <a href="https://github.com/guxuerui" target="_blank">我的Github</a>
+    <h1>我的个人空间</h1>
+    <div class="text-linear" flex="~ gap-x-2">
+      <img v-for="(chip, i) in ChipsData" :key="i" my-0 :src="chip" alt="" class="!my-0">
     </div>
-    <div grid="~ cols-2" gap-x-4>
+    <p class="text-linear">
+      欢迎来到我的个人空间，在这里记录我的学习过程，希望能够帮助到更多的朋友~
+    </p>
+    <p class="text-linear">
+      我喜欢做一些有意思的小项目
+    </p>
+    <a
+      class="c-gray-400"
+      flex="~ gap-x-1" items-center
+      hover="c-black"
+      dark:hover="c-white"
+      rel="noreferrer"
+      href="https://github.com/guxuerui/qishi"
+      target="_blank"
+      title="GitHub"
+    >
+      <span class="inline-block" i-carbon-logo-github />
+      <span>github</span>
+    </a>
+    <h3>Latest Posts</h3>
+    <div grid="~ cols-1 gap-6" class="sm:grid-cols-2">
       <PostCard
-        v-for="(card, i) in PostCardData"
+        v-for="(card, i) in latestPostData"
         :key="i"
-        my-4
         :title="card.title"
         :abstract="card.abstract"
+        :date="card.date"
         :chip-text="card.chipText"
         :chip-color="card.chipColor"
       />
     </div>
+    <h3>Used Language Rank -></h3>
     <div grid="~ cols-1">
       <ProgressBar
         v-for="(bar, i) in SkillListData"
