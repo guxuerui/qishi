@@ -25,7 +25,18 @@ defineProps({
     required: true,
     default: 'teal',
   },
+  fileName: {
+    type: String,
+    required: true,
+    default: '',
+  },
 })
+
+const router = useRouter()
+const jumpPage = (folder: string, name: string) => {
+  if (folder && name)
+    router.push(`/${folder}/${encodeURIComponent(name)}`)
+}
 </script>
 
 <template>
@@ -36,12 +47,12 @@ defineProps({
     <div class="font-normal text-gray-700 dark:text-gray-400 min-h-[4rem]">
       {{ abstract }}
     </div>
-    <div max-w-14 my-3 text="center sm teal" border="1 solid rounded-3xl" bg-teal-900>
+    <div max-w-14 my-3 text="center sm teal" border="1 solid rounded-3xl" bg-teal-900 cursor-pointer @click="jumpPage(chipText, 'list')">
       {{ chipText }}
     </div>
     <div flex="~" justify-between items-center>
       <span>{{ date }}</span>
-      <a class="text-cyan-700 hover:text-cyan-500 text-sm underline" href="#">Read More 👉</a>
+      <a class="text-cyan-700 hover:text-cyan-500 text-sm underline cursor-pointer" @click="jumpPage(chipText, fileName)">Read More 👉</a>
     </div>
   </div>
 </template>
