@@ -76,4 +76,5 @@ export interface ISkill {
 export interface IPostCard extends Pick<IList, 'date' | 'chipColor' | 'chipText'> {
   title: string
   abstract: string
+  fileName: string
 }
