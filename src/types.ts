@@ -73,7 +73,7 @@ export interface ISkill {
   color: string
 }
 
-export interface IPostCard extends Pick<IList, 'chipColor' | 'chipText'> {
+export interface IPostCard extends Pick<IList, 'date' | 'chipColor' | 'chipText'> {
   title: string
   abstract: string
 }
