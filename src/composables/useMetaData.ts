@@ -28,8 +28,9 @@ export const getMetaData = async (folder: string, file: string) => {
     chipText: '',
     date: '',
     chipColor: '',
+    fileName: '',
   }
-  const post = await allPostFiles[`../pages/${folder}/${file}`]()
+  const post = await allPostFiles[`/src/pages/${folder}/${file}`]()
   if (file.includes('.vue')) {
     const res = post.default.props.postInfo.default()
     latestPost = {
@@ -38,6 +39,7 @@ export const getMetaData = async (folder: string, file: string) => {
       chipText: res.tags,
       date: useDateFormat(res.date, 'YYYY-MM-DD').value,
       chipColor: res.chipColor,
+      fileName: file.split('.')[0],
     }
   }
   else {
@@ -47,6 +49,7 @@ export const getMetaData = async (folder: string, file: string) => {
       chipText: post.tags,
       date: useDateFormat(post.date, 'YYYY-MM-DD').value,
       chipColor: post.chipColor,
+      fileName: file.split('.')[0],
     }
   }
   return latestPost
