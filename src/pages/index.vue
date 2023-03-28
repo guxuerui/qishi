@@ -13,7 +13,7 @@ onMounted(async () => {
 <template>
   <div class="markdown-body">
     <h1>我的个人空间</h1>
-    <div class="text-linear" flex="~ gap-x-2">
+    <div class="text-linear sm:grid-cols-9" grid="~ cols-4 gap-2">
       <img v-for="(chip, i) in ChipsData" :key="i" my-0 :src="chip" alt="" class="!my-0">
     </div>
     <p class="text-linear !my-3">
