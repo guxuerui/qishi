@@ -47,7 +47,19 @@ const jumpPage = (folder: string, name: string) => {
     <div class="font-normal text-gray-700 dark:text-gray-400 min-h-[4rem]">
       {{ abstract }}
     </div>
-    <div max-w-14 my-3 text="center sm teal" border="1 solid rounded-3xl" bg-teal-900 cursor-pointer @click="jumpPage(chipText, 'list')">
+    <div v-if="chipText === 'vue'" class="chip" text-teal bg-teal-900 hover:bg-teal-700 @click="jumpPage(chipText, 'list')">
+      {{ chipText }}
+    </div>
+    <div v-else-if="chipText === 'js'" class="chip" text-yellow bg-yellow-900 hover:bg-yellow-700 @click="jumpPage(chipText, 'list')">
+      {{ chipText }}
+    </div>
+    <div v-else-if="chipText === 'css'" class="chip" text-cyan bg-cyan-900 hover:bg-cyan-700 @click="jumpPage(chipText, 'list')">
+      {{ chipText }}
+    </div>
+    <div v-else-if="chipText === 'note'" class="chip" text-orange bg-orange-900 hover:bg-orange-700 @click="jumpPage(chipText, 'list')">
+      {{ chipText }}
+    </div>
+    <div v-else-if="chipText === 'game'" class="chip" text-sky bg-sky-900 hover:bg-sky-700 @click="jumpPage(chipText, 'list')">
       {{ chipText }}
     </div>
     <div flex="~" justify-between items-center>
