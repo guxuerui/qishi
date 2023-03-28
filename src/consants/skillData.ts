@@ -1,4 +1,4 @@
-import type { IPostCard, ISkill } from '~/types'
+import type { ISkill } from '~/types'
 
 export const SkillListData: ISkill[] = [
   {
@@ -48,23 +48,12 @@ export const SkillListData: ISkill[] = [
   },
 ]
 
-export const PostCardData: IPostCard[] = [
-  {
-    title: 'Vue.js',
-    abstract: 'Vue.js is a progressive framework for building user interfaces',
-    chipColor: 'green',
-    chipText: 'Vue',
-  },
-  {
-    title: 'React.js',
-    abstract: 'React.js is a front-end framework for building user interfaces',
-    chipColor: 'blue',
-    chipText: 'React',
-  },
-  {
-    title: 'Svelte.js',
-    abstract: 'Svelte.js is a front-end framework for building user interfaces',
-    chipColor: 'red',
-    chipText: 'Svelte',
-  },
+export const ChipsData: string[] = [
+  'https://img.shields.io/badge/-HTML5-000?&logo=HTML5',
+  'https://img.shields.io/badge/-CSS3-black?style=flat&logo=css3&logoColor=1572B6',
+  'https://img.shields.io/badge/-JavaScript-black?style=flat&logo=javascript',
+  'https://img.shields.io/badge/-TypeScript-black?style=flat&logo=typescript',
+  'https://img.shields.io/badge/-Vue.js-black?style=flat&logo=vue.js',
+  'https://img.shields.io/badge/-Svelte-black?style=flat&logo=svelte&logoColor=f00',
+  'https://img.shields.io/badge/-React-black?style=flat&logo=react',
 ]
