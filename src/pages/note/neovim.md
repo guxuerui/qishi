@@ -1,3 +1,11 @@
+---
+title: 打造你的专属最强IDE
+abstract: nvim
+tags: nvim
+date: 2023-03-05
+chipColor: teal
+---
+
 # 打造你的专属最强IDE--Neovim
 
 ![preview](https://user-images.githubusercontent.com/23629097/217407314-6c672021-c42f-46af-9e2e-62afaea1858d.png)

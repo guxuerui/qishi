@@ -1,6 +1,20 @@
 <script setup lang="ts">
 import type { Area, BlockArea, SearchIndex } from '~/types'
 
+defineProps({
+  postInfo: {
+    type: Object,
+    required: false,
+    default: () => ({
+      title: '用vue3写个魔方',
+      abstract: '这是用vue3写的模仿',
+      tags: 'game',
+      date: '2022-0901',
+      chipColor: 'cyan',
+    }),
+  },
+})
+
 const ifMobile = isMobile()
 const ifSafari = isSafari()
 const count = $ref<number>(3)

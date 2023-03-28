@@ -1,3 +1,11 @@
+---
+title: CSS水平垂直居中方法大全
+abstract: css
+tags: css
+date: 2022-12-12
+chipColor: blue
+---
+
 # CSS水平垂直居中方法大全
 
 > 水平垂直居中是工作经常需要用到的技巧，也是面试常考题

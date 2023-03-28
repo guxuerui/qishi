@@ -1,3 +1,11 @@
+---
+title: canvas基础使用示例
+abstract: js
+tags: js
+date: 2022-09-07
+chipColor: fcdc00
+---
+
 <script setup lang="ts">
 import CanvasExample from '~/components/CanvasExample.vue'
 </script>

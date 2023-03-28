@@ -1,3 +1,11 @@
+---
+title: Vue3中监听组合按键 
+abstract: vue
+tags: vue
+date: 2023-02-15
+chipColor: green
+---
+
 # Vue3中监听组合按键
 
 ## 1. JS中键盘事件监听
