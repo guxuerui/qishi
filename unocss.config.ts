@@ -20,6 +20,7 @@ export default defineConfig({
       'fie': 'fi justify-end',
       'col-fcc': 'flex-col fcc',
       'inline-fcc': 'inline-flex items-center justify-center',
+      'chip': 'max-w-14 my-3 text-center text-sm border-1 border-solid rounded-3xl cursor-pointer transition',
     },
   ],
   presets: [
