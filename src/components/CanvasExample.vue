@@ -124,4 +124,3 @@ onMounted(() => {
 <template>
   <canvas ref="el" width="500" height="500" mx-auto border="1 #585" />
 </template>
-

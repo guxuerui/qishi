@@ -46,4 +46,3 @@ function toggle(index: number) {
     @toggle="toggle"
   />
 </template>
-

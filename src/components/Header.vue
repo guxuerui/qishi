@@ -5,7 +5,7 @@ import type { Post } from '~/types'
 const ifMobile = isMobile()
 const showMenuList = ref(false)
 const targetMenu = ref(null)
-onClickOutside(targetMenu, (e: MouseEvent) => {
+onClickOutside(targetMenu, () => {
   if (showMenuList.value)
     showMenuList.value = false
 })

@@ -20,7 +20,7 @@ const emit = defineEmits<{
 
 // autofocus directive
 const vFocus = {
-  mounted: (el: { focus: () => void }, binding: { }) => {
+  mounted: (el: { focus: () => void }) => {
     el.focus()
   },
 }
@@ -44,7 +44,7 @@ const cancel = () => {
   emit('cancel')
 }
 
-onClickOutside(target, (e: MouseEvent) => {
+onClickOutside(target, () => {
   cancel()
 })
 

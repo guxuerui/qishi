@@ -109,4 +109,3 @@ watch(() => selectedRows, (newValue) => {
     </template>
   </ui-pagination>
 </template>
-

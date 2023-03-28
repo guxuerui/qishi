@@ -32,4 +32,3 @@ const replay = () => {
     </div>
   </Teleport>
 </template>
-

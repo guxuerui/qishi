@@ -13,4 +13,3 @@ const goBack = () => router.back()
     </div>
   </nav>
 </template>
-

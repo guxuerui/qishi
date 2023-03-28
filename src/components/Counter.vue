@@ -16,4 +16,3 @@ const { count, inc, dec } = useCounter(props.initial)
     </button>
   </div>
 </template>
-
