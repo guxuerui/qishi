@@ -1,3 +1,11 @@
+---
+title: 发布vue3组件到npm
+abstract: 如何使用vite+ts+vue3开发组件，并将其发布到npm。其中包括组件开发、创建install.ts、配置vite.config.ts、发布到npm等步骤
+tags: vue
+date: 2022-12-04
+chipColor: green
+---
+
 # 发布vue3组件到npm
 
 > 记录一下使用vite+ts+vue3开发的组件，发布到npm的过程
@@ -123,7 +131,7 @@ export default defineConfig ({
 
 ```ts
 // vue.config.js
-const path = require('path')
+const path = require('node:path')
 
 module.exports = {
   configureWebpack: {

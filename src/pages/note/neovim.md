@@ -1,7 +1,7 @@
 ---
 title: 打造你的专属最强IDE
-abstract: nvim
-tags: nvim
+abstract: Neovim是一个基于Vim的现代文本编辑器，旨在改进Vim的可扩展性和用户友好性, 具有许多新的功能和改进，例如异步插件、内置终端、Lua API等。
+tags: note
 date: 2023-03-05
 chipColor: teal
 ---

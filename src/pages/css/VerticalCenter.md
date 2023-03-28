@@ -1,6 +1,6 @@
 ---
 title: CSS水平垂直居中方法大全
-abstract: css
+abstract: CSS实现水平垂直居中的七种方法，这些方法可以帮助我们在工作中更加便捷地实现元素的居中布局，也是面试中常考的知识点。
 tags: css
 date: 2022-12-12
 chipColor: blue
@@ -9,8 +9,6 @@ chipColor: blue
 # CSS水平垂直居中方法大全
 
 > 水平垂直居中是工作经常需要用到的技巧，也是面试常考题
-
-## 一、准备工作
 
 HTML:
 

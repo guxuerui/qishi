@@ -1,6 +1,6 @@
 ---
 title: canvas基础使用示例
-abstract: js
+abstract: Canvas是用JS动态生成元素，可绘制路径、矩形、圆形、字符等各种图案，可用于动画、游戏、可视化、图片编辑等领域
 tags: js
 date: 2022-09-07
 chipColor: fcdc00

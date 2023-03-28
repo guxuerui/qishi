@@ -95,4 +95,3 @@ onMounted(() => {
   </div>
   <canvas ref="el" width="800" height="800" border />
 </template>
-

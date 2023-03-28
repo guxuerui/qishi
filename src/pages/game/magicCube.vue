@@ -7,7 +7,7 @@ defineProps({
     required: false,
     default: () => ({
       title: '用vue3写个魔方',
-      abstract: '这是用vue3写的模仿',
+      abstract: '这是一个用Vue3写的魔方游戏，支持键盘方向按键旋转魔方。该组件使用了Vue3的Composition API，包括defineProps、ref等。',
       tags: 'game',
       date: '2022-0901',
       chipColor: 'cyan',
