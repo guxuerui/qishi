@@ -18,7 +18,7 @@ onMounted(async () => {
     </div>
     <p class="text-linear !my-3">
       前端开发 / 业余LOL玩家<br>
-      <span text-sm>我喜欢做一些有意思的小项目</span>
+      <span text-sm>喜欢做一些有意思的小项目</span>
     </p>
     <a
       class="c-gray-400 w-20"
