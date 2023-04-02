@@ -32,7 +32,7 @@ defineProps({
   },
 })
 // 边框宽度
-const borderWidth = ref('2px')
+const borderWidth = ref<string>('2px')
 
 const router = useRouter()
 const jumpPage = (folder: string, name: string) => {
