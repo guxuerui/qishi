@@ -2,11 +2,11 @@
 
 * 基本信息: 古雪瑞 / 男 / 1994年8月
 * 个人博客: <https://www.guxuerui.cn>
-* GitHub: <https://github.com/guxuerui>
+* 个人仓库: <https://github.com/guxuerui>
 * 个人邮箱: im.guxuerui@gmail.com
 * 个人电话: 18330229220
 * 工作经验: 6年
-* 教育经历: 兰州理工大学 / 计算机科学与技术 / 本科 / 2013年9月 - 2017年6月
+* 教育经历: 兰州理工大学 / 计算机科学与技术 / 本科 / 2013年.9 - 2017.6
 
 ## 专业技能
 
@@ -17,7 +17,7 @@
 * 熟练使用 Canvas，了解 Three.js，能够实现各种复杂的图形动画效果
 * 熟练使用 Git 进行代码管理，熟悉常用的 Shell 命令并可熟练使用 Linux 系统
 * 具备 Web 视频流开发经验，熟悉 Websocket、flv.js 和 WebRTC 等协议，能够实现摄像监控和直播等功能
-* 具备 Node.js 后端开发经验，能够使用 Express、Koa 等框架搭建后端服务
+* 具备 Node.js 后端开发经验，可使用 Express、Koa 等框架搭建后端服务
 
 ## 工作经历
 
