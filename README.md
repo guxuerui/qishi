@@ -1,6 +1,6 @@
-<h2 align="center">Qishi</h2>
+# Qishi
 
-### 插件
+## 插件
 
 - [Vue Router](https://github.com/vuejs/vue-router)
   - [`vite-plugin-pages`](https://github.com/hannoeru/vite-plugin-pages) - file system based routing
@@ -9,7 +9,7 @@
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
 - [UnoCss](https://github.com/unocss/unocss)
 
-### 克隆到本地
+## 克隆到本地
 
 ```bash
 1. git clone git@github.com:guxuerui/qishi.git
