@@ -18,7 +18,6 @@ interface Branch {
 
 function init() {
   ctx.strokeStyle = `rgb(255, ${Math.floor(255 - 40 * Math.random() * 6)}, ${Math.floor(255 - 40 * Math.random() * 6)})`
-  // ctx.strokeStyle = '#6b7280'
   step({
     start: { x: WIDTH / 2, y: HEIGHT },
     length: 50,
@@ -82,6 +81,7 @@ function startFrame() {
     startFrame()
   })
 }
+
 startFrame()
 
 onMounted(() => {
