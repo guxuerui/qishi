@@ -11,7 +11,7 @@
 ## 专业技能
 
 * 熟练掌握 JavaScript, TypeScript, ES6+, HTML5, CSS3，能够独立开发项目
-* 熟练使用 Vue 2/3、Svelte、React 等主流前端框架，以及 Vuetify、BalmUI、Primevue 等UI库
+* 熟练使用 Vue 2/3、Nuxt、Svelte、SvelteKit 等主流前端框架，以及 Vuetify、BalmUI、Primevue 等UI库
 * 熟悉 Webpack、Rollup、Vite 等前端构建工具的使用和优化
 * 熟练使用 Echarts、Apexcharts、AntV/G6 等可视化图表工具，具有良好的数据可视化能力
 * 熟练使用 Canvas，了解 Three.js，能够实现各种复杂的图形动画效果
