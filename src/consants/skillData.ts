@@ -22,12 +22,22 @@ export const SkillListData: ISkill[] = [
     color: '#2196f3',
   },
   {
-    label: 'Vue',
+    label: 'Vue2 / Vue3',
     progress: '90%',
     color: '#3f9',
   },
   {
+    label: 'Nuxt.js',
+    progress: '50%',
+    color: '#3f9',
+  },
+  {
     label: 'Svelte',
+    progress: '70%',
+    color: '#f03',
+  },
+  {
+    label: 'SvelteKit',
     progress: '50%',
     color: '#f03',
   },
@@ -38,7 +48,7 @@ export const SkillListData: ISkill[] = [
   },
   {
     label: 'Vite',
-    progress: '50%',
+    progress: '60%',
     color: '#aaf',
   },
   {
