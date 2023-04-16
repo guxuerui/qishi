@@ -78,3 +78,10 @@ export interface IPostCard extends Pick<IList, 'date' | 'chipColor' | 'chipText'
   abstract: string
   fileName: string
 }
+
+export interface IProjectCard extends Pick<IList, 'imgUrl'> {
+  borderColor: string
+  title: string
+  abstract: string
+  projectUrl: string
+}
