@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ChipsData, SkillListData } from '~/consants/skillData'
 import { getLatestPost } from '~/consants/latestPostData'
+import getProjectCardsData from '~/consants/projectCardsData'
 import type { IPostCard } from '~/types'
 
 const latestPostData = ref<IPostCard[]>([])
+
+const projectCardsData = getProjectCardsData()
 
 onMounted(async () => {
   latestPostData.value = await getLatestPost()
@@ -41,6 +44,18 @@ onMounted(async () => {
         :label="bar.label"
         :progress="bar.progress"
         :bar-color="bar.color"
+      />
+    </div>
+    <h3>Personal Projects</h3>
+    <div grid="~ cols-1 gap-6" class="sm:grid-cols-2">
+      <ProjectCard
+        v-for="(card, i) in projectCardsData"
+        :key="i"
+        :title="card.title"
+        :abstract="card.abstract"
+        :border-color="card.borderColor"
+        :img-url="card.imgUrl"
+        :project-url="card.projectUrl"
       />
     </div>
     <h3>Latest Posts</h3>
