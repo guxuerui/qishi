@@ -30,6 +30,7 @@ declare module '@vue/runtime-core' {
     PostCard: typeof import('./src/components/PostCard.vue')['default']
     PostList: typeof import('./src/components/postList.vue')['default']
     ProgressBar: typeof import('./src/components/ProgressBar.vue')['default']
+    ProjectCard: typeof import('./src/components/ProjectCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StatusIndicator: typeof import('./src/components/statusIndicator.vue')['default']
