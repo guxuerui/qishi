@@ -9,5 +9,26 @@ export default function getProjectCardsData(): IProjectCard[] {
       imgUrl: '/imgs/nvim.png',
       projectUrl: 'https://github.com/guxuerui/nvim-0.8',
     },
+    {
+      title: 'emoji-picker',
+      borderColor: '#d16ba5',
+      abstract: 'A simple way to search and pick an emoji of all the Github supports.',
+      imgUrl: '/imgs/emoji-picker.png',
+      projectUrl: 'https://github.com/guxuerui/emoji-picker',
+    },
+    {
+      title: 'pretty-timeline',
+      borderColor: '#41b883',
+      abstract: '一个vue3版本的时间轴组件, 可配置性高、使用丝滑, 支持局部导入和全局导入.',
+      imgUrl: '/imgs/pretty-timeline.png',
+      projectUrl: 'https://github.com/guxuerui/pretty-timeline',
+    },
+    {
+      title: 'utils-fn',
+      borderColor: '#3178c6',
+      abstract: 'Front-end tool function code snippets with full typescript support.',
+      imgUrl: '/imgs/utils-fn.png',
+      projectUrl: 'https://github.com/guxuerui/utils-fn',
+    },
   ]
 }
