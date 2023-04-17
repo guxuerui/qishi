@@ -37,7 +37,7 @@ const openUrl = (url: string) => {
     p="x-6 y-4"
     bg="white dark:gray-800"
     hover="scale-105 cursor-pointer"
-    shadow
+    shadow-2xl
     relative
     max-w-xl
     transition
@@ -56,7 +56,7 @@ const openUrl = (url: string) => {
     <p>{{ abstract }}</p>
     <img
       float="right"
-      class="w-2/5 !my-4"
+      class="w-2/5 h-2/7 !my-4"
       :src="imgUrl"
       alt="street"
     >
