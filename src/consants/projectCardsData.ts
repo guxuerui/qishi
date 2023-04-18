@@ -37,5 +37,19 @@ export default function getProjectCardsData(): IProjectCard[] {
       imgUrl: '/imgs/vue3-signage.png',
       projectUrl: 'https://github.com/guxuerui/vue3-signage',
     },
+    {
+      title: 'status-indicator',
+      borderColor: '#e4393c',
+      abstract: 'Vue3版本的状态指示灯组件, 使用vue3 + ts + vite, 可表示账号状态等, 易于使用.',
+      imgUrl: '/imgs/status-indicator.png',
+      projectUrl: 'https://github.com/guxuerui/vue3-status-indicator',
+    },
+    {
+      title: 'calculate-anything',
+      borderColor: '#fa7a18',
+      abstract: 'A simple calculator, using Nuxt3, demonstrating basic arithmetic operations in JS.',
+      imgUrl: '/imgs/calculator.png',
+      projectUrl: 'https://github.com/guxuerui/calculate-anything',
+    },
   ]
 }
