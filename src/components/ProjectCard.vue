@@ -56,7 +56,7 @@ const openUrl = (url: string) => {
     <p>{{ abstract }}</p>
     <img
       float="right"
-      class="w-2/5 h-2/7 !my-4"
+      class="w-2/5 h-2/7 !my-4 aspect-2"
       :src="imgUrl"
       alt="street"
     >
