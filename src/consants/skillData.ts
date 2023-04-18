@@ -7,7 +7,7 @@ export const SkillListData: ISkill[] = [
     color: '#f33',
   },
   {
-    label: 'CSS3',
+    label: 'CSS3 / TailwindCss / UnoCss',
     progress: '80%',
     color: '#2196f3',
   },
@@ -18,7 +18,7 @@ export const SkillListData: ISkill[] = [
   },
   {
     label: 'TypeScript',
-    progress: '60%',
+    progress: '70%',
     color: '#2196f3',
   },
   {
