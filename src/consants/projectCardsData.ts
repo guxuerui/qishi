@@ -30,5 +30,12 @@ export default function getProjectCardsData(): IProjectCard[] {
       imgUrl: '/imgs/utils-fn.png',
       projectUrl: 'https://github.com/guxuerui/utils-fn',
     },
+    {
+      title: 'vue3-signage',
+      borderColor: '#125abe',
+      abstract: 'Vue3版本的任务看看板, 创建方便, 视图清晰, 可随时进行编辑, 并且支持拖拽.',
+      imgUrl: '/imgs/vue3-signage.png',
+      projectUrl: 'https://github.com/guxuerui/vue3-signage',
+    },
   ]
 }
