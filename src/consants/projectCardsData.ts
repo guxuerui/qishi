@@ -24,11 +24,11 @@ export default function getProjectCardsData(): IProjectCard[] {
       projectUrl: 'https://github.com/guxuerui/pretty-timeline',
     },
     {
-      title: 'utils-fn',
+      title: 'utils-snap-fn',
       borderColor: '#3178c6',
       abstract: 'Front-end tool function code snippets with full typescript support.',
       imgUrl: '/imgs/utils-fn.png',
-      projectUrl: 'https://github.com/guxuerui/utils-fn',
+      projectUrl: 'https://github.com/guxuerui/utils-snap-fn',
     },
     {
       title: 'vue3-signage',
