@@ -12,6 +12,7 @@ const routes = useRoute()
     </div>
   </main>
   <BackTop />
+  <PageBg />
 </template>
 
 <style scoped>
