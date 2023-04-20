@@ -27,6 +27,7 @@ declare module '@vue/runtime-core' {
     Loading: typeof import('./src/components/Loading.vue')['default']
     LostModal: typeof import('./src/components/LostModal.vue')['default']
     MineBlock: typeof import('./src/components/MineBlock.vue')['default']
+    PageBg: typeof import('./src/components/PageBg.vue')['default']
     PostCard: typeof import('./src/components/PostCard.vue')['default']
     PostList: typeof import('./src/components/postList.vue')['default']
     ProgressBar: typeof import('./src/components/ProgressBar.vue')['default']
