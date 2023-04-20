@@ -18,6 +18,7 @@ export class DrawTree {
     public depth: number,
     public ctx: CanvasRenderingContext2D,
     public img?: any,
+    public strokeStyle?: string,
   ) {
     this.init()
   }
@@ -30,12 +31,11 @@ export class DrawTree {
     this.ctx = ctx
     this.WIDTH = width
     this.HEIGHT = height
-    this.ctx.strokeStyle = `rgb(255, ${Math.floor(255 - 40 * Math.random() * 6)}, ${Math.floor(255 - 40 * Math.random() * 6)})`
-    // ctx.strokeStyle = '#6b7280'
+    this.ctx.strokeStyle = this.strokeStyle ? this.strokeStyle : `rgb(255, ${Math.floor(255 - 40 * Math.random() * 6)}, ${Math.floor(255 - 40 * Math.random() * 6)})`
     this.step({
-      start: { x: this.WIDTH / 2, y: this.HEIGHT },
+      start: { x: 0, y: 0 },
       length: 50,
-      theta: -Math.PI / 2,
+      theta: Math.PI / 2,
     }, this.depth)
   }
 
@@ -60,7 +60,7 @@ export class DrawTree {
       this.pendingTasks.push(() => this.step({
         start: end,
         length: b.length * (0.7 + 0.3 * Math.random()),
-        theta: b.theta + 0.8 * Math.random(),
+        theta: b.theta + 0.4 * Math.random(),
       }, depth + 1))
     }
   }
