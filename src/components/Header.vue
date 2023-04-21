@@ -114,17 +114,17 @@ onBeforeUnmount(() => {
           </a>
         </div>
       </span>
-      <a
+      <span
         v-for="(item, i) in links"
         v-else
         :key="i"
-        class="mr-3 c-gray-500 cursor-pointer"
+        class="mr-3 c-gray-500 cursor-pointer transition"
         hover="c-black border-b-2 border-b-orange"
         dark:hover="c-white"
         @click="jumpPage(item.folder, item.fileName)"
       >
         {{ item.title }}
-      </a>
+      </span>
       <button
         class="icon-btn !outline-none vertical-sub c-gray-800 dark:c-gray-400"
         hover="c-black"
