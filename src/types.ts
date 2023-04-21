@@ -12,6 +12,7 @@ export interface Post {
   date: string
   folder: string
   fileName: string
+  fileType?: string
 }
 
 export interface RepoList {
