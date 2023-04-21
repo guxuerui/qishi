@@ -2,6 +2,7 @@
 // 列表组件
 import type { PropType } from 'vue'
 import type { Post } from '~/types'
+
 defineProps({
   posts: {
     type: Array as PropType<Post[]>,
@@ -21,7 +22,7 @@ const handleRepeat = (arr: Post[]) => {
 }
 
 const router = useRouter()
-const jumpPage = (folder: string, name: string, post: Omit<Post, 'data'>) => {
+const jumpPage = (folder: string, name: string, post: Post) => {
   const recentPost: Post[] = JSON.parse(localStorage.getItem('recentPost') || '[]')
   if (recentPost.length >= 5)
     recentPost.shift()
