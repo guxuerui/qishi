@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const jsPostList = ref<Post[]>([
   {
+    title: 'JS中==和===的区别',
+    date: '2023-04-26',
+    folder: 'js',
+    fileName: 'compareEqula',
+    fileType: 'md',
+  },
+  {
     title: 'canvas基础使用示例',
     date: '2022-09-07',
     folder: 'js',
