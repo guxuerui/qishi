@@ -1,6 +1,6 @@
 ---
 title: 发布vue3组件到npm
-abstract: 如何使用vite+ts+vue3开发组件，并将其发布到npm。其中包括组件开发、创建install.ts、配置vite.config.ts、发布到npm等步骤
+abstract: 如何使用vite+ts+vue3开发组件, 并将其发布到npm。包括组件开发、创建install.ts、配置vite.config.ts、发布到npm等。
 tags: vue
 date: 2022-12-04
 chipColor: green
