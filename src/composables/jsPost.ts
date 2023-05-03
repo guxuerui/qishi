@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const jsPostList = ref<Post[]>([
   {
+    title: '在JS中判断类型',
+    date: '2023-05-03',
+    folder: 'js',
+    fileName: 'inferType',
+    fileType: 'md',
+  },
+  {
     title: 'JS中==和===的区别',
     date: '2023-04-26',
     folder: 'js',
