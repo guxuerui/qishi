@@ -17,7 +17,7 @@ chipColor: yellow
 ```js
 typeof 1; // 'number'
 typeof '1' // 'string'
-typeof undefined // 'undefined', 它表示 *缺少值*, 即此处应有一个值, 但还没有定义
+typeof undefined // 'undefined', 它表示 *缺少值*, 即此处应有一个值, 但还没有定义, 且转为数值时为 `NaN`
 typeof true // 'boolean'
 typeof Symbol() // 'symbol'
 typeof null; // 'object', 但null实际上不是对象, `null` 表示 *没有对象*, 即该处不应有值，且转为数值时为 `0`
@@ -118,7 +118,7 @@ const person = new Person('qishi', 18)
 Object.prototype.toString.call(person) // '[object, Object]'
 ```
 
-> 很明显这种方法并不能准确判断 `person` 是 `Person` 的实例, 此时用 `instanceof` 来判断更为合适
+> 很明显此方法并不能准确判断 `person` 是否为 `Person` 的实例, 此时用 `instanceof` 来判断更为合适
 
 * 判断原生JSON对象
 
