@@ -24,6 +24,7 @@ specifiers:
   unocss: ^0.50.6
   unplugin-auto-import: ^0.15.2
   unplugin-vue-components: ^0.24.1
+  utils-snap-fn: ^1.1.4
   vite: ^4.2.1
   vite-plugin-pages: ^0.29.0
   vite-plugin-vue-markdown: ^0.22.4
@@ -61,6 +62,7 @@ devDependencies:
   unocss: 0.50.6_vite@4.2.1
   unplugin-auto-import: 0.15.2_@vueuse+core@9.1.0
   unplugin-vue-components: 0.24.1_vue@3.2.47
+  utils-snap-fn: 1.1.4
   vite: 4.2.1_@types+node@18.15.10
   vite-plugin-pages: 0.29.0_vite@4.2.1
   vitest: 0.29.7_jsdom@21.1.1
@@ -5120,6 +5122,10 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: true
+
+  /utils-snap-fn/1.1.4:
+    resolution: {integrity: sha512-gSMclP/lEeXX7NECrU5kD/SCh9YHrGObhdqSbm4K+7LLxUd0dHDdOwMNr0Sd0RE/7fBszhQYB9sBX5gcOSOyMQ==}
     dev: true
 
   /validate-npm-package-license/3.0.4:
