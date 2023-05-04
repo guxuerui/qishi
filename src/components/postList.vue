@@ -40,7 +40,7 @@ const jumpPage = (folder: string, name: string, post: Post) => {
   <ul class="list-title font-mno">
     <li v-for="(item, i) in posts" :key="i" class="w-full flex justify-between mb-4">
       <a
-        class="cursor-pointer c-gray-600 hover:c-black dark:c-gray-400 dark:hover:c-white"
+        class="cursor-pointer c-gray-600 dark:c-gray-400 link-style transition-colors"
         @click="jumpPage(item.folder, item.fileName, item)"
       >{{ item.title }}</a>
       <div class="flex items-center c-gray-600 dark:c-gray-400">
