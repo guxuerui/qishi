@@ -318,11 +318,12 @@ html:not(.dark) [img-dark] {
 }
 
 .markdown-body {
-  /* width: 45vw; */
-  /* height: 100%; */
+  --fg: #555;
+  --fg-deep: #222;
+  --fg-deeper: #000;
+  color: var(--fg);
   text-align: left;
   margin: 0 auto;
-  color: var(--fg);
   max-width: 70ch;
   font-size: 1rem;
   line-height: 1.75;
@@ -335,12 +336,6 @@ html:not(.dark) [img-dark] {
   line-height: 1.6;
   margin-top: 1.2em;
   margin-bottom: 1.2em
-}
-
-.markdown-body a {
-  color: var(--fg-deeper);
-  text-decoration: none;
-  font-weight: 500;
 }
 
 .markdown-body strong {
@@ -883,22 +878,17 @@ html.dark {
   --prism-selection-background: #444444
 }
 
-.markdown-body {
-  --fg: #555;
-  --fg-deep: #222;
-  --fg-deeper: #000;
-  color: var(--fg);
-}
-
 .markdown-body a {
   font-weight: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(125, 125, 125, .3);
-  transition: border .3s ease-in-out;
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  text-decoration: dotted underline !important;
 }
 
 .markdown-body a:hover {
-  border-bottom: 1px solid var(--fg);
+  color: var(--vp-c-brand) !important;
+  text-decoration-color: var(--vp-c-brand) !important;
 }
 
 .markdown-body a code {
