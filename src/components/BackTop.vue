@@ -11,7 +11,7 @@ onMounted(() => {
   })
 })
 
-const toTop = () => {
+const toTop = function () {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>

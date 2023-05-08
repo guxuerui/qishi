@@ -93,6 +93,7 @@ const sortRepo = (type: string) => {
         bg="transparent"
         border="~ rounded gray-200 dark:gray-700"
         outline="none active:none"
+        class="focus:border-green-400 focus:shadow-green-400/50 shadow-md transition-colors"
         @keydown.enter="search"
       >
 

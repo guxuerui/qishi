@@ -4,7 +4,7 @@ const routes = useRoute()
 
 <template>
   <Header />
-  <main class="main" font-sans p="x-4 y-5" text="center gray-700 dark:gray-200">
+  <main class="main slide-enter-content" font-sans p="x-4 y-5" text="center gray-700 dark:gray-200">
     <router-view />
     <Footer v-if="routes.fullPath !== '/'" />
     <div mt-4>

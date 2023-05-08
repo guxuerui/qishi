@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const ListComponent = (props: any, { slots, emit, attrs }) => {
+const ListComponent = function (props: any, { _slots, emit, _attrs }) {
   const { list, activeIndex } = props
   const handleToggle = (i: number) => emit('toggle', i)
   const listVNodes = list.map((item: any, index: number) => {
