@@ -14,7 +14,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="markdown-body">
+  <div class="markdown-body slide-enter-content">
     <h1>我的个人空间</h1>
     <div class="text-linear sm:grid-cols-9" grid="~ cols-4 gap-2">
       <img v-for="(chip, i) in ChipsData" :key="i" my-0 :src="chip" alt="" class="!my-0">
@@ -70,6 +70,9 @@ onMounted(async () => {
         :chip-color="card.chipColor"
         :file-name="card.fileName"
       />
+    </div>
+    <div mt-4>
+      Qishi © 2023
     </div>
   </div>
 </template>

@@ -4,12 +4,9 @@ const routes = useRoute()
 
 <template>
   <Header />
-  <main class="main slide-enter-content" font-sans p="x-4 y-5" text="center gray-700 dark:gray-200">
-    <router-view />
-    <Footer v-if="routes.fullPath !== '/'" />
-    <div mt-4>
-      Qishi © 2023
-    </div>
+  <main class="main" font-sans p="x-4 y-5" text="center gray-700 dark:gray-200">
+    <router-view class="slide-enter-content" />
+    <Footer v-if="routes.fullPath !== '/' && !routes.fullPath.includes('list')" />
   </main>
   <BackTop />
   <PageBg />
