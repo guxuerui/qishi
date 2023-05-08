@@ -4,6 +4,11 @@ import type { PropType } from 'vue'
 import type { Post } from '~/types'
 
 defineProps({
+  showFooter: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
   posts: {
     type: Array as PropType<Post[]>,
     required: true,
@@ -49,6 +54,6 @@ const jumpPage = function (folder: string, name: string, post: Post) {
         {{ item.date }}
       </div>
     </li>
-    <Footer v-if="routes.fullPath !== '/' && routes.fullPath.includes('list')" />
+    <Footer v-if="routes.fullPath !== '/' && routes.fullPath.includes('list') && showFooter" />
   </ul>
 </template>

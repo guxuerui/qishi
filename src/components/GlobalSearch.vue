@@ -109,7 +109,7 @@ onBeforeUnmount(() => {
               清空历史记录
             </span>
           </div>
-          <PostList class="px-1" :posts="recentPostList" @jumped="cancel" />
+          <PostList class="px-1" :show-footer="false" :posts="recentPostList" @jumped="cancel" />
         </div>
         <PostList v-else class="px-1 mt-4" :posts="postList" @jumped="cancel" />
         <div flex="~" justify-between b-t="1 solid gray-500" pt-3>
