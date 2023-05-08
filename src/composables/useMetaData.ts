@@ -1,7 +1,7 @@
 // get markdown file meta data
 import type { IPostCard } from '~/types'
 
-export const getMetaData = async (folder: string, file: string) => {
+export const getMetaData = async function (folder: string, file: string): Promise<IPostCard> {
   let allPostFiles: any = null
   switch (folder) {
     case 'vue':

@@ -1,6 +1,6 @@
 import type { IPostCard } from '~/types'
 
-export const getLatestPost = async (): Promise<IPostCard[]> => {
+export const getLatestPost = async function (): Promise<IPostCard[]> {
   const latestPostList = await Promise.all([
     getMetaData(`${vuePostList.value[0].folder}`, `${vuePostList.value[0].fileName}.${vuePostList.value[0].fileType}`),
     getMetaData(`${vuePostList.value[1].folder}`, `${vuePostList.value[1].fileName}.${vuePostList.value[1].fileType}`),

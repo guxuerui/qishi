@@ -35,7 +35,7 @@ defineProps({
 const borderWidth = ref<string>('2px')
 
 const router = useRouter()
-const jumpPage = (folder: string, name: string) => {
+const jumpPage = function (folder: string, name: string) {
   if (folder && name)
     router.push(`/${folder}/${encodeURIComponent(name)}`)
 }

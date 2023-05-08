@@ -30,7 +30,7 @@ const searchVal = ref('')
 const throttled = refThrottled(searchVal, 1000)
 const postList = ref<Post[]>([])
 const recentPostList = ref<Post[]>([])
-const search = () => {
+const search = function () {
   if (!searchVal.value)
     return postList.value = []
 
@@ -39,7 +39,7 @@ const search = () => {
   postList.value = resList.slice()
 }
 
-const cancel = () => {
+const cancel = function () {
   searchVal.value = ''
   emit('cancel')
 }
@@ -48,7 +48,7 @@ onClickOutside(target, () => {
   cancel()
 })
 
-const clearRecent = () => {
+const clearRecent = function () {
   localStorage.setItem('recentPost', '')
   recentPostList.value = []
 }
@@ -58,7 +58,7 @@ watch(() => throttled.value, (newVal, oldVal) => {
     search()
 })
 
-watch(() => props.open, (newVal, oldVal) => {
+watch(() => props.open, (newVal, _oldVal) => {
   if (newVal)
     recentPostList.value = JSON.parse(localStorage.getItem('recentPost') || '[]')
 }, { immediate: true })

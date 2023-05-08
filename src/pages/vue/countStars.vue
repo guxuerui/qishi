@@ -6,7 +6,7 @@ const repoList = ref<RepoList[]>([])
 let showLoading = $ref<boolean>(false)
 let notFound = $ref<boolean>(false)
 
-const getRepos = async (githubId: string) => {
+const getRepos = async function (githubId: string) {
   showLoading = true
   notFound = false
   try {
@@ -29,7 +29,7 @@ const getRepos = async (githubId: string) => {
   }
 }
 
-const search = () => {
+const search = function () {
   repoList.value.length = 0
   getRepos(inputVal)
 }
@@ -51,7 +51,7 @@ const totalForks = $computed(() => {
 })
 
 let sorted = $ref<number>(0)
-const sortRepo = (type: string) => {
+const sortRepo = function (type: string) {
   sorted += 1
   switch (type) {
     case 'star':

@@ -43,7 +43,7 @@ const isDarkMode = computed(() => {
 })
 
 const router = useRouter()
-const jumpPage = (folder: string, title: string) => {
+const jumpPage = function (folder: string, title: string) {
   showMenuList.value = false
 
   if (folder && title)

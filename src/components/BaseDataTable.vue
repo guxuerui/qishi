@@ -46,13 +46,13 @@ const selectedRows = $ref<any[]>([])
 const pageSize = $ref<number>(10)
 let pageNum = $ref<number>(1)
 
-const changePage = () => {
+const changePage = function () {
   // 没有数据时，不会触发changePage事件
   if (props.uiTableData.data.length === 0)
     return
   emit('onChangePage', pageNum)
 }
-const changePageSize = () => {
+const changePageSize = function () {
   pageNum = 1
   emit('onChangePageSize', pageSize)
 }

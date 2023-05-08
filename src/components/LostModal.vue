@@ -8,7 +8,7 @@ withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
   (e: 'replay'): void
 }>()
-const replay = () => {
+const replay = function () {
   emit('replay')
 }
 </script>

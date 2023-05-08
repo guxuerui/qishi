@@ -26,7 +26,7 @@ const bgColor = computed(() => {
   return isDark.value ? 'rgba(31, 41, 55, 1)' : 'rgba(255, 255, 255, 1)'
 })
 
-const openUrl = (url: string) => {
+const openUrl = function (url: string) {
   window.open(url, '_blank')
 }
 </script>

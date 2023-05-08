@@ -6,7 +6,7 @@ play.reset(9, 9, 10)
 useStorage('vuesweeper-state', play.state)
 const state = computed(() => play.board)
 
-const newGame = (difficulty: 'easy' | 'medium' | 'hard') => {
+const newGame = function (difficulty: 'easy' | 'medium' | 'hard') {
   switch (difficulty) {
     case 'easy':
       play.reset(9, 9, 1)

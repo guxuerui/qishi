@@ -18,7 +18,7 @@ const numberColors = [
   'text-teal-500',
 ]
 
-const getBlockClass = (block: BlockState) => {
+const getBlockClass = function (block: BlockState) {
   if (block.flagged)
     return 'bg-gray-500/10'
   if (!block.reveoled)

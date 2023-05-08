@@ -14,15 +14,17 @@ const emit = defineEmits<{
   (e: 'jumped'): void
 }>()
 
+const routes = useRoute()
+
 // 对象数组去重
-const handleRepeat = (arr: Post[]) => {
+const handleRepeat = function (arr: Post[]) {
   return arr.filter((obj, index, self) =>
     index === self.findIndex(t => t.title === obj.title),
   )
 }
 
 const router = useRouter()
-const jumpPage = (folder: string, name: string, post: Post) => {
+const jumpPage = function (folder: string, name: string, post: Post) {
   const recentPost: Post[] = JSON.parse(localStorage.getItem('recentPost') || '[]')
   if (recentPost.length >= 5)
     recentPost.shift()
@@ -37,7 +39,7 @@ const jumpPage = (folder: string, name: string, post: Post) => {
 </script>
 
 <template>
-  <ul class="list-title font-mno">
+  <ul class="list-title font-mno slide-enter-content">
     <li v-for="(item, i) in posts" :key="i" class="w-full flex justify-between mb-4">
       <a
         class="cursor-pointer c-gray-600 dark:c-gray-400 link-style transition-colors"
@@ -47,5 +49,6 @@ const jumpPage = (folder: string, name: string, post: Post) => {
         {{ item.date }}
       </div>
     </li>
+    <Footer v-if="routes.fullPath !== '/' && routes.fullPath.includes('list')" />
   </ul>
 </template>

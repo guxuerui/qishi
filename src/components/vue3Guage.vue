@@ -37,7 +37,7 @@ const guageData = reactive<GuageData>({
 const { value, cssDot, cssGauge, cssDotWrap } = toRefs(guageData)
 
 // 设置内环刻度颜色
-const setScaleColor = (j: number) => {
+const setScaleColor = function (j: number) {
   // if (j < 40)
   //   return `${guageData.colorList[j + 50]}`
 
@@ -50,7 +50,7 @@ const setScaleColor = (j: number) => {
     return '#87501D'
 }
 // 获取颜色列表：由蓝色逐渐变红
-const getColorList = () => {
+const getColorList = function () {
   const colorList = [] as string[]
   const red = {
     max: 173,
@@ -72,19 +72,19 @@ const getColorList = () => {
   guageData.colorList = colorList
 }
 
-const getWidth = () => { // 获取指定容器的宽度
+const getWidth = function () { // 获取指定容器的宽度
   return area.value.offsetWidth || 200
 }
-const getHeight = () => { // 获取指定容器的高度
+const getHeight = function () { // 获取指定容器的高度
   return area.value.offsetHeight || 200
 }
-const setStates = (prop: string, data: any) => {
+const setStates = function (prop: string, data: any) {
   const cache = guageData[prop]
   guageData[prop] = Object.assign({}, cache, JSON.parse(JSON.stringify(data)))
 }
 
 // 设置仪表盘图的大小
-const setSize = () => {
+const setSize = function () {
   const width = getWidth() // 获取 div 的宽度
   const height = getHeight() // 获取 div 的高度
   const length = width > height ? height : width // 根据较短边 以及 外层比例，计算实际使用的长度
