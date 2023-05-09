@@ -23,7 +23,7 @@ This is my personal [Blog](https://www.guxuerui.cn) with
 1. git clone git@github.com:guxuerui/qishi.git my-app/
 2. cd my-app
 3. pnpm i
-# If not have pnpm, run: npm install -g pnpm
+# If not have pnpm, run: npm i -g pnpm
 ```
 
 ## License
