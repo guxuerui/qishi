@@ -3,7 +3,6 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
 import App from './App.vue'
-import PostList from './components/postList.vue'
 import StatusIndicator from './components/statusIndicator.vue'
 import Vue3Guage from './components/vue3Guage.vue'
 import Cog from './components/cog.vue'
@@ -24,11 +23,16 @@ const head = createHead()
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior() {
+    return {
+      top: 0,
+      behavior: 'smooth',
+    }
+  },
 })
 
 app.use(router).use(head)
 app
-  .component('PostList', PostList)
   .component('StatusIndicator', StatusIndicator)
   .component('Vue3Guage', Vue3Guage)
   .component('Cog', Cog)
