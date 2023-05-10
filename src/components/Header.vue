@@ -2,6 +2,8 @@
 import { useEventListener } from '@vueuse/core'
 import { links } from '~/consants/HeaderLinks'
 
+const routes = useRoute()
+
 const ifMobile = isMobile()
 const showMenuList = ref(false)
 const targetMenu = ref(null)
@@ -15,8 +17,10 @@ const isDarkMode = computed(() => {
   return isDark.value
 })
 
+const activeIndex = ref<number | undefined>(0)
 const router = useRouter()
-const jumpPage = function (folder: string, title: string) {
+const jumpPage = function (folder: string, title: string, index?: number) {
+  activeIndex.value = index
   showMenuList.value = false
 
   if (folder && title)
@@ -37,6 +41,11 @@ function handleKeyDown(e: KeyboardEvent) {
 const cleanup = useEventListener(document, 'keydown', (e: KeyboardEvent) => {
   handleKeyDown(e)
 })
+
+watch(() => routes, (newVal, _oldVal) => {
+  if (newVal.fullPath === '/')
+    activeIndex.value = undefined
+}, { deep: true })
 
 onBeforeUnmount(() => {
   cleanup()
@@ -92,9 +101,10 @@ onBeforeUnmount(() => {
         v-else
         :key="i"
         class="mr-3 c-gray-500 cursor-pointer transition"
+        :class="[activeIndex === i ? 'c-black border-b-2 border-b-orange dark:c-white' : '']"
         hover="c-black border-b-2 border-b-orange"
         dark:hover="c-white"
-        @click="jumpPage(item.folder, item.fileName)"
+        @click="jumpPage(item.folder, item.fileName, i)"
       >
         {{ item.title }}
       </span>
