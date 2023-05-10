@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // import { isDev, toggleDev } from '~/composables'
+import { useTitle } from '@vueuse/core'
+
+const title = useTitle()
 
 const play = new GamePlay(9, 9, 10)
 play.reset(9, 9, 10)
@@ -29,6 +32,10 @@ const mineReset = $computed(() => {
   if (!play.state.value.mineGernerated)
     return play.mines
   return play.blocks.reduce((a, b) => a + (b.mine ? 1 : 0) - (b.flagged ? 1 : 0), 0)
+})
+
+onMounted(() => {
+  title.value = 'Minesweeper/扫雷'
 })
 
 watchEffect(() => {
