@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useTitle } from '@vueuse/core'
+
+const title = useTitle()
+
 const el = $ref<HTMLCanvasElement>()
 const ctx = $computed(() => el!.getContext('2d')!)
 
@@ -85,13 +89,14 @@ function startFrame() {
 startFrame()
 
 onMounted(() => {
+  title.value = '光秃秃的树'
   init()
 })
 </script>
 
 <template>
-  <div class="markdown-body">
-    <h1>用canvas画一棵树</h1>
+  <div class="markdown-body mb-4">
+    <h1>光秃秃的树</h1>
+    <canvas ref="el" width="800" height="800" border />
   </div>
-  <canvas ref="el" width="800" height="800" border />
 </template>
