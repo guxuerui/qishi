@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import { useTitle } from '@vueuse/core'
+
+const title = useTitle()
+onMounted(() => {
+  title.value = '五彩缤纷的鼠标'
+})
+
 let color = $ref<number>(0)
 let isColor = $ref<string>('')
 const round_arr = $ref<any>([])
@@ -64,13 +71,15 @@ function animate() {
 </script>
 
 <template>
-  <div :style="{ color: isColor }">
-    <p mb-4>
-      鼠标跟随特效, 刷新页面可切换鼠标跟随颜色~
-    </p>
-    鼠标实时坐标  ->  X: {{ x }},  Y: {{ y }}
+  <div class="markdown-body">
+    <div :style="{ color: isColor }">
+      <p mb-4>
+        鼠标跟随特效, 刷新页面可切换鼠标跟随颜色~
+      </p>
+      鼠标实时坐标  ->  X: {{ x }},  Y: {{ y }}
+    </div>
+    <canvas id="canvas" ref="myCanvas" />
   </div>
-  <canvas id="canvas" ref="myCanvas" />
 </template>
 
 <style scoped>
