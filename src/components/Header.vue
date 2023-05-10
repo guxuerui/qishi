@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useEventListener } from '@vueuse/core'
-import type { Post } from '~/types'
+import { links } from '~/consants/HeaderLinks'
 
 const ifMobile = isMobile()
 const showMenuList = ref(false)
@@ -10,33 +10,6 @@ onClickOutside(targetMenu, () => {
     showMenuList.value = false
 })
 
-const links = ref<Omit<Post, 'date'>[]>([
-  {
-    title: 'Vue',
-    fileName: 'list',
-    folder: 'vue',
-  },
-  {
-    title: 'Js',
-    fileName: 'list',
-    folder: 'js',
-  },
-  {
-    title: 'Css',
-    fileName: 'list',
-    folder: 'css',
-  },
-  {
-    title: 'Note',
-    fileName: 'list',
-    folder: 'note',
-  },
-  {
-    title: 'Game',
-    fileName: 'list',
-    folder: 'game',
-  },
-])
 // is or not darkMode
 const isDarkMode = computed(() => {
   return isDark.value
