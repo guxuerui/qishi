@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTitle } from '@vueuse/core'
 import type { Area, BlockArea, SearchIndex } from '~/types'
 
 defineProps({
@@ -13,6 +14,11 @@ defineProps({
       chipColor: 'cyan',
     }),
   },
+})
+
+const title = useTitle()
+onMounted(() => {
+  title.value = '用vue3写个魔方'
 })
 
 const ifMobile = isMobile()
@@ -435,69 +441,71 @@ function handleMousedown(block: BlockArea, area: Area, event?: MouseEvent) {
 </script>
 
 <template>
-  <div v-if="!ifMobile" class="flex flex-col md:flex-row">
-    <div>
-      <p class="text-center mt-0 mb-4">
-        点击键盘方向按键旋转魔方
-      </p>
-      <div class="flex gap-2 justify-center">
-        <Key :value="arrowup">
-          <div i-carbon-arrow-up />
-        </Key>
-        <Key :value="arrowdown">
-          <div i-carbon-arrow-down />
-        </Key>
-        <Key :value="arrowleft">
-          <div i-carbon-arrow-left />
-        </Key>
-        <Key :value="arrowright">
-          <div i-carbon-arrow-right />
-        </Key>
+  <div class="markdown-body">
+    <div v-if="!ifMobile" class="flex flex-col md:flex-row">
+      <div>
+        <p class="text-center mt-0 mb-4">
+          点击键盘方向按键旋转魔方
+        </p>
+        <div class="flex gap-2 justify-center">
+          <Key :value="arrowup">
+            <div i-carbon-arrow-up />
+          </Key>
+          <Key :value="arrowdown">
+            <div i-carbon-arrow-down />
+          </Key>
+          <Key :value="arrowleft">
+            <div i-carbon-arrow-left />
+          </Key>
+          <Key :value="arrowright">
+            <div i-carbon-arrow-right />
+          </Key>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="wrap">
-    <div
-      class="content"
-      :style="{
-        width: `${count * side}px`,
-        height: `${count * side}px`,
-        transformOrigin: `${count * side / 2}px ${count * side / 2}px -${count * side / 2}px`,
-        transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(0)`,
-      }"
-    >
+    <div class="wrap">
       <div
-        v-for="block, i in blocks"
-        :key="i"
-        :x="block.x"
-        :y="block.y"
-        :z="block.z"
+        class="content"
         :style="{
-          width: `${side}px`,
-          height: `${side}px`,
-          transformOrigin: getOrigin(block),
-          transform: blockTransform(block),
-          transition: `transform ${transitionVal}s linear`,
+          width: `${count * side}px`,
+          height: `${count * side}px`,
+          transformOrigin: `${count * side / 2}px ${count * side / 2}px -${count * side / 2}px`,
+          transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(0)`,
         }"
       >
-        <p
-          v-for="area, index in block.areas"
-          :key="index"
-          :class="area.direct"
+        <div
+          v-for="block, i in blocks"
+          :key="i"
+          :x="block.x"
+          :y="block.y"
+          :z="block.z"
           :style="{
-            background: area.color,
-            transform: area.transform,
+            width: `${side}px`,
+            height: `${side}px`,
+            transformOrigin: getOrigin(block),
+            transform: blockTransform(block),
+            transition: `transform ${transitionVal}s linear`,
           }"
-          @mousedown.prevent="handleMousedown(block, area, $event)"
-        />
+        >
+          <p
+            v-for="area, index in block.areas"
+            :key="index"
+            :class="area.direct"
+            :style="{
+              background: area.color,
+              transform: area.transform,
+            }"
+            @mousedown.prevent="handleMousedown(block, area, $event)"
+          />
+        </div>
       </div>
     </div>
-  </div>
-  <div class="markdown-body">
-    <blockquote>
-      <p>注: 当前版本只能在Chrome最新浏览器中使用</p>
-      <a href="https://github.com/guxuerui/qishi/blob/main/src/pages/game/magicCube.vue" target="_blank">源码地址</a>
-    </blockquote>
+    <div class="markdown-body">
+      <blockquote>
+        <p>注: 当前版本只能在Chrome最新浏览器中使用</p>
+        <a href="https://github.com/guxuerui/qishi/blob/main/src/pages/game/magicCube.vue" target="_blank">源码地址</a>
+      </blockquote>
+    </div>
   </div>
 </template>
 
