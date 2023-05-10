@@ -20,6 +20,7 @@ const isDarkMode = computed(() => {
 const activeIndex = ref<number | undefined>(0)
 const router = useRouter()
 const jumpPage = function (folder: string, title: string, index?: number) {
+  sessionStorage.setItem('activeIndex', `${index}`)
   activeIndex.value = index
   showMenuList.value = false
 
@@ -42,9 +43,17 @@ const cleanup = useEventListener(document, 'keydown', (e: KeyboardEvent) => {
   handleKeyDown(e)
 })
 
+onMounted(() => {
+  const activeLinkIndex = sessionStorage.getItem('activeIndex')!
+  if (activeLinkIndex !== null)
+    activeIndex.value = parseInt(activeLinkIndex)
+})
+
 watch(() => routes, (newVal, _oldVal) => {
-  if (newVal.fullPath === '/')
+  if (newVal.fullPath === '/') {
     activeIndex.value = undefined
+    sessionStorage.setItem('activeIndex', 'undefined')
+  }
 }, { deep: true })
 
 onBeforeUnmount(() => {
