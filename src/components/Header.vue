@@ -156,7 +156,7 @@ onBeforeUnmount(() => {
     justify-content: space-between;
     align-items: center;
   }
-  .link div a, search-icon {
+  .link div a, .search-icon {
     transition: all 0.2s ease-in-out;
   }
   .search-btn:hover .search-icon {
