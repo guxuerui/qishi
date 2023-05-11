@@ -1,3 +1,11 @@
+---
+title: 使用纯CSS实现樱花般的齿轮动画
+abstract: 使用纯CSS实现樱花般的齿轮动画。
+tags: css
+date: 2022-07-23
+chipColor: blue
+---
+
 # 使用纯CSS实现樱花般的齿轮动画
 
 ## 1. HTML

@@ -1,3 +1,11 @@
+---
+title: 3D立方体
+abstract: CSS3D效果。
+tags: css
+date: 2022-08-29
+chipColor: blue
+---
+
 <script setup lang="ts">
 import Cube3D from '~/components/Cube3D.vue'
 </script>

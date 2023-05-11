@@ -1,3 +1,11 @@
+---
+title: CSS语法之attr()
+abstract: ttr() 理论上能用于所有的 CSS 属性但目前支持的仅有伪元素的`content`属性, 浏览器兼容性有些惨不忍睹, 其他的属性和高级特性目前是实验性的。
+tags: css
+date: 2022-08-29
+chipColor: blue
+---
+
 <script setup lang="ts">
 import Attr from '~/components/Attr.vue'
 </script>

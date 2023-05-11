@@ -1,3 +1,11 @@
+---
+title: CSS语法之filter
+abstract: CSS属性 `filter` 将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像、背景和边框的渲染。
+tags: css
+date: 2022-08-30
+chipColor: blue
+---
+
 <script setup lang="ts">
 import CssFilter from '~/components/CssFilter.vue'
 </script>
