@@ -1,6 +1,15 @@
+---
+title: 一个类似仪表盘的圆环组件
+abstract: UI新设计了一个圆环图，长得怪好看的，哈哈，不服输的我当然要挑战一下啦~
+tags: vue
+date: 2022-07-22
+chipColor: green
+---
+
 # 一个类似仪表盘的圆环组件
 
 ## 需求来啦
+
 UI新设计了一个圆环图，长得怪好看的，哈哈，不服输的我当然要挑战一下啦~
 
 ![avatar](/imgs/circle.png)
@@ -8,6 +17,7 @@ UI新设计了一个圆环图，长得怪好看的，哈哈，不服输的我当
 ## 开动
 
 ### 1. 首先，整个圆出来
+
 ```ts
 // <script setup lant="ts"></script>
 // 索引类型
@@ -26,6 +36,7 @@ const guageData = reactive<GuageData>({
 ```
 
 部分样式代码使用了 <a href="https://github.com/unocss/unocss" target="_blank">UnoCSS</a>
+
 ```html
   <div ref="area" class="gauge-area" position="relative">
     <div :style="cssGauge">
@@ -41,7 +52,9 @@ const guageData = reactive<GuageData>({
 ```
 
 ### 2. 使用一个简单又偷懒的办法，将刻度画出来
+
 遍历div表示刻度，并通过`transform: rotate()`来实现方向的转变
+
 ```html
   <div ref="area" class="gauge-area" position="relative">
     <div :style="cssGauge">
@@ -58,6 +71,7 @@ const guageData = reactive<GuageData>({
     </div>
   </div>
 ```
+
 ```ts
 // <script setup lant="ts"></script>
 interface GuageStyle {
@@ -136,7 +150,9 @@ onMounted(() => {
   setSize()
 })
 ```
+
 ### 3. 最后在环中间加上数字展示
+
 ```html
   <div ref="area" class="gauge-area" position="relative">
     <div :style="cssGauge">
@@ -157,6 +173,7 @@ onMounted(() => {
     </div>
   </div>
 ```
+
 ```css
   .gauge-title {
     font-family: Bender;
@@ -168,8 +185,11 @@ onMounted(() => {
     font-weight: bold;
   }
 ```
+
 ## 大功告成，基本完事啦
+
 再加一个定时器模拟value值的变化
+
 ```ts
 const timer = ref<any>(null)
 onMounted(() => {
@@ -181,5 +201,5 @@ onBeforeUnmount(() => {
   timer.value && clearInterval(timer.value)
 })
 ```
-<Vue3Guage />
 
+<Vue3Guage />
