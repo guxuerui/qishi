@@ -1,3 +1,11 @@
+---
+title: 创建函数式组件
+abstract: 函数式组件是一种定义自身没有任何状态的组件的方式。它们很像纯函数：接收 props，返回 vnodes。
+tags: vue
+date: 2022-10-14
+chipColor: green
+---
+
 <script setup lang="ts">
 import FunctionalComp from '~/components/FunctionalComp.vue'
 </script>

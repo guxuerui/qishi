@@ -1,3 +1,11 @@
+---
+title: 在Vue3和Ts项目中注册全局插件
+abstract: 插件(Plugins)是一种能为Vue添加全局功能的工具代码。一个插件可以是一个拥有`install()`方法的对象，也可以直接是一个安装函数本身。
+tags: vue
+date: 2022-09-28
+chipColor: green
+---
+
 # 在Vue3和Ts项目中注册全局插件
 
 > 插件(Plugins)是一种能为Vue添加全局功能的工具代码。一个插件可以是一个拥有`install()`方法的对象，也可以直接是一个安装函数本身。更多详细介绍可以查看[官方文档](https://cn.vuejs.org/guide/reusability/plugins.html)

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useTitle } from '@vueuse/core'
 import type { RepoList } from '~/types'
+
+const title = useTitle()
 
 const inputVal = $ref<string>('')
 const repoList = ref<RepoList[]>([])
@@ -73,6 +76,10 @@ const sortRepo = function (type: string) {
       break
   }
 }
+
+onMounted(() => {
+  title.value = '统计GitHub个人项目Star数量'
+})
 </script>
 
 <template>
