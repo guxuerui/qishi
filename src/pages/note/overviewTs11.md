@@ -1,4 +1,12 @@
-# 纵览TypeScript之字符串操作
+---
+title: 纵览TypeScript之字符串的操作
+abstract: 字符串的操作主要是类型的推导和解构以及类型的遍历。
+tags: note
+date: 2023-12-08
+chipColor: teal
+---
+
+# 纵览TypeScript之字符串的操作
 
 字符串的操作主要是两方面:
 

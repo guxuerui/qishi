@@ -16,7 +16,7 @@ export const notePostList = ref<Post[]>([
     fileType: 'md',
   },
   {
-    title: '纵览TypeScript之字符串操作',
+    title: '纵览TypeScript之字符串的操作',
     date: '2022-12-08',
     folder: 'note',
     fileName: 'overviewTs11',

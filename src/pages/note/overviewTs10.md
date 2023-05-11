@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之元组类型的操作
+abstract: 在元组中也可以像对象那样，在元组前加上 `readonly` 代表元组的每一项都是只读的。
+tags: note
+date: 2023-12-01
+chipColor: teal
+---
+
 # 纵览TypeScript之元组类型的操作
 
 ## 1. 只读修饰符 & 父子关系
