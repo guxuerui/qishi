@@ -1,8 +1,17 @@
+---
+title: TS中Type和Inrerface的区别
+abstract: 日常开发中会经常使用到类型约束，但有时候会对type和interface到底有什么区别，到底应该用哪一个产生疑惑。
+tags: note
+date: 2022-07-25
+chipColor: teal
+---
+
 ## TS中Type和Inrerface的区别
 
 > 日常开发中会经常使用到类型约束，但有时候会对type和interface到底有什么区别，应该用哪一个产生疑惑，所以今天做下总结
 
 ### 1. 什么是类型别名(Type Aliases)
+
 简单讲就是给一个类型起的别名。比如`type MyType = string`, 就是给`string`类型起了一个别名`MyType`, 它本质上还是指的是基础类型`string`，<a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases" target="_blank">更多详细内容可见官方文档</a>。
 
 **语法示例:**
@@ -23,6 +32,7 @@ Hello({ age: 18, height: 180 })
 ```
 
 还可以声明联合类型
+
 ```ts
 type ID = number | string
 ```
@@ -30,6 +40,7 @@ type ID = number | string
 >Tips: 类型别名就只是类型别名，当使用类型别名时，相当于在使用这个类型
 
 比如下面的例子，实际上都是使用的 `string` 类型约束
+
 ```ts
 type UserInput = string
 
@@ -41,6 +52,7 @@ outPut('test input')
 ```
 
 ### 2. 什么是接口(Interface)
+
 `interface`可以对传入的数据结构和数据类型做出约束，方便的帮我们定位问题。
 
 ```ts
@@ -57,6 +69,7 @@ Hello({ age: 18, height: 180 })
 ```
 
 ### 3. 它们之间的区别
+
 可以看出，`类型别名`和`接口`非常相似，绝大多数情况下都是可以自由选择使用的，`接口`的绝大部分功能都可以通过`类型别名`来实现，关键的区别在于`类型别名`不能重新声明以添加新的属性，而`接口`却总是可以扩展的。
 
 - Interface
@@ -65,16 +78,16 @@ Hello({ age: 18, height: 180 })
 
      ```typescript
      interface Animal {
-     	name: string   
+      name: string   
      }
      
      interface Dog extends Animal {
-     	age: number
+      age: number
      }
      // 结果是 ->
      interface Dog {
-     	name: string
-     	age: number
+      name: string
+      age: number
      }
      ```
 
@@ -100,8 +113,6 @@ Hello({ age: 18, height: 180 })
      } 
      console.log(person.name, person.age)
      ```
-
-     
 
 - Type
 
@@ -146,4 +157,3 @@ Hello({ age: 18, height: 180 })
 ### 5. 总结
 
 一般来说，可以在开发中全程使用`interface`，而如果使用的是面向对象Class开发，则应该更严谨些，除非明确要使用`interface`的场景，否则都应该使用`type`。
-
