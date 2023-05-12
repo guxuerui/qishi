@@ -13,7 +13,6 @@
   "dependencies": {
     "@vueuse/core": "v9.1.0",
     "@vueuse/head": "v0.7.9",
-    "axios": "^1.4.0",
     "canvas-confetti": "^1.6.0",
     "markdown-it-prism": "^2.3.0",
     "pretty-timeline": "^1.1.10",
