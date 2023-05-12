@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之条件语句
+abstract: TS中没有其他语言的 `if/else` 语法，而是使用了三元运算符。
+tags: note
+date: 2023-11-27
+chipColor: teal
+---
+
 # 纵览TypeScript之条件语句
 
 TS中没有其他语言的 `if/else` 语法，而是使用了三元运算符 `X extends Y ? expr1 : expr2`

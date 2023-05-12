@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之类型中的函数(泛型)
+abstract: TS泛型就像JS的函数一样，可以根据输入的类型，决定返回的类型。
+tags: note
+date: 2023-11-28
+chipColor: teal
+---
+
 # 纵览TypeScript之类型中的函数(泛型)
 
 ## 1. 泛型基础和定义

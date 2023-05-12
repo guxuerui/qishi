@@ -1,9 +1,16 @@
+---
+title: 纵览TypeScript之类型的父子关系
+abstract: 类型是有父子关系的，子类型的值可以赋值给父类型，但是父类型的值是不能赋值给子类型的。
+tags: note
+date: 2023-11-26
+chipColor: teal
+---
+
 # 纵览TypeScript之类型的父子关系
 
 ## 1. 基础
 
-类型是有父子关系的，子类型的值可以赋值给父类型，但是父类型的值是不能赋值给子类型的。
-例如:
+类型是有父子关系的，子类型的值可以赋值给父类型，但是父类型的值是不能赋值给子类型的。例如:
 
 ```ts
 type ParentType = 1 | 2 | string
@@ -103,7 +110,7 @@ c = a // ok, undefined是 void 类型的子类型
 d = a // ok, undefined是 any 类型的子类型
 ```
 
-### 7. 父子关系与联合类型 
+### 7. 父子关系与联合类型
 
 当子类型与父类型组成联合类型时，实际效果等于父类型。例如:
 
@@ -111,4 +118,3 @@ d = a // ok, undefined是 any 类型的子类型
 type A = number | 1 // number
 type B = never | string // string(前面说了never是所有类型的子类型)
 ```
- 

@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之对象类型的遍历
+abstract: 在JS中可以使用 `for/in` 遍历对象的属性，在TS中也有类似的方式，不过更加简洁。
+tags: note
+date: 2023-11-30
+chipColor: teal
+---
+
 # 纵览TypeScript之对象类型的遍历
 
 在JS中可以使用 `for/in` 遍历对象的属性，在TS中也有类似的方式，不过更加简洁.

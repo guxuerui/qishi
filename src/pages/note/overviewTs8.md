@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之对象类型的操作
+abstract: 对象的属性是可以有修饰符的，目前有两种修饰符，分别是 `readonly` 关键字对应的只读属性和 `?` 对应的可选属性。
+tags: note
+date: 2023-11-29
+chipColor: teal
+---
+
 # 纵览TypeScript之对象类型的操作
 
 ## 1. 属性修饰

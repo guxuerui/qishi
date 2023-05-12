@@ -1,8 +1,17 @@
+---
+title: 纵览TypeScript之类型变量定义
+abstract: 定义类型变量的方式有三种，分别是 `type`,  `interface`,  `enum`,  它们都相当于JS中的 `const`, **一旦定义就不可再改变**。
+tags: note
+date: 2023-11-20
+chipColor: teal
+---
+
 # 纵览TypeScript之类型变量定义
 
 ## 1. 定义
 
 定义类型变量的方式有三种，分别是 `type`,  `interface`,  `enum`,  它们都相当于JS中的 `const`, **一旦定义就不可再改变**, 三者的区别是:
+
 - `type`:  **使用绝大多数类型，例如普通的值、对象、函数、数组、元组等**
 - `interface`  **可以定义函数、对象、类**
 - `enum`: **仅用来定义枚举类型**

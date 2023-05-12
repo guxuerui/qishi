@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之类型数据和值
+abstract: JS中合法的值，在TS类型中同样合法，也就是说 _TS类型的值 = TS基础类型 + JS值_，并且可以混用。
+tags: note
+date: 2023-11-22
+chipColor: teal
+---
+
 # 纵览TypeScript之类型数据和值
 
 TS基础类型:

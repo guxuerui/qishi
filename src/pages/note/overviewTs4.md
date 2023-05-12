@@ -1,3 +1,11 @@
+---
+title: 纵览TypeScript之通过变量取属性
+abstract: 我们知道在JS中对象可以通过 `.` 操作符取值，在TS类型中，也能进行类似的操作。
+tags: note
+date: 2023-11-26
+chipColor: teal
+---
+
 # 纵览TypeScript之通过变量取属性
 
 我们知道在JS中对象可以通过 `.` 操作符取值，在TS类型中，也能进行类似的操作。例如:
@@ -46,4 +54,3 @@ type Concat = 'h'['concat'] // `String.prototype.concat` 的类型定义
 type N = 1
 type ToFixed = 1['toFixed'] // `Number.prototype.toFixed` 的类型定义
 ```
-
