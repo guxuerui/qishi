@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTitle } from '@vueuse/core'
+import { useFetch, useTitle } from '@vueuse/core'
 import type { RepoList } from '~/types'
 
 const title = useTitle()
@@ -14,14 +14,15 @@ const getRepos = async function (githubId: string) {
   notFound = false
   try {
     for (let i = 1; i <= 10; i++) {
-      const res = await axios.get(`https://api.github.com/users/${githubId}/repos?page=${i}&tab=repositories`)
-      if (res.status === 200 && res.data.length) {
-        repoList.value = [...repoList.value, ...res.data]
-      }
-      else {
+      const url = `https://api.github.com/users/${githubId}/repos?page=${i}&tab=repositories`
+      const { isFinished, error, data } = await useFetch(url).json()
+      if (error.value) {
         showLoading = false
-        return
+        throw new Error('API请求失败!', error.value)
       }
+
+      if (isFinished.value && data.value.length)
+        repoList.value = [...repoList.value, ...data.value]
     }
   }
   catch (e) {
