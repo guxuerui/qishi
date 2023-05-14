@@ -20,7 +20,7 @@ onMounted(async () => {
       <img v-for="(chip, i) in ChipsData" :key="i" my-0 :src="chip" alt="" class="!my-0">
     </div>
     <p class="text-linear !my-3">
-      前端开发 / 业余LOL玩家<br>
+      前端开发 / 业余骑行爱好者<br>
       <span text-sm>喜欢做开源以及一些有意思的小项目</span>
     </p>
     <a
@@ -76,21 +76,3 @@ onMounted(async () => {
     </div>
   </div>
 </template>
-
-<style scoped>
-  @counter-style fixed {
-    system: fixed;
-    symbols: ❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾ ❿;
-    suffix: " ";
-  }
-  .items {
-    margin-left: 1.5rem;
-    list-style-type: fixed;
-  }
-  .items li {
-    padding-left: 0.5rem;
-  }
-  .items li::before {
-    display: none;
-  }
-</style>
