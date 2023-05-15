@@ -23,19 +23,33 @@ onMounted(async () => {
       前端开发 / 业余骑行爱好者<br>
       <span text-sm>喜欢做开源以及一些有意思的小项目</span>
     </p>
-    <a
-      class="c-gray-400 w-20"
-      flex="~ gap-x-1" items-center
-      hover="c-black"
-      dark:hover="c-white"
-      rel="noreferrer"
-      href="https://github.com/guxuerui/qishi"
-      target="_blank"
-      title="GitHub"
-    >
-      <span class="inline-block" i-carbon-logo-github />
-      <span>github</span>
-    </a>
+    <div flex="~ gap-x-4">
+      <a
+        class="c-gray-400 w-20"
+        flex="~ gap-x-1" items-center
+        hover="c-black"
+        dark:hover="c-white"
+        rel="noreferrer"
+        href="https://github.com/guxuerui/qishi"
+        target="_blank"
+        title="GitHub"
+      >
+        <span class="inline-block" i-carbon-logo-github />
+        <span>github</span>
+      </a>
+      <a
+        class="c-gray-400 w-50"
+        flex="~ gap-x-1" items-center
+        hover="c-black"
+        dark:hover="c-white"
+        rel="noreferrer"
+        title="What I'm Using"
+        href="/about/using"
+      >
+        <span class="inline-block" i-carbon-tool-kit />
+        <span>What I'm Using</span>
+      </a>
+    </div>
     <h3>Used Language Rank -></h3>
     <div grid="~ cols-1">
       <ProgressBar
