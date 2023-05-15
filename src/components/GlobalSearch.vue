@@ -78,15 +78,15 @@ onBeforeUnmount(() => {
   <Teleport to="#app">
     <div
       v-if="open"
-      class="out z-10"
+      class="position-fixed top-0 left-0 w-full h-full z-10"
     >
       <div
         ref="target"
         max-w-120
         mx-auto pa-4
-        bg="gray-800"
-        position-relative
-        style="top: 5rem"
+        bg="white dark:gray-800"
+        position-relative top-20
+        shadow="2xl"
       >
         <input
           id="input"
@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
           autocomplete="true"
           w-full h-10 pl-3
           text="left"
-          bg="gray-800"
+          bg="white dark:gray-800"
           border="~ rounded #1DB954"
           outline="none active:none"
           @keydown.enter="search"
@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
           <PostList class="px-1" :show-footer="false" :posts="recentPostList" @jumped="cancel" />
         </div>
         <PostList v-else class="px-1 mt-4" :posts="postList" @jumped="cancel" />
-        <div flex="~" justify-between b-t="1 solid gray-500" pt-3>
+        <div flex="~" justify-between b-t="1 solid gray-500" pt-3 c-gray-600 dark:c-gray-400>
           <span>press esc to close</span>
           <button hover:text="orange" transition="color 1s linear" @click="cancel">
             关闭
@@ -122,14 +122,3 @@ onBeforeUnmount(() => {
     </div>
   </Teleport>
 </template>
-
-<style scoped>
-  .out {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(81, 96, 130, .8);
-  }
-</style>
