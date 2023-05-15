@@ -78,7 +78,7 @@ onBeforeUnmount(() => {
   <Teleport to="#app">
     <div
       v-if="open"
-      class="position-fixed top-0 left-0 w-full h-full z-10"
+      class="position-fixed top-0 left-0 w-full h-full z-10 bg-gray-800/80"
     >
       <div
         ref="target"
