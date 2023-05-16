@@ -587,6 +587,7 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   text-decoration: dotted underline !important;
+  color: #00a98e;
 }
 
 .markdown-body a:hover {
