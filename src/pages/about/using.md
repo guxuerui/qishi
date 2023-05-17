@@ -24,8 +24,10 @@
 - [Iterm2](https://iterm2.com/) - Terminal
 - [Fish](https://fishshell.com/docs/current/index.html)- Shell
   - Config: [guxuerui/dotFiles](https://github.com/guxuerui/dotFiles/tree/main/fish)
-- [Starship](https://starship.rs/guide) - The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+- [Starship](https://starship.rs/guide) - Prompt for any shell!
   - [starship.toml](https://github.com/guxuerui/dotFiles/blob/main/starship.toml) - Starship config
+- [Ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console
+  - [guxuerui/dotFiles/ranger](https://github.com/guxuerui/dotFiles/tree/main/ranger) - Ranger config files
 - [pnpm](https://pnpm.io/) - Preferred package managers, also for monorepo
 - [ni](https://github.com/antfu/ni) - Aliasing package managers
 - [taze](https://github.com/antfu/taze) - Upgrade dependencies
@@ -43,9 +45,9 @@
 - [Grammarly](https://chrome.google.com/webstore/detail/grammarly-grammar-checker/kbfnbcaeplbcioakkpcpgfkobkghlhen) - Spell check
 - [ChatGPT for Google](https://chrome.google.com/webstore/detail/chatgpt-for-google/jgjaeacdkonaoafenlfkkkmbaopkbilf) - ChatGPT browser plugin
 - [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) - Toggle Page Dark Mode
-- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - Improving the performance, quality, and correctness of your web apps
+- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - Improving the performance, quality, and correctness
 - [Relingo](https://chrome.google.com/webstore/detail/relingo-master-words-from/dpphkcfmnbkdpmgneljgdhfnccnhmfig) - Master words from any webpage
-- [Save All Resources](https://chrome.google.com/webstore/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb) - Save all resources files with retaining folder structure
+- [Save All Resources](https://chrome.google.com/webstore/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb) - Save all resources files
 - [SpacingJS](https://chrome.google.com/webstore/detail/spacingjs/fhjegjndanjcamfldhenjnhnjheecgcc) - Measure the spacing between elements on webpage
 - [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) - Ad blocker
 - [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) - Provides keyboard shortcuts of vim
