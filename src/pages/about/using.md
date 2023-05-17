@@ -38,6 +38,11 @@
 
 ## Hardware
 
+- MacBook Pro 16' M1 Max / 32GB RAM
+- Monitor: Dell U2718Q
+- Mouse: MagicTrackpad 2
+- Keyboard: Keydous nj68
+
 ## CLI
 
 ## Starter Templates
