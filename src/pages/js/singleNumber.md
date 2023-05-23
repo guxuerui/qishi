@@ -17,16 +17,18 @@ const item = [3, 3, 2, 5, 5]
 
 ## 1. 第一种方法
 
-先将数组原地排序，然后通过`for`循环依次比对
+使用`Set()`，然后通过`for`循环依次比对
 
 ```ts
 const getRes = (item) => {
-  item.sort()
-  for (let i = 0; i < item.length; i += 2) {
-    if (item[i] !== item[i + 1])
-      return item[i]
-
+  const set = new Set(item)
+  for (let val of set) {
+    if (item.indexOf(val) === item.lastIndexOf(val)) {
+      return val
+    }
   }
+
+  return null
 }
 
 getRes(item) // -> 2
