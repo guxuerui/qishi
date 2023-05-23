@@ -70,17 +70,16 @@ getNum(item) // -> 2
 
 ```ts
 const getSingNum = (item) => {
-  const map = new Map() 
+  const map = new Map()
+
   for (const num of item) {
-    if (map.has(num))
-      map.set(num, map.get(num) + 1)
-    else
-      map.set(num, 1)
+    map.has(num) ? map.set(num, false) : map.set(num, true)
   }
 
   for (const [key, value] of map) {
-    if (value === 1)
+    if (value) {
       return key
+    }
   }
 
   return null
