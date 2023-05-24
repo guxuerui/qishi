@@ -642,7 +642,6 @@ html.dark .markdown-body {
   right: 2rem;
   background: none;
   cursor: pointer;
-  color: #fff;
   display: none;
   transition: all .2s ease;
 }
