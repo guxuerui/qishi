@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const notePostList = ref<Post[]>([
   {
+    title: 'Neovim中的高亮显示',
+    date: '2023-05-24',
+    folder: 'note',
+    fileName: 'highlightInNvim',
+    fileType: 'md',
+  },
+  {
     title: '打造你的专属最强IDE--Neovim',
     date: '2023-03-05',
     folder: 'note',
