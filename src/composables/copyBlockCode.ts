@@ -1,8 +1,8 @@
 import { copyToClipboard } from 'utils-snap-fn'
 
-const copyIcon = '<span class="dark:text-white" i-carbon-copy>copy</span>'
+const copyIcon = '<div class="dark:text-white" i-carbon-copy />'
 
-const copiedIcon = '<span class="dark:text-white" i-carbon-checkmark-outline>copy</span>'
+const copiedIcon = '<div class="dark:text-white" i-carbon-checkmark-outline />'
 
 function htmlDecode(input: any) {
   const doc = new DOMParser().parseFromString(input, 'text/html')
