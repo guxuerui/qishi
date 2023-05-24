@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { setCopy } from '~/composables/copyBlockCode'
+
 const routes = useRoute()
+
+watch(() => routes.fullPath, (newVal, _oldVal) => {
+  if (newVal !== '/')
+    setCopy()
+}, { immediate: true })
 </script>
 
 <template>

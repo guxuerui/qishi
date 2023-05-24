@@ -633,3 +633,19 @@ html.dark .markdown-body {
 .markdown-body blockquote p:first-of-type:after {
   content: none
 }
+
+.markdown-body .copy-btn {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  background: none;
+  cursor: pointer;
+  display: none;
+  transition: all .2s ease;
+}
+
+.markdown-body pre[class*=language-]:hover .copy-btn {
+  display: block;
+}
