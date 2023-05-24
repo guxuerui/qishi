@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
         :class="[activeIndex === i ? 'c-black border-b-2 border-b-orange dark:c-white' : '']"
         hover="c-black border-b-2 border-b-orange"
         dark:hover="c-white"
-        @click="jumpPage(item.folder, item.fileName, i)"
+        @click="jumpPage(item.folder, item.fileName)"
       >
         {{ item.title }}
       </span>
