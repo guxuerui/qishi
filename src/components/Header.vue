@@ -19,9 +19,19 @@ const isDarkMode = computed(() => {
 
 const activeIndex = ref<number | undefined>(0)
 const router = useRouter()
-const jumpPage = function (folder: string, title: string, index?: number) {
-  sessionStorage.setItem('activeIndex', `${index}`)
-  activeIndex.value = index
+
+const setActiveIndex = function (index?: number) {
+  if (index !== undefined) {
+    sessionStorage.setItem('activeIndex', `${index}`)
+    activeIndex.value = index
+  }
+  else {
+    activeIndex.value = undefined
+    sessionStorage.setItem('activeIndex', 'undefined')
+  }
+}
+
+const jumpPage = function (folder: string, title: string) {
   showMenuList.value = false
 
   if (folder && title)
@@ -49,10 +59,14 @@ onMounted(() => {
     activeIndex.value = parseInt(activeLinkIndex)
 })
 
+// 监听路由
 watch(() => routes, (newVal, _oldVal) => {
-  if (newVal.fullPath === '/') {
-    activeIndex.value = undefined
-    sessionStorage.setItem('activeIndex', 'undefined')
+  if (newVal.fullPath === '/')
+    setActiveIndex()
+
+  for (let i = 0; i < links.value.length; i++) {
+    if (newVal.fullPath.includes(links.value[i].folder))
+      setActiveIndex(i)
   }
 }, { deep: true })
 
