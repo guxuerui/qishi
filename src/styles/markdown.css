@@ -635,8 +635,6 @@ html.dark .markdown-body {
 }
 
 .markdown-body .copy-btn {
-  width: 1rem;
-  height: 1rem;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
