@@ -12,7 +12,7 @@
 ## Editor
 
 - [Neovim](https://github.com/neovim/neovim) - Text Editor
-  - [lazw.nvim](https://github.com/folke/lazw.nvim) - Plugin Manager
+  - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin Manager
   - [tokynoight.nvim](https://github.com/folke/tokyonight.nvim) - Color Scheme
   - [guxuerui/nvim-0.8](https://github.com/guxuerui/nvim-0.8) - My Full Configuration
 - [VS Code](https://code.visualstudio.com/)
