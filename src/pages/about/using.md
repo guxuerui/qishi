@@ -1,4 +1,4 @@
-# What I'm using
+# Things I'm using
 
 > Tool-kit I'm using
 
