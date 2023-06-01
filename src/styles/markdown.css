@@ -636,12 +636,16 @@ html.dark .markdown-body {
 
 .markdown-body .copy-btn {
   position: absolute;
-  bottom: 0;
+  top: -2rem;
   right: 1rem;
   background: none;
   cursor: pointer;
   display: none;
   transition: all .2s ease;
+}
+
+.markdown-body .copy-btn:hover {
+  transform: scale(1.1);
 }
 
 .markdown-body pre[class*=language-]:hover .copy-btn {
