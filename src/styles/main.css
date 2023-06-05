@@ -28,13 +28,17 @@ html {
   overflow: scroll;
 }
 
-body {
-  line-height: inherit;
+.bg-grid {
+  background-size: 44.5px 44.5px;
+  background-image:
+    linear-gradient(to right, rgb(128, 128, 128, 1) 1px, rgb(128, 128, 128, .1) 1px),
+    linear-gradient(to bottom, rgb(128, 128, 128, 1) 1px, transparent 1px);
 }
 
 html, body, #app {
   margin: 0;
   padding: 0;
+  line-height: inherit;
 }
 
 html.dark {
