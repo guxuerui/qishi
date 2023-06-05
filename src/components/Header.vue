@@ -12,6 +12,20 @@ onClickOutside(targetMenu, () => {
     showMenuList.value = false
 })
 
+// Toggle Background Grid
+const toggleBg = ref(localStorage.getItem('toggleBg') === 'true')
+function loadBgGrid() {
+  if (toggleBg.value)
+    document.body.classList.add('bg-grid')
+  else
+    document.body.classList.remove('bg-grid')
+}
+function handdleToggleBg() {
+  toggleBg.value = !toggleBg.value
+  localStorage.setItem('toggleBg', `${toggleBg.value}`)
+  loadBgGrid()
+}
+
 // is or not darkMode
 const isDarkMode = computed(() => {
   return isDark.value
@@ -54,6 +68,7 @@ const cleanup = useEventListener(document, 'keydown', (e: KeyboardEvent) => {
 })
 
 onMounted(() => {
+  loadBgGrid()
   const activeLinkIndex = sessionStorage.getItem('activeIndex')!
   if (activeLinkIndex !== null)
     activeIndex.value = parseInt(activeLinkIndex)
@@ -119,7 +134,7 @@ onBeforeUnmount(() => {
           </a>
         </div>
       </span>
-      <span
+      <a
         v-for="(item, i) in links"
         v-else
         :key="i"
@@ -130,7 +145,7 @@ onBeforeUnmount(() => {
         @click="jumpPage(item.folder, item.fileName)"
       >
         {{ item.title }}
-      </span>
+      </a>
       <button
         class="icon-btn !outline-none vertical-sub c-gray-800 dark:c-gray-400"
         hover="c-black"
@@ -150,6 +165,18 @@ onBeforeUnmount(() => {
         title="GitHub"
       >
         <span class="inline-block" i-carbon-logo-github />
+      </a>
+      <a
+        class="vertical-sub ml-3 c-gray-400 transition"
+        hover="c-black"
+        dark:hover="c-white"
+        rel="noreferrer"
+        target="_blank"
+        title="Toggle Background Grid"
+        @click="handdleToggleBg"
+      >
+        <span v-if="toggleBg" class="inline-block" i-mdi-toggle-switch-outline />
+        <span v-else class="inline-block" i-mdi-toggle-switch-off-outline />
       </a>
     </div>
   </nav>
