@@ -30,7 +30,7 @@ onMounted(async () => {
         hover="c-black"
         dark:hover="c-white"
         rel="noreferrer"
-        href="https://github.com/guxuerui/qishi"
+        href="https://github.com/guxuerui"
         target="_blank"
         title="GitHub"
       >
