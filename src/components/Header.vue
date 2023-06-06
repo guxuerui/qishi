@@ -168,7 +168,7 @@ onBeforeUnmount(() => {
       </a>
       <a
         class="vertical-sub ml-3 c-gray-400 transition"
-        hover="c-black"
+        hover="c-black cursor-pointer"
         dark:hover="c-white"
         rel="noreferrer"
         target="_blank"
