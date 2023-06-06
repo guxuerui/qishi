@@ -14,8 +14,8 @@ dependencies:
     specifier: ^2.3.0
     version: 2.3.0
   pretty-timeline:
-    specifier: ^1.1.10
-    version: 1.1.10(vite@4.3.5)
+    specifier: ^1.1.11
+    version: 1.1.11(vite@4.3.5)
   vite-plugin-vue-markdown:
     specifier: ^0.23.4
     version: 0.23.4(vite@4.3.5)
@@ -4452,8 +4452,8 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /pretty-timeline@1.1.10(vite@4.3.5):
-    resolution: {integrity: sha512-jrzlpO1ES4SS2nLaCcBSRoDnF41Djv7D1RGxhFIHHPo1FtmYkivhh/WWqVCR8NkGFmc8SoYVm/moAW+RMZzZMw==}
+  /pretty-timeline@1.1.11(vite@4.3.5):
+    resolution: {integrity: sha512-O/dTArUPKM7jrEvshnKnIkG1UqxAaAKOQDZNxTLaIwKPvUGFGDaqxsN+zWqjxoy27N5Dxa6yH7b5b3u+8mbXuw==}
     dependencies:
       '@vueuse/core': 9.1.0(vue@3.2.47)
       '@vueuse/head': 0.7.9(vue@3.2.47)

@@ -15,7 +15,7 @@
     "@vueuse/head": "v0.7.9",
     "canvas-confetti": "^1.6.0",
     "markdown-it-prism": "^2.3.0",
-    "pretty-timeline": "^1.1.10",
+    "pretty-timeline": "^1.1.11",
     "vite-plugin-vue-markdown": "^0.23.4",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
