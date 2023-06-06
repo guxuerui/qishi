@@ -43,11 +43,11 @@ onMounted(async () => {
         hover="c-black"
         dark:hover="c-white"
         rel="noreferrer"
-        title="What I'm Using"
+        title="Things I'm Using"
         href="/about/using"
       >
         <span class="inline-block" i-carbon-tool-kit />
-        <span>What I'm Using</span>
+        <span>Things I'm Using</span>
       </a>
     </div>
     <h3>Used Language Rank -></h3>
