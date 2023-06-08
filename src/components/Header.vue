@@ -122,12 +122,13 @@ onBeforeUnmount(() => {
           dark:bg="gray-900"
           w-20
           pa-2
+          z-10
           border="rounded"
         >
           <a
             v-for="(item, i) in links"
             :key="i"
-            class="c-gray-500 cursor-pointer block mt-1"
+            class="c-gray-500 dark:c-gray-300 cursor-pointer block mt-1"
             @click="jumpPage(item.folder, item.fileName)"
           >
             {{ item.title }}
