@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const vuePostList = ref<Post[]>([
   {
+    title: '给node_modules打补丁',
+    date: '2023-06-12',
+    folder: 'vue',
+    fileName: 'patchNodeModules',
+    fileType: 'md',
+  },
+  {
     title: 'Vue中监听组合按键',
     date: '2023-02-15',
     folder: 'vue',
