@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ChipsData, SkillListData } from '~/consants/skillData'
-import { getLatestPost } from '~/consants/latestPostData'
-import getProjectCardsData from '~/consants/projectCardsData'
+import { ChipsData, SkillListData } from '~/constants/skillData'
+import { getLatestPost } from '~/constants/latestPostData'
+import getProjectCardsData from '~/constants/projectCardsData'
 import type { IPostCard } from '~/types'
 
 const latestPostData = ref<IPostCard[]>([])

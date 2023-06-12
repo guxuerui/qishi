@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useEventListener } from '@vueuse/core'
-import { links } from '~/consants/HeaderLinks'
+import { links } from '~/constants/HeaderLinks'
 
 const routes = useRoute()
 
