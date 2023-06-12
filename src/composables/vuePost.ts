@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const vuePostList = ref<Post[]>([
   {
+    title: 'svg圆环组件',
+    date: '2023-06-12',
+    folder: 'vue',
+    fileName: 'circleProgressBar',
+    fileType: 'md',
+  },
+  {
     title: '给node_modules打补丁',
     date: '2023-06-12',
     folder: 'vue',
