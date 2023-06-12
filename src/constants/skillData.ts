@@ -38,7 +38,7 @@ export const SkillListData: ISkill[] = [
   },
   {
     label: 'SvelteKit',
-    progress: '50%',
+    progress: '60%',
     color: '#f03',
   },
   {
