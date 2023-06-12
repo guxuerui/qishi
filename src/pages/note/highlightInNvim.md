@@ -67,8 +67,18 @@ local highlights = {
     hl = "Constant",
   },
   {
+    filter = { filetype = "javascript" },
+    pattern = "%s*%*%s*(@%w+)",
+    hl = "Constant",
+  },
+  {
     filter = { filetype = "typescript" },
     pattern = "%s*%/%/%s*(@%w+)",
+    hl = "Constant",
+  },
+  {
+    filter = { filetype = "typescript" },
+    pattern = "%s*%*%s*(@%w+)",
     hl = "Constant",
   },
   {
@@ -112,8 +122,18 @@ return {
         hl = "Constant",
       },
       {
+        filter = { filetype = "javascript" },
+        pattern = "%s*%*%s*(@%w+)",
+        hl = "Constant",
+      },
+      {
         filter = { filetype = "typescript" },
         pattern = "%s*%/%/%s*(@%w+)",
+        hl = "Constant",
+      },
+      {
+        filter = { filetype = "typescript" },
+        pattern = "%s*%*%s*(@%w+)",
         hl = "Constant",
       },
       {
