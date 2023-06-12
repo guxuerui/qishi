@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     BackTop: typeof import('./src/components/BackTop.vue')['default']
     BaseDataTable: typeof import('./src/components/BaseDataTable.vue')['default']
     CanvasExample: typeof import('./src/components/CanvasExample.vue')['default']
+    CircleProgressBar: typeof import('./src/components/CircleProgressBar.vue')['default']
     Cog: typeof import('./src/components/cog.vue')['default']
     Confetti: typeof import('./src/components/Confetti.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
