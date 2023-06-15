@@ -20,7 +20,7 @@ onMounted(async () => {
       <img v-for="(chip, i) in ChipsData" :key="i" my-0 :src="chip" alt="" class="!my-0">
     </div>
     <p class="text-linear !my-3">
-      前端开发 / 业余骑行爱好者<br>
+      前端开发 / 业余骑行爱好者 - 「 先让手会, 再让心会 」<br>
       <span text-sm>喜欢做开源以及一些有意思的小项目</span>
     </p>
     <div flex="~ gap-x-4">
