@@ -42,11 +42,6 @@ export const SkillListData: ISkill[] = [
     color: '#f03',
   },
   {
-    label: 'React',
-    progress: '30%',
-    color: '#2191a3',
-  },
-  {
     label: 'Vite',
     progress: '60%',
     color: '#aaf',
@@ -55,6 +50,11 @@ export const SkillListData: ISkill[] = [
     label: 'NodeJs',
     progress: '60%',
     color: '#1aaaaa',
+  },
+  {
+    label: 'React',
+    progress: '30%',
+    color: '#2191a3',
   },
 ]
 
@@ -65,5 +65,4 @@ export const ChipsData: string[] = [
   'https://img.shields.io/badge/-TypeScript-black?style=flat&logo=typescript',
   'https://img.shields.io/badge/-Vue.js-black?style=flat&logo=vue.js',
   'https://img.shields.io/badge/-Svelte-black?style=flat&logo=svelte&logoColor=f00',
-  'https://img.shields.io/badge/-React-black?style=flat&logo=react',
 ]
