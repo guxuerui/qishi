@@ -8,7 +8,7 @@ chipColor: green
 
 # 给node_modules打补丁
 
-> 背景: 最近在工作中, 使用Vue3 UI库 [BalmUI](https://material.balmjs.com/)的 `<ui-tree>` 组件的时候, 发现不能自动展开选中的树节点, 因为时间紧急，所以先手动给 `balm-ui` 包打了patch(补丁)
+> 背景: 最近在工作中, 使用Vue3 UI库 [BalmUI](https://material.balmjs.com/) 的 `<ui-tree>` 组件的时候, 发现不能自动展开选中的树节点, 因为时间紧急，所以先手动给 `balm-ui` 包打了patch(补丁)
 
 ## 1. 安装patch-package
 
@@ -42,6 +42,6 @@ npm install patch-package -D
 npx patch-package balm-ui
 ```
 
-最后会生成一个 `patches` 文件夹, 其中包含所有以 `diff` 方式生成的补丁, 将生成的patch文件提交到远程仓库中, 以后每次重新install都会自动生成一个新的补丁~
+最后会生成一个 `patches` 文件夹, 其中包含所有以 `diff` 方式生成的补丁, 将生成的patch文件提交到远程仓库中, 以后每次重新执行 `install` 都会自动生成一个新的补丁~
 
 > 此功能已经合并到源仓库中, **PR**: [feat(tree.vue): add new props autoExpandSelected and autoExpandAll](https://github.com/balmjs/balm-ui/pull/168)
