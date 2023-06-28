@@ -139,9 +139,9 @@ onBeforeUnmount(() => {
         v-for="(item, i) in links"
         v-else
         :key="i"
-        class="mr-3 c-gray-500 cursor-pointer transition"
-        :class="[activeIndex === i ? 'c-black border-b-2 border-b-orange dark:c-white' : '']"
-        hover="c-black border-b-2 border-b-orange"
+        class="mr-3 c-gray-500 cursor-pointer transition border-orange"
+        :class="[activeIndex === i ? 'c-black dark:c-white border-b' : '']"
+        hover="c-black border-b"
         dark:hover="c-white"
         @click="jumpPage(item.folder, item.fileName)"
       >
