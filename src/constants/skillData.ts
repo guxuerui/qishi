@@ -27,7 +27,7 @@ export const SkillListData: ISkill[] = [
     color: '#3f9',
   },
   {
-    label: 'Nuxt.js',
+    label: 'Nuxt',
     progress: '50%',
     color: '#3f9',
   },
