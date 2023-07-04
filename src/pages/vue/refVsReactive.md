@@ -115,3 +115,51 @@ console.log(obj.count) // -> 0
 响应式对象 `obj` 是原始对象 `{ count: 0 }` 的代理对象, 与其有着相同的属性
 
 > 总结: `ref()` 访问值需要使用 `.value`, 且在模板中使用是不需要使用 `.value`, 而 `reactive()` 访问值可以直接使用
+
+## 3. 重新赋值
+
+`ref()` 变量使用 `.value` 访问和更新, 而 `reactive()` 是原始对象的代理, 所以 `ref()` 变量可以重新赋值一个新对象, 但是 `reactive()` 不可以
+
+### 3.1 ref()
+
+给 `ref()` 变量重新赋值新对象是完全可以的
+
+```js
+import { ref, onMounted } from 'vue'
+
+const num = ref({ count: 0 })
+
+onMounted(() => {
+  num.value = { count: 1 }
+})
+```
+
+```html
+<template>
+  <span>{{ num.count }}</span>
+</template>
+```
+
+这时最后值展示为 `1`, 变量保持了响应性
+
+### 3.2 reactive()
+
+```js
+import { reactive, onMounted } from 'vue'
+
+let obj = reactive({ count: 0 }) // 不能用const
+
+onMounted(() => {
+  obj = { count: 1 }
+})
+```
+
+```html
+<template>
+  <span>{{ obj.count }}</span>
+</template>
+```
+
+这时最后值仍然为 `0`, 并不能保持响应性
+
+> 总结: `ref()` 变量可以直接被重新赋值为一个新对象, 而 `reactive()` 不可以
