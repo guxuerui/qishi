@@ -66,6 +66,52 @@ count++ // state.count -> 1
 testFn(state.count)
 ```
 
-> 总结: `ref()` 可以设置原始类型变量, `reactive()` 不可以设置原始类型变量, 且都可以设置对象类型变量
+> 总结: `ref()` 可以设置原始类型变量, `reactive()` 不可以设置原始类型变量, 但都可以设置对象类型变量
 
 ## 2. 访问响应式变量的值
+
+第二个不同是访问响应式变量的值的 `方式`
+
+### 2.1 ref()
+
+在 `<scrip>t` 中, 需要使用 `.value` 来访问
+
+```js
+import { ref } from 'vue'
+
+const num = ref(0)
+console.log(num.value) // -> 0
+
+const obj = ref({ count: 0 })
+console.log(obj.value.count) // -> 0
+```
+
+但是, 在模板中使用是不需要 `.vlaue` 的, 会自动解包
+
+```html
+<template>
+  <span>{{ num }}</span>
+  <span>{{ obj.count }}</span>
+</template>
+```
+
+### 2.2 reactive()
+
+可以直接访问
+
+```js
+import { reactive } from 'vue'
+
+const obj = reactive({ count: 0 })
+console.log(obj.count) // -> 0
+```
+
+```html
+<template>
+  <span>{{ obj.count }}</span>
+</template>
+```
+
+响应式对象 `obj` 是原始对象 `{ count: 0 }` 的代理对象, 与其有着相同的属性
+
+> 总结: `ref()` 访问值需要使用 `.value`, 且在模板中使用是不需要使用 `.value`, 而 `reactive()` 访问值可以直接使用
