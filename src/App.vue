@@ -21,7 +21,7 @@ watch(() => routes.fullPath, (newVal, _oldVal) => {
 
 <style scoped>
   .main {
-    max-width: 65ch;
+    max-width: 70ch;
     text-align: left;
     margin: 0 auto;
     font-size: 1rem;
