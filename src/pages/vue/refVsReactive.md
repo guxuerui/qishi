@@ -163,3 +163,65 @@ onMounted(() => {
 这时最后值仍然为 `0`, 并不能保持响应性
 
 > 总结: `ref()` 变量可以直接被重新赋值为一个新对象, 而 `reactive()` 不可以
+
+## 4. 类型
+
+### 4.1 ref()
+
+- 若直接使用 `ref()` 值, 可使用 `Ref` 定义, 比如
+
+```js
+import { computed, ref, Ref } from 'vue'
+
+const num: Ref<number> = ref(0)
+export const useIsEven = (num: Ref<number>) => {
+  return computed(() => num.value % 2 === 0)
+}
+const isEven = useIsEven(num)
+```
+
+- 若使用 `.value` , 可直接定义, 比如
+
+```js
+import { computed, ref } from 'vue'
+
+const num = ref<number>(0)
+export const useIsEven = (num: number) => {
+  return computed(() => num.value % 2 === 0)
+}
+const isEven = useIsEven(num.value)
+```
+
+- 也可在具体使用时, 通过 `toValue()` 自动解包变量, 此时传入 `ref` 变量或 `普通变量` 都可以, 比如
+
+```js
+import { computed, ref, toValue } from 'vue'
+
+const num = ref<number>(0)
+export const useIsEven = (num: Ref<number>) => {
+  return computed(() => toValue(num) % 2 === 0)
+}
+const isEven = useIsEven(num)
+```
+
+### 4.2 reactive()
+
+通常使用 `对象类型` 或 `interface` 为 `reactive()` 对象定义类型, 比如
+
+```js
+import { reactive } from 'vue'
+
+const obj: { count: number } = reactive({ count: 0 })
+```
+
+`reactive()` 通常会保留原始对象的类型, 但有一种例外, 如果对象中包含 `ref()` 值, 它们会被自动解包, 比如
+
+```js
+import { ref, reactive } from 'vue'
+
+const obj: { count: number } = reactive({ count: ref(0) })
+```
+
+此时尽管 `count` 的值是 `ref(0)`, 但是返回的类型仍然是 `{ count: number }`, 因为 `reactive()` 会自动解包对象中找到的 `ref()` 引用
+
+> 总结: `ref(value: T)` 返回的引用类型是 `Ref<T>`，而 `reactive(object: T)` 返回的响应式对象类型是 `T`（另外：`reactive()` 中的引用会被自动解包）
