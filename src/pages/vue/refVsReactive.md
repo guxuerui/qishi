@@ -313,7 +313,7 @@ watch(obj, () => {
 
 ### 5.2 reactive()
 
-在监听 `reactive()` 数据时, `watch()` 总是会表现为深度监听, 即使没有设置 `{ deep: true}`
+在监听 `reactive()` 数据时, `watch()` 总是会表现为深度监听, 即使没有设置 `{ deep: true }`
 
 ```js
 import { reactive, watch } from 'vue'
