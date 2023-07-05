@@ -1,13 +1,13 @@
 import type { Post } from '~/types'
 
 export const vuePostList = ref<Post[]>([
-  // {
-  //   title: 'ref和reactive的区别',
-  //   date: '2023-06-29',
-  //   folder: 'vue',
-  //   fileName: 'refVsReactive',
-  //   fileType: 'md',
-  // },
+  {
+    title: 'ref和reactive的区别',
+    date: '2023-06-29',
+    folder: 'vue',
+    fileName: 'refVsReactive',
+    fileType: 'md',
+  },
   {
     title: 'svg圆环组件',
     date: '2023-06-12',
