@@ -50,16 +50,6 @@ onMounted(async () => {
         <span>Things I'm Using</span>
       </a>
     </div>
-    <h3>Used Language Rank -></h3>
-    <div grid="~ cols-1">
-      <ProgressBar
-        v-for="(bar, i) in SkillListData"
-        :key="i"
-        :label="bar.label"
-        :progress="bar.progress"
-        :bar-color="bar.color"
-      />
-    </div>
     <h3>Personal Projects</h3>
     <div grid="~ cols-1 gap-6" class="sm:grid-cols-2">
       <ProjectCard
@@ -83,6 +73,16 @@ onMounted(async () => {
         :chip-text="card.chipText"
         :chip-color="card.chipColor"
         :file-name="card.fileName"
+      />
+    </div>
+    <h3>Used Language Rank -></h3>
+    <div grid="~ cols-1">
+      <ProgressBar
+        v-for="(bar, i) in SkillListData"
+        :key="i"
+        :label="bar.label"
+        :progress="bar.progress"
+        :bar-color="bar.color"
       />
     </div>
     <div mt-4>
