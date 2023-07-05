@@ -240,3 +240,110 @@ const obj: { count: number } = reactive({ count: ref(0) })
 此时尽管 `count` 的值是 `ref(0)`, 但是返回的类型仍然是 `{ count: number }`, 因为 `reactive()` 会自动解包对象中找到的 `ref()` 引用
 
 > 总结: `ref(value: T)` 返回的引用类型是 `Ref<T>`，而 `reactive(object: T)` 返回的响应式对象类型是 `T`（另外：`reactive()` 中的引用会被自动解包）
+
+## 5. 数据监听
+
+`watch()` 监听响应性数据变化, 但对于 `ref()` 和 `reactive()` 的默认行为是不同的
+
+### 5.1 ref()
+
+`watch()` 会判断 `.value` 是否发生了变化
+
+```js
+import { ref, watch } from 'vue'
+
+const num = ref(0)
+
+watch(num, () => {
+  console.log('changed!')
+})
+
+// or
+// watch(() => num.value, (newVal, oldVal) => {
+//   console.log('changed!', newVal, oldVal)
+// })
+
+function increase() {
+  num.value++
+}
+```
+
+```html
+<template>
+  <button @click="increase">+1</button>
+</template>
+```
+
+每点击一次按钮, `num.value` 的变化都会触发 `watch()` 回调.
+
+那么, 如果是监听一个对象数据呢? 还可以触发 `watch()` 回调么, 比如:
+
+```js
+import { ref, watch } from 'vue'
+
+const obj = ref({ count: 0 })
+
+watch(obj, () => {
+  console.log('changed!')
+})
+
+function increase() {
+  obj.value.count++
+}
+```
+
+```html
+<template>
+  {{ obj.count }}
+  <button @click="increase">+1</button>
+</template>
+```
+
+当点击按钮时, 会发现页面上的输出是响应性变化的, 但是控制台中是没有输出的, 说明 `watch()` 默认是不会深度监听ref对象的.
+
+只需这样:
+
+```js
+// ...
+watch(obj, () => {
+  console.log('changed!')
+}, { deep: true })
+// ...
+```
+
+### 5.2 reactive()
+
+在监听 `reactive()` 数据时, `watch()` 总是会表现为深度监听, 即使没有设置 `{ deep: true}`
+
+```js
+import { reactive, watch } from 'vue'
+
+const obj = reactive({ counter: { value: 0 } })
+
+watch(obj, () => {
+  console.log('changed!')
+})
+
+function increase() {
+  obj.counter.value++
+}
+```
+
+```html
+<template>
+  {{ obj.counter.value }}
+  <button @click="increase">+1</button>
+</template>
+```
+
+每次点击按钮时, 可以看到页面和控制台的输出都是响应性变化的, 每当 `obj` 的任何属性(包括深层属性)发生变化, 都会触发 `watch()` 回调
+
+> 总结: `watch()` 默认监听 `ref()` 的 `.value` 变化, 需通过 `{ deep: true }` 设置深度监听, 而 `reactive()` 默认是深度监听
+
+## 6. 结论
+
+虽然没有严格的规定，但在某些情况下使用特定的响应性函数是更好的选择:
+
+1. 如果需要一个响应式的原始值，那么使用 `ref()` 是正确的选择
+2. 如果需要一个响应式的值对象（通常不会改变属性的对象），那么使用 `ref()` 是一个好选择
+3. 如果需要一个响应式的可变对象，并且想要跟踪该对象的深层变异属性，那么使用 `reactive()` 是一个好的选择; 如果一定要使用 `ref()`, 则需要手动设置 `{ deep: true }`
