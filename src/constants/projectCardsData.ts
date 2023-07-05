@@ -19,7 +19,7 @@ export default function getProjectCardsData(): IProjectCard[] {
     {
       title: 'pretty-timeline',
       borderColor: '#41b883',
-      abstract: '一个vue3版本的时间轴组件, 可配置性高、使用丝滑, 支持局部导入和全局导入.',
+      abstract: '一个vue3版本的时间轴组件, 可配置性高、使用丝滑, 支持局部导入和全局导入, 支持light和dark模式.',
       imgUrl: '/imgs/pretty-timeline.png',
       projectUrl: 'https://github.com/guxuerui/pretty-timeline',
     },
@@ -33,7 +33,7 @@ export default function getProjectCardsData(): IProjectCard[] {
     {
       title: 'vue3-signage',
       borderColor: '#125abe',
-      abstract: 'Vue3版本的任务看看板, 创建方便, 视图清晰, 可随时进行编辑, 并且支持拖拽.',
+      abstract: 'Vue3版本的任务看看板, 创建方便, 视图清晰, 可随时进行编辑, 支持light和dark模式, 并且支持拖拽.',
       imgUrl: '/imgs/vue3-signage.png',
       projectUrl: 'https://github.com/guxuerui/vue3-signage',
     },
