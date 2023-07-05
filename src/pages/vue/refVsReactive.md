@@ -160,7 +160,22 @@ onMounted(() => {
 </template>
 ```
 
-这时最后值仍然为 `0`, 并不能保持响应性
+这时页面上值仍然为 `0`, 并不能保持响应性
+
+**那么如何做才能保持响应性?**
+
+```js
+import { reactive, onMounted } from 'vue'
+
+let obj = reactive({ count: 0 })
+let obj2 = reactive({ count: 2 })
+
+onMounted(() => {
+  obj = Object.assign(obj, { count: 1 })
+  obj2 = Object.assign(obj1, { count: 3 })
+})
+// 此时可以做到保持变量响应性, 但是 `obj` 得值会被改变, 和 `obj2` 同为 `{ count: 3 }`
+```
 
 > 总结: `ref()` 变量可以直接被重新赋值为一个新对象, 而 `reactive()` 不可以
 
