@@ -191,7 +191,7 @@ markdown-body*, :before,:after {
   font-size: 2.25em;
   margin-top: 0;
   margin-bottom: .8888889em;
-  line-height: 1.1111111
+  line-height: 1.1111111;
 }
 
 .markdown-body h2 {
@@ -199,7 +199,7 @@ markdown-body*, :before,:after {
   font-weight: 700;
   font-size: 1.5em;
   margin: 1em 0; 
-  line-height: 1.3333333
+  line-height: 1.3333333;
 }
 
 .markdown-body h3 {
@@ -208,7 +208,7 @@ markdown-body*, :before,:after {
   font-size: 1.25em;
   margin-top: 1.6em;
   margin-bottom: .6em;
-  line-height: 1.6
+  line-height: 1.6;
 }
 
 .markdown-body h4 {
@@ -216,14 +216,14 @@ markdown-body*, :before,:after {
   font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: .5em;
-  line-height: 1.5
+  line-height: 1.5;
 }
 
 .markdown-body figure figcaption {
   color: #6b7280;
   font-size: .875em;
   line-height: 1.4285714;
-  margin-top: .8571429em
+  margin-top: .8571429em;
 }
 
 .markdown-body code {
