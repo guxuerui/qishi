@@ -535,47 +535,47 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
 }
 
 .token.important,.token.bold {
-  font-weight: 700
+  font-weight: 700;
 }
 
 .token.italic {
-  font-style: italic
+  font-style: italic;
 }
 
 .token.class-name {
-  color: var(--prism-class)
+  color: var(--prism-class);
 }
 
 .token.tag,.token.builtin {
-  color: var(--prism-builtin)
+  color: var(--prism-builtin);
 }
 
 .token.attr-name,.token.property,.token.entity {
-  color: var(--prism-property)
+  color: var(--prism-property);
 }
 
 .language-json .token.property {
-  color: var(--prism-json-property)
+  color: var(--prism-json-property);
 }
 
 .token.regex {
-  color: var(--prism-regex)
+  color: var(--prism-regex);
 }
 
 .token.decorator,.token.annotation {
-  color: var(--prism-decorator)
+  color: var(--prism-decorator);
 }
 
 .line-numbers .line-numbers-rows {
-  border-right-color: var(--prism-line-number)
+  border-right-color: var(--prism-line-number);
 }
 
 .line-numbers-rows>span:before {
-  color: var(--prism-line-number-gutter)
+  color: var(--prism-line-number-gutter);
 }
 
 .line-highlight {
-  background: var(--prism-line-highlight-background)
+  background: var(--prism-line-highlight-background);
 }
 
 .markdown-body a {
@@ -593,18 +593,18 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
 }
 
 .markdown-body a code {
-  color: inherit
+  color: inherit;
 }
 
 .markdown-body hr {
   width: 50px;
-  margin: 2em auto
+  margin: 2em auto;
 }
 
 html.dark .markdown-body {
   --fg: #bbb;
   --fg-deep: #ddd;
-  --fg-deeper: #fff
+  --fg-deeper: #fff;
 }
 
 .markdown-body blockquote {
@@ -616,19 +616,19 @@ html.dark .markdown-body {
 }
 
 .markdown-body blockquote>:first-child {
-  margin-top: 0
+  margin-top: 0;
 }
 
 .markdown-body blockquote>:last-child {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .markdown-body blockquote p:first-of-type:before {
-  content: none
+  content: none;
 }
 
 .markdown-body blockquote p:first-of-type:after {
-  content: none
+  content: none;
 }
 
 /* for copy btn */
