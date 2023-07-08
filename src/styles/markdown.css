@@ -454,11 +454,11 @@ div[class*=language-],pre[class*=language-] {
   font-size: var(--prism-inline-font-size);
   padding: var(--prism-inline-padding-y) var(--prism-inline-padding-x);
   border-radius: var(--prism-inline-radius);
-  background: var(--prism-inline-background)
+  background: var(--prism-inline-background);
 }
 
 pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection {
-  background: var(--prism-selection-background)
+  background: var(--prism-selection-background);
 }
 
 pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection {
@@ -471,67 +471,67 @@ pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=l
 }
 
 .token.namespace {
-  color: var(--prism-namespace)
+  color: var(--prism-namespace);
 }
 
 .token.interpolation {
-  color: var(--prism-interpolation)
+  color: var(--prism-interpolation);
 }
 
 .token.string {
-  color: var(--prism-string)
+  color: var(--prism-string);
 }
 
 .token.punctuation {
-  color: var(--prism-punctuation)
+  color: var(--prism-punctuation);
 }
 
 .token.operator {
-  color: var(--prism-operator)
+  color: var(--prism-operator);
 }
 
 .token.keyword.module,.token.keyword.control-flow {
-  color: var(--prism-keyword-control)
+  color: var(--prism-keyword-control);
 }
 
 .token.url,.token.symbol,.token.inserted {
-  color: var(--prism-symbol)
+  color: var(--prism-symbol);
 }
 
 .token.constant {
-  color: var(--prism-constant)
+  color: var(--prism-constant);
 }
 
 .token.string.url {
-  text-decoration: var(--prism-url-decoration)
+  text-decoration: var(--prism-url-decoration);
 }
 
 .token.boolean,.language-json .token.boolean {
-  color: var(--prism-boolean)
+  color: var(--prism-boolean);
 }
 
 .token.number,.language-json .token.number {
-  color: var(--prism-number)
+  color: var(--prism-number);
 }
 
 .token.variable {
-  color: var(--prism-variable)
+  color: var(--prism-variable);
 }
 
 .token.keyword {
-  color: var(--prism-keyword)
+  color: var(--prism-keyword);
 }
 
 .token.atrule,.token.attr-value,.token.selector {
-  color: var(--prism-selector)
+  color: var(--prism-selector);
 }
 
 .token.function {
-  color: var(--prism-function)
+  color: var(--prism-function);
 }
 
 .token.deleted {
-  color: var(--prism-deleted)
+  color: var(--prism-deleted);
 }
 
 .token.important,.token.bold {
