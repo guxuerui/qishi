@@ -265,11 +265,7 @@ markdown-body*, :before,:after {
   line-height: inherit
 }
 
-.markdown-body pre code:before {
-  content: none
-}
-
-.markdown-body pre code:after {
+.markdown-body pre code:before, .markdown-body pre code:after {
   content: none
 }
 
