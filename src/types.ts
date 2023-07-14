@@ -25,7 +25,7 @@ export interface RepoList {
 }
 
 export interface SearchIndex {
-  [key: string]: string
+  [key: string]: string | number
 }
 
 export interface BlockRotate {
