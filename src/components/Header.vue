@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="header link font-mno mx-auto max-w-75ch" :class="ifMobile ? 'pa-4' : 'py-4'">
+  <header class="header link font-mno mx-auto md:max-w-5xl pa-4">
     <div class="c-gray-500">
       <a href="/" class="hover:c-black dark:hover:c-white">
         Home
@@ -180,7 +180,7 @@ onBeforeUnmount(() => {
         <span v-else class="inline-block" i-mdi-toggle-switch-off-outline />
       </a>
     </div>
-  </nav>
+  </header>
   <global-search :open="openSearch" @cancel="openSearch = false" />
 </template>
 
