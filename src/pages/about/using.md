@@ -15,6 +15,7 @@
   - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin Manager
   - [tokynoight.nvim](https://github.com/folke/tokyonight.nvim) - Color Scheme
   - [guxuerui/nvim-0.8](https://github.com/guxuerui/nvim-0.8) - My Full Configuration
+  - [Hack Bold Nerd Font Complete Mono.ttf](https://github.com/guxuerui/dotFiles/tree/main/fonts) - Nerd Fonts
 - [VS Code](https://code.visualstudio.com/)
   - `Maple Mono SC NF, Menlo, Monaco, 'Courier New', monospace` - Fonts
   - [Moegi Space](https://github.com/moegi-design/vscode-theme) - Theme
