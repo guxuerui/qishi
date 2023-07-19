@@ -38,7 +38,7 @@
     "unocss": "^0.51.12",
     "unplugin-auto-import": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
-    "utils-snap-fn": "^1.1.4",
+    "utils-snap-fn": "^1.1.8",
     "vite": "^4.3.5",
     "vite-plugin-pages": "^0.29.0",
     "vitest": "^0.31.0",
