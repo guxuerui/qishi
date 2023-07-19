@@ -27,4 +27,9 @@ export const links = ref<Omit<Post, 'date'>[]>([
     fileName: 'list',
     folder: 'game',
   },
+  {
+    title: '言',
+    fileName: 'gallery',
+    folder: 'motto',
+  },
 ])
