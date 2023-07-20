@@ -8,7 +8,7 @@ const ifMobile = isMobile()
   <h1 text-4xl>
     一言一行
   </h1>
-  <div class="waterfall w-full my-6" :class="{ 'waterfall-mobile': ifMobile }">
+  <div class="columns-2 gap-4 w-full my-6" :class="{ 'columns-1 gap-4': ifMobile }">
     <div
       v-for="(item, index) in galleryItems"
       :key="index"
@@ -29,14 +29,3 @@ const ifMobile = isMobile()
     </div>
   </div>
 </template>
-
-<style scoped>
-.waterfall {
-  column-count: 2;
-  column-gap: 1rem;
-}
-.waterfall-mobile {
-  column-count: 1;
-  column-gap: 1rem;
-}
-</style>
