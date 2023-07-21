@@ -8,7 +8,7 @@ const ifMobile = isMobile()
   <h1 text-4xl>
     一言一行
   </h1>
-  <div class="columns-2 gap-4 w-full my-6" :class="{ 'columns-1 gap-4': ifMobile }">
+  <div class="columns-2 gap-4 w-full my-6" :class="{ '!columns-1': ifMobile }">
     <div
       v-for="(item, index) in galleryItems"
       :key="index"
