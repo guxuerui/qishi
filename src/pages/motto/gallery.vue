@@ -8,7 +8,7 @@ const ifMobile = isMobile()
   <h1 text-4xl>
     一言一行
   </h1>
-  <div class="columns-2 gap-4 w-full my-6" :class="{ '!columns-1': ifMobile }">
+  <div class="columns-3 gap-4 w-full my-6" :class="{ '!columns-1': ifMobile }">
     <div
       v-for="(item, index) in galleryItems"
       :key="index"
@@ -24,7 +24,7 @@ const ifMobile = isMobile()
       <h2>{{ item.title }}</h2>
       <p mt-2 flex="~ justify-between">
         <span>发布于: {{ item.date }}</span>
-        <span>作者: {{ item.author }}</span>
+        <span v-if="item.author">—— {{ item.author }}</span>
       </p>
     </div>
   </div>
