@@ -3,7 +3,7 @@ import type { Post } from '~/types'
 
 interface GallaryItems extends Pick<Post, 'title' | 'date'> {
   color: string
-  author: string
+  author?: string
 }
 
 export const galleryItems = ref<GallaryItems[]>([
@@ -11,13 +11,11 @@ export const galleryItems = ref<GallaryItems[]>([
     title: '想到什么就立刻去做，不要等待，在那个时刻是最有想法和激情的。',
     date: '2023-07-24',
     color: randomColor('rgb', 0.3),
-    author: '',
   },
   {
     title: '学习一门语言, 最重要的就是一定要用。',
     date: '2023-07-24',
     color: randomColor('rgb', 0.3),
-    author: '',
   },
   {
     title: '你无法控制生活中的所有事情，但你可以控制自己的反应。',
