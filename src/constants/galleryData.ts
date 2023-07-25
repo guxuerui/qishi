@@ -8,6 +8,12 @@ interface GallaryItems extends Pick<Post, 'title' | 'date'> {
 
 export const galleryItems = ref<GallaryItems[]>([
   {
+    title: '问学必有师，讲习必有友。',
+    date: '2023-07-25',
+    color: randomColor('rgb', 0.3),
+    author: '陆佃',
+  },
+  {
     title: '在Vue3中, 当`cpmputed()`的返回值为布尔值时, 可以使用`VueUse`中的`computedEager()`函数来代替, 从而提高计算性能。',
     date: '2023-07-24',
     color: randomColor('rgb', 0.3),
