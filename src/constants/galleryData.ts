@@ -8,6 +8,12 @@ interface GallaryItems extends Pick<Post, 'title' | 'date'> {
 
 export const galleryItems = ref<GallaryItems[]>([
   {
+    title: '友谊是一种生长缓慢的植物，它只有嫁接在彼此熟识，互相敬爱的枝干上才会枝繁叶茂。',
+    date: '2023-07-26',
+    color: randomColor('rgb', 0.3),
+    author: '切斯特菲尔德',
+  },
+  {
     title: '问学必有师，讲习必有友。',
     date: '2023-07-25',
     color: randomColor('rgb', 0.3),
