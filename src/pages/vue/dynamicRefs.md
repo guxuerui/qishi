@@ -20,7 +20,7 @@ chipColor: green
 </template>
 ```
 
-然后再script中就可以直接访问了, 比如:
+然后在script中就可以直接访问了, 比如:
 
 ```js
 this.$refs.wave.style.color = '#fff';
@@ -88,7 +88,7 @@ const setRefMap = (el: refItem, title: string) => {
 
 ## 4. 告警处理
 
-当设置完ref, 获取对应的DOM元素并设置样式时, 可能会受到类型错误告警:
+当设置完ref, 获取对应的DOM元素并设置样式时, 可能会收到类型错误告警:
 
 ```js
 // 类型“Element | HTMLElement | ComponentPublicInstance”上不存在属性“style”。
