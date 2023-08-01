@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const vuePostList = ref<Post[]>([
   {
+    title: '在Vue3中动态创建refs',
+    date: '2023-08-01',
+    folder: 'vue',
+    fileName: 'dynamicRefs',
+    fileType: 'md',
+  },
+  {
     title: 'ref和reactive的区别',
     date: '2023-06-29',
     folder: 'vue',
