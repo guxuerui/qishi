@@ -1,4 +1,6 @@
 {
   "extends": "@antfu",
-  "@typescript-eslint/consistent-type-definitions": ["off", "interface"]
+  "rules" : {
+    "@typescript-eslint/consistent-type-definitions": ["off", "interface"]
+  }
 }
