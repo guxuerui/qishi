@@ -8,6 +8,12 @@ interface GallaryItems extends Pick<Post, 'title' | 'date'> {
 
 export const galleryItems = ref<GallaryItems[]>([
   {
+    title: '人生天地之间，若白驹之过隙，忽然而已。',
+    date: '2023-08-14',
+    color: randomColor('rgb', 0.3),
+    author: '庄周',
+  },
+  {
     title: '树欲静而风不止。',
     date: '2023-08-07',
     color: randomColor('rgb', 0.3),
