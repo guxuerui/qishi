@@ -3,6 +3,11 @@ import balloon from '/imgs/ballon.jpeg'
 import night from '/imgs/night.jpeg'
 import type { ITimeline } from '~/types'
 
+// icon position
+const iconPosition = computed(() => {
+  return isMobile().value ? '100%' : '10%'
+})
+
 export const timelineArr = ref<ITimeline[]>([
   {
     isCollapsed: false,
@@ -14,7 +19,7 @@ export const timelineArr = ref<ITimeline[]>([
         iconColor: '#26c',
         chipColor: '#26C',
         chipText: '二周年',
-        iconRight: '7%',
+        iconRight: iconPosition.value,
         subTitleColor: '#26c',
         subTitle: '新公司入职2周年',
         imgUrl: image,
@@ -38,7 +43,7 @@ export const timelineArr = ref<ITimeline[]>([
         iconColor: '#00EAFF',
         chipColor: '#00EAFF',
         chipText: '二换',
-        iconRight: '7%',
+        iconRight: iconPosition.value,
         subTitleColor: '#00EAFF',
         subTitle: '今天, 第二次换工作',
         imgUrl: night,
@@ -60,7 +65,7 @@ export const timelineArr = ref<ITimeline[]>([
         iconColor: '#7367F0',
         chipColor: '#7367F0',
         chipText: '换工作了',
-        iconRight: '7%',
+        iconRight: iconPosition.value,
         subTitleColor: '#7367F0',
         subTitle: '今天, 第一次换工作',
         imgUrl: balloon,
@@ -81,7 +86,7 @@ export const timelineArr = ref<ITimeline[]>([
         iconColor: 'orange',
         chipColor: 'orange',
         chipText: '入职了',
-        iconRight: '7%',
+        iconRight: iconPosition.value,
         subTitleColor: 'orange',
         subTitle: '今天, 入职了!',
         content: `
@@ -94,7 +99,7 @@ export const timelineArr = ref<ITimeline[]>([
         iconColor: 'cyan',
         chipColor: '#1c9',
         chipText: '毕业啦',
-        iconRight: '7%',
+        iconRight: iconPosition.value,
         subTitleColor: '#1c9',
         subTitle: '今天, 毕业了!',
         content: '大学四年正式结束了, 离开兰州理工大学, 即将步入职场!<br/>',
