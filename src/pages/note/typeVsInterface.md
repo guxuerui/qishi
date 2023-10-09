@@ -6,7 +6,6 @@ date: 2022-07-25
 chipColor: teal
 ---
 
-<!--toc:start-->
 [TS中Type和Inrerface的区别](#TS中Type和Inrerface的区别)
 
 - [1. 什么是类型别名(Type Aliases)](#1-什么是类型别名type-aliases)
@@ -14,7 +13,6 @@ chipColor: teal
 - [3. 它们之间的区别](#3-它们之间的区别)
 - [4. 到底应该用哪个](#4-到底应该用哪个)
 - [5. 总结](#5-总结)
-<!--toc:end-->
 
 <a name="TS中Type和Inrerface的区别"></a>
 
