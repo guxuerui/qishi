@@ -6,9 +6,23 @@ date: 2022-07-25
 chipColor: teal
 ---
 
+<!--toc:start-->
+[TS中Type和Inrerface的区别](#TS中Type和Inrerface的区别)
+
+- [1. 什么是类型别名(Type Aliases)](#1-什么是类型别名type-aliases)
+- [2. 什么是接口(Interface)](#2-什么是接口interface)
+- [3. 它们之间的区别](#3-它们之间的区别)
+- [4. 到底应该用哪个](#4-到底应该用哪个)
+- [5. 总结](#5-总结)
+<!--toc:end-->
+
+<a name="TS中Type和Inrerface的区别"></a>
+
 ## TS中Type和Inrerface的区别
 
 > 日常开发中会经常使用到类型约束，但有时候会对type和interface到底有什么区别，应该用哪一个产生疑惑，所以今天做下总结
+
+<a name="1-什么是类型别名type-aliases"></a>
 
 ### 1. 什么是类型别名(Type Aliases)
 
@@ -51,6 +65,8 @@ function outPut(msg: string): UserInput {
 outPut('test input')
 ```
 
+<a name="2-什么是接口interface"></a>
+
 ### 2. 什么是接口(Interface)
 
 `interface`可以对传入的数据结构和数据类型做出约束，方便的帮我们定位问题。
@@ -67,6 +83,8 @@ function Hello(person: Person) {
 
 Hello({ age: 18, height: 180 })
 ```
+
+<a name="3-它们之间的区别"></a>
 
 ### 3. 它们之间的区别
 
@@ -147,12 +165,16 @@ Hello({ age: 18, height: 180 })
      // Error: Duplicate identifier 'Person'
      ```
 
+<a name="4-到底应该用哪个"></a>
+
 ### 4. 到底应该用哪个
 
 > Because an interface more closely maps how JavaScript objects work by being open to extension, we recommend using an interface over a type alias when possible.
 > On the other hand, if you can’t express some shape with an interface and you need to use a union or tuple type, type aliases are usually the way to go.
 
 其实就是说因为`interface`更接近JavaScript对象的工作方式，所以建议只要能用`interface`就用`interface`，不能用的话再用`type`。比如当你不能用`interface`定义某些结构或者需要定义联合类型或元祖类型的时候，通常就使用`type`。
+
+<a name="5-总结"></a>
 
 ### 5. 总结
 
