@@ -89,4 +89,4 @@ require("lazy").setup(plugins, opts)
 - [tabline.nvim](https://github.com/kdheepak/tabline.nvim) - A "buffer and tab" tabline
 - [treesitter.nvim](https://github.com/nvim-treesitter/nvim-treesitter) - 语法规则及代码高亮
 
-> 更多详细的配置可以参考我的 [完整配置](https://github.com/guxuerui/nvim-0.8)
+> 更多详细的配置可以参考我的 [完整配置](https://github.com/guxuerui/nvim-config)
