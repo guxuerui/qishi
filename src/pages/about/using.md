@@ -61,5 +61,5 @@
   - Dictionary
 - [Kap](https://getkap.co/) - GIF Recorder
 - [Rectangle](https://rectangleapp.com/) - Window Manager
-- [iRightMouse](https://apps.apple.com/cn/app/%E8%B6%85%E7%BA%A7%E5%8F%B3%E9%94%AE-irightmouse/id1497428978?mt=12) - The most powerful right-click menu tool
 - [LocalSend](https://github.com/localsend/localsend) - Share files and messages with nearby devices
+- [Raycast](https://www.raycast.com/) - Command line tool
