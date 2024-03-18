@@ -1,7 +1,30 @@
 <script setup lang="ts">
+import PinchScrollZoom, { type PinchScrollZoomEmitData, type PinchScrollZoomExposed } from '@coddicat/vue-pinch-scroll-zoom'
 import { FilterCards } from '~/constants/FilterCards'
 import type { SearchIndex } from '~/types'
 import image from '/imgs/street.jpeg'
+
+const zoomer = ref<PinchScrollZoomExposed>()
+
+const state = reactive<{
+  scale?: number
+  originX?: number
+  originY?: number
+  translateX?: number
+  translateY?: number
+  eventName?: string
+  eventData?: PinchScrollZoomEmitData
+}>({})
+
+function onEvent(name: string, e: PinchScrollZoomEmitData): void {
+  state.eventName = name
+  state.eventData = e
+  state.scale = e.scale
+  state.originX = e.originX
+  state.originY = e.originY
+  state.translateX = e.translateX
+  state.translateY = e.translateY
+}
 
 const slidesData = reactive<SearchIndex>({
   slide1: 0,
@@ -41,7 +64,7 @@ const slide10Val = computed(() => `${slidesData.slide10}px`)
 <template>
   <div grid="~ gap-6 md:cols-2 sm:cols-1">
     <div v-for="item, i in FilterCards" :key="i" min-h-50>
-      <div h-20 overflow-scroll>
+      <div min-h-20>
         {{ i + 1 }}. {{ item.title }}
       </div>
       <div flex="~" justify-between>
@@ -52,7 +75,24 @@ const slide10Val = computed(() => `${slidesData.slide10}px`)
         </div>
       </div>
       <input v-model="slidesData[`slide${i + 1}`]" type="range" min="0" max="100" step="1">
-      <img :src="image" :class="item.className">
+      <!-- <img :src="image" :class="item.className"> -->
+      <PinchScrollZoom
+        ref="zoomer"
+        within
+        centred
+        key-actions
+        :width="360"
+        :height="240"
+        :origin-x="180"
+        :min-scale="1"
+        :max-scale="6"
+        @scaling="(e: any) => onEvent('scaling', e)"
+        @start-drag="(e: any) => onEvent('startDrag', e)"
+        @stop-drag="(e: any) => onEvent('stopDrag', e)"
+        @dragging="(e: any) => onEvent('dragging', e)"
+      >
+        <img :src="image" :class="item.className">
+      </PinchScrollZoom>
     </div>
   </div>
 </template>

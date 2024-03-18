@@ -7,6 +7,7 @@ import StatusIndicator from './components/statusIndicator.vue'
 import Vue3Guage from './components/vue3Guage.vue'
 import Cog from './components/cog.vue'
 
+import '@coddicat/vue-pinch-scroll-zoom/style.css'
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
