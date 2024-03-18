@@ -11,6 +11,7 @@
     "up": "taze major -I"
   },
   "dependencies": {
+    "@coddicat/vue-pinch-scroll-zoom": "^4.3.5",
     "@vueuse/core": "v9.1.0",
     "@vueuse/head": "v0.7.9",
     "canvas-confetti": "^1.6.0",
