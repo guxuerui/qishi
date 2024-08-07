@@ -2,6 +2,13 @@ import type { Post } from '~/types'
 
 export const notePostList = ref<Post[]>([
   {
+    title: 'Linux命令行速查表',
+    date: '2024-08-06',
+    folder: 'note',
+    fileName: 'linuxCheckList',
+    fileType: 'md',
+  },
+  {
     title: 'Neovim中的高亮显示',
     date: '2023-05-24',
     folder: 'note',
