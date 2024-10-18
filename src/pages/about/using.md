@@ -43,7 +43,6 @@
 ## Chrome Extensions
 
 - [Refined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf) - No brainer must-have
-- [Grammarly](https://chrome.google.com/webstore/detail/grammarly-grammar-checker/kbfnbcaeplbcioakkpcpgfkobkghlhen) - Spell check
 - [ChatGPT for Google](https://chrome.google.com/webstore/detail/chatgpt-for-google/jgjaeacdkonaoafenlfkkkmbaopkbilf) - ChatGPT browser plugin
 - [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) - Toggle Page Dark Mode
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - Improving the performance, quality, and correctness
@@ -63,3 +62,4 @@
 - [Rectangle](https://rectangleapp.com/) - Window Manager
 - [LocalSend](https://github.com/localsend/localsend) - Share files and messages with nearby devices
 - [Raycast](https://www.raycast.com/) - Command line tool
+- [Raycast Pro](https://www.raycast.com/pro) - Command line tool
