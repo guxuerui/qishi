@@ -11,6 +11,6 @@ const goBack = () => router.back()
     <a href="/">cd ~</a>
   </div>
   <div mt-2 c-gray-600 dark:c-gray-400>
-    Qishi © 2024
+    Qishi © 2025
   </div>
 </template>

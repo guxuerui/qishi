@@ -86,7 +86,7 @@ onMounted(async () => {
       />
     </div>
     <div mt-4>
-      Qishi © 2024
+      Qishi © 2025
     </div>
   </div>
 </template>
