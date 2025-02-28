@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import PinchScrollZoom, { type PinchScrollZoomEmitData, type PinchScrollZoomExposed } from '@coddicat/vue-pinch-scroll-zoom'
 import { FilterCards } from '~/constants/FilterCards'
-import type { SearchIndex } from '~/types'
 import image from '/imgs/street.jpeg'
 
 const zoomer = ref<PinchScrollZoomExposed>()
@@ -26,39 +25,34 @@ function onEvent(name: string, e: PinchScrollZoomEmitData): void {
   state.translateY = e.translateY
 }
 
-const slidesData = reactive<SearchIndex>({
-  slide1: 0,
-  slide2: 0,
-  slide3: 1,
-  slide4: 100,
-  slide5: 0,
-  slide6: 100,
-  slide7: 100,
-  slide8: 100,
-  slide9: 5,
-  slide10: 8,
+const slidesData = reactive<{
+  [key: string]: {
+    value: number
+    unit: string
+  }
+}>({
+  slide1: { value: 0, unit: '%' },
+  slide2: { value: 0, unit: '%' },
+  slide3: { value: 1, unit: '%' },
+  slide4: { value: 100, unit: 'deg' },
+  slide5: { value: 0, unit: '%' },
+  slide6: { value: 100, unit: '%' },
+  slide7: { value: 100, unit: '%' },
+  slide8: { value: 100, unit: '%' },
+  slide9: { value: 5, unit: 'px' },
+  slide10: { value: 8, unit: 'px' },
 })
 
-// const slide1 = $ref(0)
-const slide1Val = computed(() => `${slidesData.slide1}%`)
+// 计算属性，用于生成CSS值
+const slideVals = computed(() => {
+  const result: Record<string, string> = {}
 
-const slide2Val = computed(() => `${slidesData.slide2}%`)
+  Object.entries(slidesData).forEach(([key, data]) => {
+    result[key] = `${data.value}${data.unit}`
+  })
 
-const slide3Val = computed(() => `${slidesData.slide3}%`)
-
-const slide4Val = computed(() => `${slidesData.slide4}deg`)
-
-const slide5Val = computed(() => `${slidesData.slide5}%`)
-
-const slide6Val = computed(() => `${slidesData.slide6}%`)
-
-const slide7Val = computed(() => `${slidesData.slide7}%`)
-
-const slide8Val = computed(() => `${slidesData.slide8}%`)
-
-const slide9Val = computed(() => `${slidesData.slide9}px`)
-
-const slide10Val = computed(() => `${slidesData.slide10}px`)
+  return result
+})
 </script>
 
 <template>
@@ -69,20 +63,20 @@ const slide10Val = computed(() => `${slidesData.slide10}px`)
       </div>
       <div flex="~" justify-between>
         <div>Min: {{ item.min }}</div>
-        <div>current: {{ slidesData[`slide${i + 1}`] }}</div>
+        <div>current: {{ slidesData[`slide${i + 1}`].value }}</div>
         <div v-if="item.max">
           Max: {{ item.max }}
         </div>
       </div>
-      <input v-model="slidesData[`slide${i + 1}`]" type="range" min="0" max="100" step="1">
+      <input v-model="slidesData[`slide${i + 1}`].value" type="range" min="0" max="100" step="1">
       <!-- <img :src="image" :class="item.className"> -->
       <PinchScrollZoom
         ref="zoomer"
         within
         centred
         key-actions
-        :width="360"
-        :height="240"
+        :width="480"
+        :height="360"
         :origin-x="180"
         :min-scale="1"
         :max-scale="6"
@@ -99,33 +93,43 @@ const slide10Val = computed(() => `${slidesData.slide10}px`)
 
 <style scoped>
   .slide1 {
-    filter: grayscale(v-bind(slide1Val));
+    --slide1: v-bind(slideVals.slide1);
+    filter: grayscale(var(--slide1));
   }
   .slide2 {
-    filter: sepia(v-bind(slide2Val));
+    --slide2: v-bind(slideVals.slide2);
+    filter: sepia(var(--slide2));
   }
   .slide3 {
-    filter: saturate(v-bind(slide3Val));
+    --slide3: v-bind(slideVals.slide3);
+    filter: saturate(var(--slide3));
   }
   .slide4 {
-    filter: hue-rotate(v-bind(slide4Val));
+    --slide4: v-bind(slideVals.slide4);
+    filter: hue-rotate(var(--slide4));
   }
   .slide5 {
-    filter: invert(v-bind(slide5Val));
+    --slide5: v-bind(slideVals.slide5);
+    filter: invert(var(--slide5));
   }
   .slide6 {
-    filter: opacity(v-bind(slide6Val));
+    --slide6: v-bind(slideVals.slide6);
+    filter: opacity(var(--slide6));
   }
   .slide7 {
-    filter: brightness(v-bind(slide7Val));
+    --slide7: v-bind(slideVals.slide7);
+    filter: brightness(var(--slide7));
   }
   .slide8 {
-    filter: contrast(v-bind(slide8Val));
+    --slide8: v-bind(slideVals.slide8);
+    filter: contrast(var(--slide8));
   }
   .slide9 {
-    filter: blur(v-bind(slide9Val));
+    --slide9: v-bind(slideVals.slide9);
+    filter: blur(var(--slide9));
   }
   .slide10 {
-    filter: drop-shadow(8px 10px v-bind(slide10Val) #585);
+    --slide10: v-bind(slideVals.slide10);
+    filter: drop-shadow(8px 10px var(--slide10) #585);
   }
 </style>
