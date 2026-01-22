@@ -3,7 +3,7 @@
 import type { PropType } from 'vue'
 import type { Post } from '~/types'
 
-defineProps({
+const props = defineProps({
   showFooter: {
     type: Boolean,
     required: false,
@@ -29,23 +29,29 @@ const handleRepeat = function (arr: Post[]) {
 }
 
 const router = useRouter()
+const RECENT_MAX_POST = ref(5)
+const LOCAL_STORAGE_RECENT_POSTS_KEY = ref('recentPost')
 const jumpPage = function (folder: string, name: string, post: Post) {
-  const recentPost: Post[] = JSON.parse(localStorage.getItem('recentPost') || '[]')
-  if (recentPost.length >= 5)
+  const recentPost: Post[] = JSON.parse(localStorage.getItem(LOCAL_STORAGE_RECENT_POSTS_KEY.value) || '[]')
+  if (recentPost.length >= RECENT_MAX_POST.value)
     recentPost.shift()
   recentPost.push(post)
-  localStorage.setItem('recentPost', JSON.stringify(handleRepeat(recentPost)))
+  localStorage.setItem(LOCAL_STORAGE_RECENT_POSTS_KEY.value, JSON.stringify(handleRepeat(recentPost)))
 
   if (folder && name)
     router.push(`/${folder}/${encodeURIComponent(name)}`)
 
   emit('jumped')
 }
+
+const shouldShowFoolter = computed(() => {
+  return routes.fullPath !== '/' && routes.fullPath.includes('list') && props.showFooter
+})
 </script>
 
 <template>
   <ul class="list-title font-mno slide-enter-content">
-    <li v-for="(item, i) in posts" :key="i" class="w-full flex justify-between mb-4">
+    <li v-for="(item, i) in posts" :key="item.title + i" class="w-full flex justify-between mb-4">
       <a
         class="cursor-pointer c-gray-600 dark:c-gray-400 link-style transition-colors"
         @click="jumpPage(item.folder, item.fileName, item)"
@@ -54,6 +60,6 @@ const jumpPage = function (folder: string, name: string, post: Post) {
         {{ item.date }}
       </div>
     </li>
-    <Footer v-if="routes.fullPath !== '/' && routes.fullPath.includes('list') && showFooter" />
+    <Footer v-if="shouldShowFoolter" />
   </ul>
 </template>
